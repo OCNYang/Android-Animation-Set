@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">ViewAnimation</string>
+    <string name="module_name">ViewAnimation</string>
+    <string name="alpha_animation">AlphaAnimation</string>
+    <string name="rotate_animation">RotateAnimation</string>
+    <string name="scale_animation">ScaleAnimation</string>
+    <string name="translate_animation">TranslateAnimation</string>
+    <string name="animation_set">AnimationSet</string>
 </resources>

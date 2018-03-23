@@ -3,7 +3,9 @@
           package="com.ocnyang.viewanimation">
 
     <application>
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".ViewAnimationActivity"
+            android:label="@string/module_name">
         </activity>
     </application>
 

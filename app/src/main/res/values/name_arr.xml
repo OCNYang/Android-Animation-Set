@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="itemName">
+        <item>View Animation</item>
+        <item>Drawable Animation</item>
+        <item>Property Animation</item>
+        <item>触摸反馈动画</item>
+
+        <item>揭露动画</item>
+        <item>转场动画 共享元素</item>
+        <item>视图状态动画</item>
+        <item>矢量图动画</item>
+    </string-array>
+</resources>
