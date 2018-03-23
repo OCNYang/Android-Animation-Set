@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.ocnyang.eurooostock.module.store.StoreActivity">
+    <item
+        android:id="@+id/action_do"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="@string/do_"/>
+    <item
+        android:id="@+id/action_stop"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="@string/stop"/>
+
+</menu>

@@ -1,6 +1,7 @@
 package com.ocnyang.androidanimationset;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,6 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.ocnyang.drawableanimation.DrawableAnimationActivity;
+import com.ocnyang.viewanimation.ViewAnimationActivity;
 
 /*******************************************************************
  *    * * * *   * * * *   *     *       Created by OCN.Yang
@@ -39,13 +43,35 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         holder.itemView.setBackgroundColor(mIntArray[position]);
         holder.itemNameTv.setText(mStringArray[position]);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(mContext, "fuck", Toast.LENGTH_SHORT).show();
+                switch(position){
+                    case 0:
+                        mContext.startActivity(new Intent(mContext, ViewAnimationActivity.class));
+                        break;
+                    case 1:
+                        mContext.startActivity(new Intent(mContext, DrawableAnimationActivity.class));
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        break;
+                    default:
+                        break;
+                }
             }
         });
 
