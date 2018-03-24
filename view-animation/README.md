@@ -1,10 +1,10 @@
 # Ⅰ. View Animation（视图动画）使用详解
 
 ## 1. 概述:
-视图动画，也叫Tween（补间）动画可以在一个视图容器内执行一系列简单变换（位置、大小、旋转、透明度）。
-譬如，如果你有一个TextView对象，您可以移动、旋转、缩放、透明度设置其文本，当然，如果它有一个背景图像，背景图像会随着文本变化。
+视图动画，也叫 Tween （补间）动画可以在一个视图容器内执行一系列简单变换（位置、大小、旋转、透明度）。
+譬如，如果你有一个 TextView 对象，您可以移动、旋转、缩放、透明度设置其文本，当然，如果它有一个背景图像，背景图像会随着文本变化。
 
-补间动画通过XML或Android代码定义，建议使用XML文件定义，因为它更具可读性、可重用性。
+补间动画通过 XML 或 Android 代码定义，建议使用 XML 文件定义，因为它更具可读性、可重用性。
 
 如下是视图动画相关的类继承关系：
 
@@ -22,11 +22,11 @@
 
 ## 2. 视图动画详细说明
 
-可以看出来Animation抽象类是所有补间动画类的基类，所以基类会提供一些通用的动画属性方法，如下我们就来详细看看这些属性，
+可以看出来 Animation 抽象类是所有补间动画类的基类，所以基类会提供一些通用的动画属性方法，如下我们就来详细看看这些属性，
 关于这些属性详细官方解释 [翻墙点击我](https://developer.android.com/reference/android/view/animation/Animation.html) 
 或者 [翻墙点击我](https://developer.android.com/guide/topics/resources/animation-resource.html)。
 
-### 2-1. Animation属性详解
+### 2-1. Animation 属性详解
 
 | xml 属性 | java 方法 | 解释 |
 | :----- | :------- | :----- |
@@ -45,14 +45,14 @@
 
 那接下来我们就看看每种补间动画特有的一些属性说明吧。
 
-### 2-2. Alpha属性详解
+### 2-2. Alpha 属性详解
 
 | xml 属性 | java方法 | 解释 |
 | :----- | :------- | :----- |
 | android:fromAlpha | AlphaAnimation(float fromAlpha, …) | 动画开始的透明度（0.0到1.0，0.0是全透明，1.0是不透明） | 
 | android:toAlpha | AlphaAnimation(…, float toAlpha) | 动画结束的透明度，同上 | 
 
-### 2-3. Rotate属性详解
+### 2-3. Rotate 属性详解
 
 | xml 属性 | java方法 | 解释 |
 | :----- | :------- | :----- |
@@ -61,7 +61,7 @@
 | android:pivotX | RotateAnimation(…, float pivotX, …) | 缩放起点X坐标（数值、百分数、百分数p，譬如50表示以当前View左上角坐标加50px为初始点、50%表示以当前View的左上角加上当前View宽高的50%做为初始点、50%p表示以当前View的左上角加上父控件宽高的50%做为初始点） | 
 | android:pivotY | RotateAnimation(…, float pivotY) | 缩放起点Y坐标，同上规律 | 
 
-### 2-4. Scale属性详解
+### 2-4. Scale 属性详解
 
 | xml 属性 | java方法 | 解释 |
 | :----- | :------- | :----- |
@@ -72,7 +72,7 @@
 | android:pivotX | ScaleAnimation(…, float pivotX, …) | 缩放起点X轴坐标（数值、百分数、百分数p，譬如50表示以当前View左上角坐标加50px为初始点、50%表示以当前View的左上角加上当前View宽高的50%做为初始点、50%p表示以当前View的左上角加上父控件宽高的50%做为初始点） | 
 | android:pivotY | ScaleAnimation(…, float pivotY) | 缩放起点Y轴坐标，同上规律 | 
 
-### 2-5. Translate属性详解
+### 2-5. Translate 属性详解
 
 | xml 属性 | java方法 | 解释 |
 | :----- | :------- | :----- |
@@ -81,13 +81,14 @@
 | android:toXDelta | TranslateAnimation(…, float toXDelta, …) | 结束点X轴坐标，同上规律 | 
 | android:toYDelta | TranslateAnimation(…, float toYDelta) | 结束点Y轴坐标，同上规律 | 
 
-### 2-6. AnimationSet详解
+### 2-6. AnimationSet 详解
 
-AnimationSet继承自Animation，是上面四种的组合容器管理类，没有自己特有的属性，他的属性继承自Animation，所以特别注意，当我们对set标签使用Animation的属性时会对该标签下的所有子控件都产生影响。  
+AnimationSet 继承自 Animation，是上面四种的组合容器管理类，没有自己特有的属性，他的属性继承自 Animation，所以特别注意，
+当我们对 set 标签使用 Animation 的属性时会对该标签下的所有子控件都产生影响。  
 
 ## 3. 视图动画使用方法
 
-通过上面对于动画的属性介绍之后我们来看看在Android中这些动画如何使用（PS：这里直接演示xml方式，至于java方式太简单了就不说了），如下：
+通过上面对于动画的属性介绍之后我们来看看在 Android 中这些动画如何使用（PS：这里直接演示 xml 方式，至于 java 方式太简单了就不说了），如下：
 
     <?xml version="1.0" encoding="utf-8"?>
     <set xmlns:android="http://schemas.android.com/apk/res/android"
@@ -124,36 +125,36 @@ AnimationSet继承自Animation，是上面四种的组合容器管理类，没�
     Animation hyperspaceJumpAnimation = AnimationUtils.loadAnimation(this, R.anim.hyperspace_jump);
     spaceshipImage.startAnimation(hyperspaceJumpAnimation);
 
-上面就是一个标准的使用我们定义的补间动画的模板。至于补间动画的使用，Animation还有如下一些比较实用的方法介绍：
+上面就是一个标准的使用我们定义的补间动画的模板。至于补间动画的使用，Animation 还有如下一些比较实用的方法介绍：
 
-| Animation类的方法 | 解释 |
+| Animation 类的方法 | 解释 |
 | :-------------- | :----|
-| reset() | 重置Animation的初始化 | 
-| cancel() | 取消Animation动画 | 
-| start() | 开始Animation动画 | 
-| setAnimationListener(AnimationListener listener) | 给当前Animation设置动画监听 | 
-| hasStarted() | 判断当前Animation是否开始 | 
-| hasEnded() | 判断当前Animation是否结束 | 
+| reset() | 重置 Animation 的初始化 | 
+| cancel() | 取消 Animation 动画 | 
+| start() | 开始 Animation 动画 | 
+| setAnimationListener(AnimationListener listener) | 给当前 Animation 设置动画监听 | 
+| hasStarted() | 判断当前 Animation 是否开始 | 
+| hasEnded() | 判断当前 Animation 是否结束 | 
 
-既然补间动画只能给View使用，那就来看看View中和动画相关的几个常用方法吧，如下：
+既然补间动画只能给 View 使用，那就来看看 View 中和动画相关的几个常用方法吧，如下：
 
 | View类的常用动画操作方法 | 解释 | 
 | :-------------- | :----|
-| startAnimation(Animation animation) | 对当前View开始设置的Animation动画 | 
-| clearAnimation() | 取消当View在执行的Animation动画 | 
+| startAnimation(Animation animation) | 对当前 View 开始设置的 Animation 动画 | 
+| clearAnimation() | 取消当 View 在执行的 Animation 动画 | 
 
-到此整个Android的补间动画常用详细属性及方法全部介绍完毕，如有特殊的属性需求可以访问Android Developer查阅即可。如下我们就来个综合大演练。
+到此整个 Android 的补间动画常用详细属性及方法全部介绍完毕，如有特殊的属性需求可以访问 Android Developer 查阅即可。如下我们就来个综合大演练。
 
 ## 4. 视图动画注意事项
 
 关于视图动画（补间动画）的例子我就不介绍了，网上简直多的都泛滥了。只是强调在使用补间动画时注意如下一点即可：
 
 > **特别特别注意：**  
->补间动画执行之后并未改变View的真实布局属性值。切记这一点，譬如我们在 Activity 中有一个 Button 在屏幕上方，
+>补间动画执行之后并未改变 View 的真实布局属性值。切记这一点，譬如我们在 Activity 中有一个 Button 在屏幕上方，
 我们设置了平移动画移动到屏幕下方然后保持动画最后执行状态呆在屏幕下方，这时如果点击屏幕下方动画执行之后的 Button 是没有任何反应的，
 而点击原来屏幕上方没有 Button 的地方却响应的是点击Button的事件。
 
-## 5. 视图动画Interpolator插值器详解
+## 5. 视图动画 Interpolator 插值器详解
 
 ## 5-1 插值器简介
 
@@ -161,15 +162,15 @@ AnimationSet继承自Animation，是上面四种的组合容器管理类，没�
 
 ![补间动画插值器子类结构图](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/interpolator_class.png)  
 
-可以看见其实各种插值器都是实现了Interpolator接口而已，同时可以看见系统提供了许多已经实现OK的插值器，  
+可以看见其实各种插值器都是实现了 Interpolator 接口而已，同时可以看见系统提供了许多已经实现 OK 的插值器，  
 具体如下：
 
-|　java类　| xml id值 | 描述 |
+|　java 类　| xml id值 | 描述 |
 | :------ | :------ | :--- |
 |　AccelerateDecelerateInterpolator | @android:anim/accelerate_decelerate_interpolator | 动画始末速率较慢，中间加速 | 
 |　AccelerateInterpolator | @android:anim/accelerate_interpolator | 动画开始速率较慢，之后慢慢加速 | 
 |　AnticipateInterpolator | @android:anim/anticipate_interpolator | 开始的时候从后向前甩 | 
-|　AnticipateOvershootInterpolator | @android:anim/anticipate_overshoot_interpolator | 类似上面AnticipateInterpolator | 
+|　AnticipateOvershootInterpolator | @android:anim/anticipate_overshoot_interpolator | 类似上面 AnticipateInterpolator | 
 |　BounceInterpolator | @android:anim/bounce_interpolator | 动画结束时弹起 | 
 |　CycleInterpolator | @android:anim/cycle_interpolator | 循环播放速率改变为正弦曲线 | 
 |　DecelerateInterpolator | @android:anim/decelerate_interpolator | 动画开始快然后慢 | 
@@ -189,11 +190,11 @@ AnimationSet继承自Animation，是上面四种的组合容器管理类，没�
 
 ## 5-3 插值器的自定义
 
-有时候你会发现系统提供的插值器不够用，可能就像View一样需要自定义。所以接下来我们来看看插值器的自定义，
-关于插值器的自定义分为两种实现方式，xml自定义实现（其实就是对现有的插值器的一些属性修改）或者java代码实现方式。如下我们来说说。
+有时候你会发现系统提供的插值器不够用，可能就像 View 一样需要自定义。所以接下来我们来看看插值器的自定义，
+关于插值器的自定义分为两种实现方式，xml 自定义实现（其实就是对现有的插值器的一些属性修改）或者 java 代码实现方式。如下我们来说说。
 
-先看看XML自定义插值器的步骤：
-1. 在res/anim/目录下创建filename.xml文件。
+先看看 XML 自定义插值器的步骤：
+1. 在 res/anim/ 目录下创建 filename.xml 文件。
 2. 修改你准备自定义的插值器如下：
 
         <?xml version="1.0" encoding="utf-8"?>
@@ -233,10 +234,10 @@ android:factor 浮点值，减速的速率（默认为1）。
 **`<overshootInterpolator>`**  
 android:tension 浮点值，超出终点后的张力（默认为2）。
 
-再来看看 Java 自定义插值器的（Java 自定义插值器其实是 xml 自定义的升级，也就是说如果我们修改xml的属性还不能满足需求，那就可以选择通过 Java 来实现）方式。
+再来看看 Java 自定义插值器的（Java 自定义插值器其实是 xml 自定义的升级，也就是说如果我们修改 xml 的属性还不能满足需求，那就可以选择通过 Java 来实现）方式。
 
 可以看见上面所有的 Interpolator 都实现了 Interpolator 接口，而 Interpolator 接口又继承自 TimeInterpolator，
-TimeInterpolator 接口定义了一个float getInterpolation(float input);方法，这个方法是由系统调用的，
+TimeInterpolator 接口定义了一个 float getInterpolation(float input);方法，这个方法是由系统调用的，
 其中的参数 input 代表动画的时间，在 0 和 1 之间，也就是开始和结束之间。
 
 如下就是一个动画始末速率较慢、中间加速的 AccelerateDecelerateInterpolator 插值器：
