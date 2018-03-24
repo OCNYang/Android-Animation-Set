@@ -36,7 +36,7 @@ Android 3.0以后引入了属性动画，属性动画可以轻而易举的实现
 ![Animator 继承关系]()
 
 | java 类名 | xml 关键字 | 描述信息 |
-| :-------: | :------- | :-----_ |
+| :-------: | :------- | :----- |
 | ValueAnimator | `<animator>` 放置在 res/animator/ 目录下 | 在一个特定的时间里执行一个动画 | 
 | TimeAnimator | 不支持/点我查看原因 | 时序监听回调工具 | 
 | ObjectAnimator | `<objectAnimator>` 放置在 res/animator/ 目录下 | 一个对象的一个属性动画 | 
