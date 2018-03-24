@@ -132,7 +132,7 @@ TypeEvaluator 使用了 IntEvaluator。所以这些类都是标准的API，我�
 这就是官方给的一个关于属性动画实现的过程及基本原理解释，相信你看到这里是会有些迷糊的，没关系，你先有个大致概念就行，
 接下来我们会慢慢进入实战，因为 Android 的属性动画相对于其他动画来说涉及的知识点本来就比较复杂，所以我们慢慢来。
 
-### 2-2 XML方式属性动画
+### 2-2 XML 方式属性动画
 
 在 xml 中可直接用的属性动画节点有 ValueAnimator、ObjectAnimator、AnimatorSet。
 如下是官方的一个例子和解释（[详情点我](http://developer.android.com/guide/topics/resources/animation-resource.html)）：
@@ -193,7 +193,7 @@ XML 属性动画使用方法：
     set.setTarget(myObject);
     set.start();
 
-### 2-3 Java方式属性动画
+### 2-3 Java 方式属性动画
 
 **1、ObjectAnimator：**  
 继承自 ValueAnimator，允许你指定要进行动画的对象以及该对象的一个属性。该类会根据计算得到的新值自动更新属性。
@@ -275,7 +275,7 @@ ObjectAnimator 的动画原理是不停的调用 setXXX 方法更新属性值，
     ......//其他组合方式
     animSet.start();  
 
-**5、Evaluators相关类解释：**  
+**5、Evaluators 相关类解释：**  
 Evaluators 就是属性动画系统如何去计算一个属性值。它们通过 Animator 提供的动画的起始和结束值去计算一个动画的属性值。
 
 * IntEvaluator：整数属性值。
@@ -359,7 +359,7 @@ Evaluators 就是属性动画系统如何去计算一个属性值。它们通过
 综上可以发现，我们可以使用现有系统提供标准的东东实现属性动画，也可以通过自定义继承相关接口实现自己的动画，
 只要实现上面提到的那些主要方法即可。
 
-### 2-4 Java属性动画拓展之ViewPropertyAnimator动画
+### 2-4 Java 属性动画拓展之 ViewPropertyAnimator 动画
 
 在 Android API 12 时，View 中添加了 animate 方法，具体如下：
 
@@ -390,7 +390,7 @@ ViewPropertyAnimator 提供了一种非常方便的方法为 View 的部分属�
 
     myView.animate().x(0f).y(100f).start(); 
 
-### 2-5 Java属性动画拓展之LayoutAnimator容器布局动画
+### 2-5 Java 属性动画拓展之 LayoutAnimator 容器布局动画
 
 Property 动画系统还提供了对 ViewGroup 中 View 添加时的动画功能，
 我们可以用 LayoutTransition 对 ViewGroup 中的 View 进行动画设置显示。
