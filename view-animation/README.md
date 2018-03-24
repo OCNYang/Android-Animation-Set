@@ -26,7 +26,7 @@
 关于这些属性详细官方解释 [翻墙点击我](https://developer.android.com/reference/android/view/animation/Animation.html) 
 或者 [翻墙点击我](https://developer.android.com/guide/topics/resources/animation-resource.html)。
 
-### 2_1. Animation属性详解
+### 2-1. Animation属性详解
 
 | xml 属性 | java 方法 | 解释 |
 | :----- | :------- | :----- |
@@ -126,131 +126,128 @@ AnimationSet继承自Animation，是上面四种的组合容器管理类，没�
 
 上面就是一个标准的使用我们定义的补间动画的模板。至于补间动画的使用，Animation还有如下一些比较实用的方法介绍：
 
-Animation类的方法	解释
-reset()	重置Animation的初始化
-cancel()	取消Animation动画
-start()	开始Animation动画
-setAnimationListener(AnimationListener listener)	给当前Animation设置动画监听
-hasStarted()	判断当前Animation是否开始
-hasEnded()	判断当前Animation是否结束
+| Animation类的方法 | 解释 |
+| :-------------- | :----|
+| reset() | 重置Animation的初始化 | 
+| cancel() | 取消Animation动画 | 
+| start() | 开始Animation动画 | 
+| setAnimationListener(AnimationListener listener) | 给当前Animation设置动画监听 | 
+| hasStarted() | 判断当前Animation是否开始 | 
+| hasEnded() | 判断当前Animation是否结束 | 
 
 既然补间动画只能给View使用，那就来看看View中和动画相关的几个常用方法吧，如下：
 
-View类的常用动画操作方法	解释
-startAnimation(Animation animation)	对当前View开始设置的Animation动画
-clearAnimation()	取消当View在执行的Animation动画
+| View类的常用动画操作方法 | 解释 | 
+| :-------------- | :----|
+| startAnimation(Animation animation) | 对当前View开始设置的Animation动画 | 
+| clearAnimation() | 取消当View在执行的Animation动画 | 
+
 到此整个Android的补间动画常用详细属性及方法全部介绍完毕，如有特殊的属性需求可以访问Android Developer查阅即可。如下我们就来个综合大演练。
 
-2-4 视图动画注意事项
+## 4. 视图动画注意事项
+
 关于视图动画（补间动画）的例子我就不介绍了，网上简直多的都泛滥了。只是强调在使用补间动画时注意如下一点即可：
 
-特别特别注意：补间动画执行之后并未改变View的真实布局属性值。切记这一点，譬如我们在Activity中有一个Button在屏幕上方，我们设置了平移动画移动到屏幕下方然后保持动画最后执行状态呆在屏幕下方，这时如果点击屏幕下方动画执行之后的Button是没有任何反应的，而点击原来屏幕上方没有Button的地方却响应的是点击Button的事件。
+> **特别特别注意：**  
+>补间动画执行之后并未改变View的真实布局属性值。切记这一点，譬如我们在 Activity 中有一个 Button 在屏幕上方，
+我们设置了平移动画移动到屏幕下方然后保持动画最后执行状态呆在屏幕下方，这时如果点击屏幕下方动画执行之后的 Button 是没有任何反应的，
+而点击原来屏幕上方没有 Button 的地方却响应的是点击Button的事件。
 
-2-5 视图动画Interpolator插值器详解
-2-5-1 插值器简介
+## 5. 视图动画Interpolator插值器详解
+
+## 5-1 插值器简介
+
 介绍补间动画插值器之前我们先来看一幅图，如下：
 
-这里写图片描述
+![补间动画插值器子类结构图]()  
 
-可以看见其实各种插值器都是实现了Interpolator接口而已，同时可以看见系统提供了许多已经实现OK的插值器，具体如下：
+可以看见其实各种插值器都是实现了Interpolator接口而已，同时可以看见系统提供了许多已经实现OK的插值器，  
+具体如下：
 
-java类	xml id值	描述
-AccelerateDecelerateInterpolator	@android:anim/accelerate_decelerate_interpolator	动画始末速率较慢，中间加速
-AccelerateInterpolator	@android:anim/accelerate_interpolator	动画开始速率较慢，之后慢慢加速
-AnticipateInterpolator	@android:anim/anticipate_interpolator	开始的时候从后向前甩
-AnticipateOvershootInterpolator	@android:anim/anticipate_overshoot_interpolator	类似上面AnticipateInterpolator
-BounceInterpolator	@android:anim/bounce_interpolator	动画结束时弹起
-CycleInterpolator	@android:anim/cycle_interpolator	循环播放速率改变为正弦曲线
-DecelerateInterpolator	@android:anim/decelerate_interpolator	动画开始快然后慢
-LinearInterpolator	@android:anim/linear_interpolator	动画匀速改变
-OvershootInterpolator	@android:anim/overshoot_interpolator	向前弹出一定值之后回到原来位置
-PathInterpolator		新增，定义路径坐标后按照路径坐标来跑。
+|　java类　| xml id值 | 描述 |
+| :------ | :------ | :--- |
+|　AccelerateDecelerateInterpolator | @android:anim/accelerate_decelerate_interpolator | 动画始末速率较慢，中间加速 | 
+|　AccelerateInterpolator | @android:anim/accelerate_interpolator | 动画开始速率较慢，之后慢慢加速 | 
+|　AnticipateInterpolator | @android:anim/anticipate_interpolator | 开始的时候从后向前甩 | 
+|　AnticipateOvershootInterpolator | @android:anim/anticipate_overshoot_interpolator | 类似上面AnticipateInterpolator | 
+|　BounceInterpolator | @android:anim/bounce_interpolator | 动画结束时弹起 | 
+|　CycleInterpolator | @android:anim/cycle_interpolator | 循环播放速率改变为正弦曲线 | 
+|　DecelerateInterpolator | @android:anim/decelerate_interpolator | 动画开始快然后慢 | 
+|　LinearInterpolator | @android:anim/linear_interpolator | 动画匀速改变 | 
+|　OvershootInterpolator | @android:anim/overshoot_interpolator | 向前弹出一定值之后回到原来位置 | 
+|　PathInterpolator |  | 新增，定义路径坐标后按照路径坐标来跑。 | 
+
 如上就是系统提供的一些插值器，下面我们来看看怎么使用他们。
 
-2-5-2 插值器使用方法
+## 5-2 插值器使用方法
+
 插值器的使用比较简答，如下：
 
-<set android:interpolator="@android:anim/accelerate_interpolator">
-    ...
-</set>
-1
-2
-3
-2-5-3 插值器的自定义
-有时候你会发现系统提供的插值器不够用，可能就像View一样需要自定义。所以接下来我们来看看插值器的自定义，关于插值器的自定义分为两种实现方式，xml自定义实现（其实就是对现有的插值器的一些属性修改）或者java代码实现方式。如下我们来说说。
+    <set android:interpolator="@android:anim/accelerate_interpolator">
+        ...
+    </set>
+
+## 5-3 插值器的自定义
+
+有时候你会发现系统提供的插值器不够用，可能就像View一样需要自定义。所以接下来我们来看看插值器的自定义，
+关于插值器的自定义分为两种实现方式，xml自定义实现（其实就是对现有的插值器的一些属性修改）或者java代码实现方式。如下我们来说说。
 
 先看看XML自定义插值器的步骤：
+1. 在res/anim/目录下创建filename.xml文件。
+2. 修改你准备自定义的插值器如下：
 
-在res/anim/目录下创建filename.xml文件。
-修改你准备自定义的插值器如下：
-<?xml version="1.0" encoding="utf-8"?>
-<InterpolatorName xmlns:android="http://schemas.android.com/apk/res/android"
-    android:attribute_name="value"
-    />
-1
-2
-3
-4
-在你的补间动画文件中引用该文件即可。
+        <?xml version="1.0" encoding="utf-8"?>
+        <InterpolatorName xmlns:android="http://schemas.android.com/apk/res/android"
+            android:attribute_name="value"
+            />
+
+3. 在你的补间动画文件中引用该文件即可。
+
 可以看见上面第二步修改的是现有插值器的一些属性，但是有些插值器却不具备修改属性，具体如下：
 
-<accelerateDecelerateInterpolator>
+**`<accelerateDecelerateInterpolator>`**  
+无可自定义的 attribute。
 
-无可自定义的attribute。
-
-<accelerateInterpolator>
-
+**`<accelerateInterpolator>`**  
 android:factor 浮点值，加速速率（默认值为1）。
 
-<anticipateInterploator>
-
+**`<anticipateInterploator>`**  
 android:tension 浮点值，起始点后拉的张力数（默认值为2）。
 
-<anticipateOvershootInterpolator>
-
+**`<anticipateOvershootInterpolator>`**  
 android:tension 浮点值，起始点后拉的张力数（默认值为2）。 
 android:extraTension 浮点值，拉力的倍数（默认值为1.5）。
 
-<bounceInterpolator>
+**`<bounceInterpolator>`**  
+无可自定义的 attribute。
 
-无可自定义的attribute。
-
-<cycleInterplolator>
-
+**`<cycleInterplolator>`**  
 android:cycles 整形，循环的个数（默认为1）。
 
-<decelerateInterpolator>
-
+**`<decelerateInterpolator>`**  
 android:factor 浮点值，减速的速率（默认为1）。
 
-<linearInterpolator>
-
+**`<linearInterpolator>`**  
 无可自定义的attribute。
 
-<overshootInterpolator>
-
+**`<overshootInterpolator>`**  
 android:tension 浮点值，超出终点后的张力（默认为2）。
 
-再来看看Java自定义插值器的（Java自定义插值器其实是xml自定义的升级，也就是说如果我们修改xml的属性还不能满足需求，那就可以选择通过Java来实现）方式。
+再来看看 Java 自定义插值器的（Java自定义插值器其实是xml自定义的升级，也就是说如果我们修改xml的属性还不能满足需求，那就可以选择通过 Java 来实现）方式。
 
-可以看见上面所有的Interpolator都实现了Interpolator接口，而Interpolator接口又继承自TimeInterpolator，TimeInterpolator接口定义了一个float getInterpolation(float input);方法，这个方法是由系统调用的，其中的参数input代表动画的时间，在0和1之间，也就是开始和结束之间。
+可以看见上面所有的 Interpolator 都实现了 Interpolator 接口，而 Interpolator 接口又继承自 TimeInterpolator，
+TimeInterpolator 接口定义了一个float getInterpolation(float input);方法，这个方法是由系统调用的，
+其中的参数 input 代表动画的时间，在 0 和 1 之间，也就是开始和结束之间。
 
-如下就是一个动画始末速率较慢、中间加速的AccelerateDecelerateInterpolator插值器：
+如下就是一个动画始末速率较慢、中间加速的 AccelerateDecelerateInterpolator 插值器：
 
-public class AccelerateDecelerateInterpolator extends BaseInterpolator
-        implements NativeInterpolatorFactory {
-    ......
-    public float getInterpolation(float input) {
-        return (float)(Math.cos((input + 1) * Math.PI) / 2.0f) + 0.5f;
+    public class AccelerateDecelerateInterpolator extends BaseInterpolator
+            implements NativeInterpolatorFactory {
+        ......
+        public float getInterpolation(float input) {
+            return (float)(Math.cos((input + 1) * Math.PI) / 2.0f) + 0.5f;
+        }
+        ......
     }
-    ......
-}
-1
-2
-3
-4
-5
-6
-7
-8
+
 到此整个补间动画与补间动画的插值器都分析完毕了，接下来看下别的动画。
