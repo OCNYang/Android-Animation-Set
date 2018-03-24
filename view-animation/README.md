@@ -205,14 +205,16 @@ AnimationSet继承自Animation，是上面四种的组合容器管理类，没�
 
 可以看见上面第二步修改的是现有插值器的一些属性，但是有些插值器却不具备修改属性，具体如下：
 
-**`<accelerateDecelerateInterpolator>`**  
-无可自定义的 attribute。
+| 插值器 |
+| ----- |
+| **`<accelerateDecelerateInterpolator>`**  
+无可自定义的 attribute。| 
 
-**`<accelerateInterpolator>`**  
-android:factor 浮点值，加速速率（默认值为1）。
+| **`<accelerateInterpolator>`**  
+android:factor 浮点值，加速速率（默认值为1）。| 
 
-**`<anticipateInterploator>`**  
-android:tension 浮点值，起始点后拉的张力数（默认值为2）。
+| **`<anticipateInterploator>`**  
+android:tension 浮点值，起始点后拉的张力数（默认值为2）。| 
 
 **`<anticipateOvershootInterpolator>`**  
 android:tension 浮点值，起始点后拉的张力数（默认值为2）。 
