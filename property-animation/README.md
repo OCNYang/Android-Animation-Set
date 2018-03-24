@@ -1,6 +1,6 @@
 # Property Animation（属性动画）使用详解
 
-在使用属性动画之前先来看几个常用的View属性成员：
+在使用属性动画之前先来看几个常用的 View 属性成员：
 
 * translationX，translationY：控制View的位置，值是相对于View容器左上角坐标的偏移。
 * rotationX，rotationY：控制相对于轴心旋转。
@@ -11,7 +11,7 @@
 
 ## 1. 属性动画概述
 
-Android 3.0以后引入了属性动画，属性动画可以轻而易举的实现许多View动画做不到的事，
+Android 3.0 以后引入了属性动画，属性动画可以轻而易举的实现许多 View 动画做不到的事，
 上面也看见了，View动画无非也就做那几种事情，别的也搞不定，而属性动画就可以的，
 譬如3D旋转一张图片。其实说白了，你记住一点就行，属性动画实现原理就是修改控件的属性值实现的动画。
 
@@ -29,8 +29,8 @@ Android 3.0以后引入了属性动画，属性动画可以轻而易举的实现
 
 ![Animator 的子类关系]()
 
-其实可以看见，属性动画的实现有7个类（PS，之所以类继承关系列表会出来那么多是因为我下载了所有版本的SDK，
-你只用关注我红点标注的就行，妹的，ubuntu下图片处理工具怎么都这么难用），进去粗略分析可以发现，好几个是hide的类，
+其实可以看见，属性动画的实现有7个类（PS，之所以类继承关系列表会出来那么多是因为我下载了所有版本的 SDK，
+你只用关注我红点标注的就行，妹的，ubuntu 下图片处理工具怎么都这么难用），进去粗略分析可以发现，好几个是 hide 的类，
 而其他可用的类继承关系又如下：
 
 ![Animator 继承关系]()
@@ -51,25 +51,25 @@ Android 3.0以后引入了属性动画，属性动画可以轻而易举的实现
 
 [参看Android官方文档，英文原版详情点我查看](https://developer.android.com/guide/topics/graphics/prop-animation.html)
 
-Android属性动画（注意最低兼容版本，不过可以使用开源项目来替代低版本问题）提供了以下属性：
+Android 属性动画（注意最低兼容版本，不过可以使用开源项目来替代低版本问题）提供了以下属性：
 
 * Duration：动画的持续时间；
 * TimeInterpolation：定义动画变化速率的接口，所有插值器都必须实现此接口，如线性、非线性插值器；
-* TypeEvaluator：用于定义属性值计算方式的接口，有int、float、color类型，根据属性的起始、结束值和插值一起计算出当前时间的属性值；
+* TypeEvaluator：用于定义属性值计算方式的接口，有 int、float、color 类型，根据属性的起始、结束值和插值一起计算出当前时间的属性值；
 * Animation sets：动画集合，即可以同时对一个对象应用多个动画，这些动画可以同时播放也可以对不同动画设置不同的延迟；
-* Frame refreash delay：多少时间刷新一次，即每隔多少时间计算一次属性值，默认为10ms，最终刷新时间还受系统进程调度与硬件的影响；
+* Frame refreash delay：多少时间刷新一次，即每隔多少时间计算一次属性值，默认为 10ms，最终刷新时间还受系统进程调度与硬件的影响；
 * Repeat Country and behavoir：重复次数与方式，如播放3次、5次、无限循环，可以让此动画一直重复，或播放完时向反向播放；
 
 接下来先来看官方为了解释原理给出的两幅图（其实就是初中物理题，不解释）：
 
 ![Example of a linear animation]()  
 
-上面就是一个线性匀速动画，描述了一个Object的X属性运动动画，该对象的X坐标在40ms内从0移动到40，
-每10ms刷新一次，移动4次，每次移动为40/4=10pixel。 
+上面就是一个线性匀速动画，描述了一个 Object 的 X 属性运动动画，该对象的X坐标在 40ms 内从 0 移动到 40，
+每 10ms 刷新一次，移动 4 次，每次移动为 40/4=10pixel。 
 
 ![Example of a non-linear animation]()  
 
-上面是一个非匀速动画，描述了一个Object的X属性运动动画，该对象的X坐标在40ms内从0移动到40，每10ms刷新一次，移动4次，
+上面是一个非匀速动画，描述了一个 Object 的 X 属性运动动画，该对象的 X 坐标在 40ms 内从 0 移动到 40，每 10ms 刷新一次，移动4次，
 但是速率不同，开始和结束的速度要比中间部分慢，即先加速后减速。
 
 接下来我们来详细的看一下，属性动画系统的重要组成部分是如何计算动画值的，下图描述了如上面所示动画的实现作用过程。
@@ -86,7 +86,7 @@ ValueAnimator 封装了动画的 TimeInterpolator 时间插值器和一个 TypeE
 
 当 ValueAnimator 计算完已完成动画分数后，它会调用当前设置的 TimeInterpolator，
 去计算得到一个 interpolated（插值）分数，在计算过程中，已完成动画百分比会被加入到新的插值计算中。
-如上图2非线性动画中，因为动画的运动是缓慢加速的，它的插值分数大约是 0.15，小于t = 10ms时的已完成动画分数0.25。
+如上图 2 非线性动画中，因为动画的运动是缓慢加速的，它的插值分数大约是 0.15，小于 t = 10ms 时的已完成动画分数 0.25。
 而在上图1中，这个插值分数一直和已完成动画分数是相同的。
 
 当插值分数计算完成后，ValueAnimator 会根据插值分数调用合适的 TypeEvaluator 去计算运动中的属性值。
@@ -111,7 +111,7 @@ TypeEvaluator 使用了 IntEvaluator。所以这些类都是标准的API，我�
     }
 
 
-其实AccelerateDecelerateInterpolator的基类接口就是TimeInterpolator，如下，他只有getInterpolation方法，
+其实 AccelerateDecelerateInterpolator 的基类接口就是 TimeInterpolator，如下，他只有 getInterpolation 方法，
 也就是上面我们关注的方法。
 
     public interface TimeInterpolator {
@@ -119,8 +119,8 @@ TypeEvaluator 使用了 IntEvaluator。所以这些类都是标准的API，我�
     }
 
 
-接着ValueAnimator会根据插值分数调用合适的TypeEvaluator（IntEvaluator）去计算运动中的属性值，
-如下，因为startValue = 0，所以属性值：0+0.15*（40-0）= 6。
+接着 ValueAnimator 会根据插值分数调用合适的 TypeEvaluator（IntEvaluator） 去计算运动中的属性值，
+如下，因为 startValue = 0，所以属性值：0+0.15*（40-0）= 6。
 
     public class IntEvaluator implements TypeEvaluator<Integer> {
         public Integer evaluate(float fraction, Integer startValue, Integer endValue) {
@@ -168,20 +168,20 @@ TypeEvaluator 使用了 IntEvaluator。所以这些类都是标准的API，我�
 
 | xml 属性 | 解释 |
 | ------- | ---- |
-| android:ordering | 控制子动画启动方式是先后有序的还是同时进行。sequentially:动画按照先后顺序；together(默认):动画同时启动； | 
+| android:ordering | 控制子动画启动方式是先后有序的还是同时进行。sequentially: 动画按照先后顺序；together(默认): 动画同时启动； | 
 
 `<objectAnimator>` 属性解释：
 
 | xml属性 | 解释 |
 | ------ | ---- |
-| android:propertyName | String类型，必须要设置的节点属性，代表要执行动画的属性（通过名字引用），辟如你可以指定了一个View的”alpha” 或者 “backgroundColor” ，这个objectAnimator元素没有对外说明target属性，所以你不能在XML中设置执行这个动画，必须通过调用loadAnimator()方法加载你的XML动画资源，然后调用setTarget()应用到具备这个属性的目标对象上（譬如TextView）。 | 
-| android:valueTo | float、int或者color类型，必须要设置的节点属性，表明动画结束的点；如果是颜色的话，由6位十六进制的数字表示。 | 
-| android:valueFrom | 相对应valueTo，动画的起始点，如果没有指定，系统会通过属性的get方法获取，颜色也是6位十六进制的数字表示。 | 
-| android:duration | 动画的时长，int类型，以毫秒为单位，默认为300毫秒。 | 
-| android:startOffset | 动画延迟的时间，从调用start方法后开始计算，int型，毫秒为单位。 | 
-| android:repeatCount | 一个动画的重复次数，int型，”-1“表示无限循环，”1“表示动画在第一次执行完成后重复执行一次，也就是两次，默认为0，不重复执行。 | 
-| android:repeatMode | 重复模式：int型，当一个动画执行完的时候应该如何处理。该值必须是正数或者是-1，“reverse”会使得按照动画向相反的方向执行，可实现类似钟摆效果。“repeat”会使得动画每次都从头开始循环。 | 
-| android:valueType | 关键参数，如果该value是一个颜色，那么就不需要指定，因为动画框架会自动的处理颜色值。有intType和floatType（默认）两种：分别说明动画值为int和float型。 | 
+| android:propertyName | String 类型，必须要设置的节点属性，代表要执行动画的属性（通过名字引用），辟如你可以指定了一个View的”alpha” 或者 “backgroundColor” ，这个objectAnimator元素没有对外说明target属性，所以你不能在XML中设置执行这个动画，必须通过调用loadAnimator()方法加载你的XML动画资源，然后调用setTarget()应用到具备这个属性的目标对象上（譬如TextView）。 | 
+| android:valueTo | float、int 或者 color 类型，必须要设置的节点属性，表明动画结束的点；如果是颜色的话，由 6 位十六进制的数字表示。 | 
+| android:valueFrom | 相对应 valueTo，动画的起始点，如果没有指定，系统会通过属性的 get  方法获取，颜色也是 6 位十六进制的数字表示。 | 
+| android:duration | 动画的时长，int 类型，以毫秒为单位，默认为 300 毫秒。 | 
+| android:startOffset | 动画延迟的时间，从调用 start 方法后开始计算，int 型，毫秒为单位。 | 
+| android:repeatCount | 一个动画的重复次数，int 型，”-1“表示无限循环，”1“表示动画在第一次执行完成后重复执行一次，也就是两次，默认为0，不重复执行。 | 
+| android:repeatMode | 重复模式：int 型，当一个动画执行完的时候应该如何处理。该值必须是正数或者是-1，“reverse”会使得按照动画向相反的方向执行，可实现类似钟摆效果。“repeat”会使得动画每次都从头开始循环。 | 
+| android:valueType | 关键参数，如果该 value 是一个颜色，那么就不需要指定，因为动画框架会自动的处理颜色值。有 intType 和 floatType（默认）两种：分别说明动画值为 int 和 float 型。 | 
 
 `<objectAnimator>` 属性解释：  
 同上 `<objectAnimator>` 属性，不多介绍。
@@ -316,9 +316,9 @@ Evaluators 就是属性动画系统如何去计算一个属性值。它们通过
         }
     });
 
-**6、Interpolators相关类解释：**
+**6、Interpolators 相关类解释：**
 
-* AccelerateDecelerateInterolator：先加速后减速。
+* AccelerateDecelerateInterpolator：先加速后减速。
 * AccelerateInterpolator：加速。
 * DecelerateInterpolator：减速。
 * AnticipateInterpolator：先向相反方向改变一段再加速播放。
@@ -329,7 +329,7 @@ Evaluators 就是属性动画系统如何去计算一个属性值。它们通过
 * OvershottInterpolator：最后超出目标值然后缓慢改变到目标值。
 * TimeInterpolator：一个允许自定义 Interpolator 的接口，以上都实现了该接口。
 
-举个例子，就像系统提供的标准API一样，如下就是加速插值器的实现代码，我们自定义时也可以类似实现：
+举个例子，就像系统提供的标准 API 一样，如下就是加速插值器的实现代码，我们自定义时也可以类似实现：
 
     //开始很慢然后不断加速的插值器。
     public class AccelerateInterpolator implements Interpolator {
@@ -382,7 +382,7 @@ Evaluators 就是属性动画系统如何去计算一个属性值。它们通过
     }
 
 可以看见通过 View 的 animate() 方法可以得到一个 ViewPropertyAnimator 的属性动画
-（有人说他没有继承Animator类，是的，他是成员关系，不是之前那种继承关系）。
+（有人说他没有继承 Animator 类，是的，他是成员关系，不是之前那种继承关系）。
 
 ViewPropertyAnimator 提供了一种非常方便的方法为 View 的部分属性设置动画（切记，是部分属性），
 它可以直接使用一个 Animator 对象设置多个属性的动画；在多属性设置动画时，它比上面的 ObjectAnimator 更加牛逼、高效，
@@ -401,11 +401,11 @@ LayoutTransition 的动画效果都是设置给 ViewGroup，然后当被设置�
 
 我们可以发现 LayoutTransition 类中主要有五种容器转换动画类型，具体如下：
 
-* LayoutTransition.APPEARING：当View出现或者添加的时候View出现的动画。
-* LayoutTransition.CHANGE_APPEARING：当添加View导致布局容器改变的时候整个布局容器的动画。
-* LayoutTransition.DISAPPEARING：当View消失或者隐藏的时候View消失的动画。
-* LayoutTransition.CHANGE_DISAPPEARING：当删除或者隐藏View导致布局容器改变的时候整个布局容器的动画。
-* LayoutTransition.CHANGE：当不是由于View出现或消失造成对其他View位置造成改变的时候整个布局容器的动画。
+* LayoutTransition.APPEARING：当 View 出现或者添加的时候 View 出现的动画。
+* LayoutTransition.CHANGE_APPEARING：当添加 View 导致布局容器改变的时候整个布局容器的动画。
+* LayoutTransition.DISAPPEARING：当View消失或者隐藏的时候 View 消失的动画。
+* LayoutTransition.CHANGE_DISAPPEARING：当删除或者隐藏 View 导致布局容器改变的时候整个布局容器的动画。
+* LayoutTransition.CHANGE：当不是由于 View 出现或消失造成对其他 View 位置造成改变的时候整个布局容器的动画。
 
 **XML 方式使用系统提供的默认 LayoutTransition 动画：**
 
@@ -427,7 +427,7 @@ Java 方式使用系统提供的默认 LayoutTransition 动画：
 在使用 LayoutTransition 时，你可以自定义这几种事件类型的动画，也可以使用默认的动画，
 总之最终都是通过 setLayoutTransition(LayoutTransition lt) 方法把这些动画以一个 LayoutTransition 对象设置给一个 ViewGroup。
 
-譬如实现如上Xml方式的默认系统 LayoutTransition 动画如下：
+譬如实现如上 Xml 方式的默认系统 LayoutTransition 动画如下：
 
     mTransitioner = new LayoutTransition();
     mViewGroup.setLayoutTransition(mTransitioner);
