@@ -1,1 +1,1 @@
-include ':app', ':viewanimation', ':drawableanimation'
+include ':app', ':view-animation', ':drawable-animation', ':property-animation'

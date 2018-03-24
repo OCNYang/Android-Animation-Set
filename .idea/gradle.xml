@@ -9,8 +9,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/drawableanimation" />
-            <option value="$PROJECT_DIR$/viewanimation" />
+            <option value="$PROJECT_DIR$/drawable-animation" />
+            <option value="$PROJECT_DIR$/property-animation" />
+            <option value="$PROJECT_DIR$/view-animation" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

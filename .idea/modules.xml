@@ -4,8 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidAnimationSet.iml" filepath="$PROJECT_DIR$/AndroidAnimationSet.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/drawableanimation/drawableanimation.iml" filepath="$PROJECT_DIR$/drawableanimation/drawableanimation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/viewanimation/viewanimation.iml" filepath="$PROJECT_DIR$/viewanimation/viewanimation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/drawable-animation/drawable-animation.iml" filepath="$PROJECT_DIR$/drawable-animation/drawable-animation.iml" />
+      <module fileurl="file://F:\github\AndroidAnimationSet\drawable-animation\drawableanimation.iml" filepath="F:\github\AndroidAnimationSet\drawable-animation\drawableanimation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/property-animation/property-animation.iml" filepath="$PROJECT_DIR$/property-animation/property-animation.iml" />
+      <module fileurl="file://F:\github\AndroidAnimationSet\property-animation\propertyanimation.iml" filepath="F:\github\AndroidAnimationSet\property-animation\propertyanimation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/view-animation/viewanimation.iml" filepath="$PROJECT_DIR$/view-animation/viewanimation.iml" />
     </modules>
   </component>
 </project>
