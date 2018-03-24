@@ -1,21 +1,24 @@
-# View Animation
+# View Animation（视图动画）使用详解
 
-View Animation（视图动画）使用详解
-2-1 视图动画概述
-视图动画，也叫Tween（补间）动画可以在一个视图容器内执行一系列简单变换（位置、大小、旋转、透明度）。譬如，如果你有一个TextView对象，您可以移动、旋转、缩放、透明度设置其文本，当然，如果它有一个背景图像，背景图像会随着文本变化。
+概述:
+视图动画，也叫Tween（补间）动画可以在一个视图容器内执行一系列简单变换（位置、大小、旋转、透明度）。
+譬如，如果你有一个TextView对象，您可以移动、旋转、缩放、透明度设置其文本，当然，如果它有一个背景图像，背景图像会随着文本变化。
 
 补间动画通过XML或Android代码定义，建议使用XML文件定义，因为它更具可读性、可重用性。
 
 如下是视图动画相关的类继承关系：
 
-这里写图片描述
+![视图动画相关的类继承关系]()
 
-java类名	xml关键字	描述信息
-AlphaAnimation	<alpha> 放置在res/anim/目录下	渐变透明度动画效果
-RotateAnimation	<rotate> 放置在res/anim/目录下	画面转移旋转动画效果
-ScaleAnimation	<scale> 放置在res/anim/目录下	渐变尺寸伸缩动画效果
-TranslateAnimation	<translate> 放置在res/anim/目录下	画面转换位置移动动画效果
-AnimationSet	<set> 放置在res/anim/目录下	一个持有其它动画元素alpha、scale、translate、rotate或者其它set元素的容器
+| java类名 | xml关键字 | 描述信息 |
+| :-----: | :------- | :----- |
+| AlphaAnimation | <alpha> 放置在res/anim/目录下 | 渐变透明度动画效果 |
+| RotateAnimation | <rotate> 放置在res/anim/目录下 | 画面转移旋转动画效果 | 
+| ScaleAnimation | <scale> 放置在res/anim/目录下 | 渐变尺寸伸缩动画效果 | 
+| TranslateAnimation | <translate> 放置在res/anim/目录下 | 画面转换位置移动动画效果 | 
+| AnimationSet | <set> 放置在res/anim/目录下 | 一个持有其它动画元素alpha、scale、translate、rotate或者其它set元素的容器 | 
+
+
 通过上图和上表可以直观的看出来补间动画的关系及种类了吧，接下来我们就详细一个一个的介绍一下各种补间动画。
 
 2-2 视图动画详细说明
