@@ -12,11 +12,11 @@
 
 | java类名 | xml关键字 | 描述信息 |
 | :-----: | :------- | :----- |
-| AlphaAnimation | <alpha> 放置在res/anim/目录下 | 渐变透明度动画效果 |
-| RotateAnimation | <rotate> 放置在res/anim/目录下 | 画面转移旋转动画效果 | 
-| ScaleAnimation | <scale> 放置在res/anim/目录下 | 渐变尺寸伸缩动画效果 | 
-| TranslateAnimation | <translate> 放置在res/anim/目录下 | 画面转换位置移动动画效果 | 
-| AnimationSet | <set> 放置在res/anim/目录下 | 一个持有其它动画元素alpha、scale、translate、rotate或者其它set元素的容器 | 
+| AlphaAnimation | `<alpha>` 放置在 res/anim/ 目录下 | 渐变透明度动画效果 |
+| RotateAnimation | `<rotate>` 放置在 res/anim/ 目录下 | 画面转移旋转动画效果 | 
+| ScaleAnimation | `<scale>` 放置在 res/anim/ 目录下 | 渐变尺寸伸缩动画效果 | 
+| TranslateAnimation | `<translate>` 放置在 res/anim/ 目录下 | 画面转换位置移动动画效果 | 
+| AnimationSet | `<set>` 放置在 res/anim/ 目录下 | 一个持有其它动画元素alpha、scale、translate、rotate或者其它set元素的容器 | 
 
 
 通过上图和上表可以直观的看出来补间动画的关系及种类了吧，接下来我们就详细一个一个的介绍一下各种补间动画。
