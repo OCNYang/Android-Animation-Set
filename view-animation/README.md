@@ -228,12 +228,12 @@ android:cycles 整形，循环的个数（默认为1）。
 android:factor 浮点值，减速的速率（默认为1）。
 
 **`<linearInterpolator>`**  
-无可自定义的attribute。
+无可自定义的 attribute。
 
 **`<overshootInterpolator>`**  
 android:tension 浮点值，超出终点后的张力（默认为2）。
 
-再来看看 Java 自定义插值器的（Java自定义插值器其实是xml自定义的升级，也就是说如果我们修改xml的属性还不能满足需求，那就可以选择通过 Java 来实现）方式。
+再来看看 Java 自定义插值器的（Java 自定义插值器其实是 xml 自定义的升级，也就是说如果我们修改xml的属性还不能满足需求，那就可以选择通过 Java 来实现）方式。
 
 可以看见上面所有的 Interpolator 都实现了 Interpolator 接口，而 Interpolator 接口又继承自 TimeInterpolator，
 TimeInterpolator 接口定义了一个float getInterpolation(float input);方法，这个方法是由系统调用的，
