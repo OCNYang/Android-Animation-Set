@@ -250,4 +250,4 @@ TimeInterpolator 接口定义了一个float getInterpolation(float input);方法
         ......
     }
 
-到此整个补间动画与补间动画的插值器都分析完毕了，接下来看下别的动画。
+到此整个补间动画与补间动画的插值器都分析完毕了。
