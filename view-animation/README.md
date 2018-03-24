@@ -8,7 +8,7 @@
 
 如下是视图动画相关的类继承关系：
 
-![视图动画相关的类继承关系]()
+![视图动画相关的类继承关系](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/view_animation_class.png)
 
 | java 类名 | xml 关键字 | 描述信息 |
 | :-----: | :------- | :----- |
@@ -159,7 +159,7 @@ AnimationSet继承自Animation，是上面四种的组合容器管理类，没�
 
 介绍补间动画插值器之前我们先来看一幅图，如下：
 
-![补间动画插值器子类结构图]()  
+![补间动画插值器子类结构图](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/interpolator_class.png)  
 
 可以看见其实各种插值器都是实现了Interpolator接口而已，同时可以看见系统提供了许多已经实现OK的插值器，  
 具体如下：
@@ -205,16 +205,14 @@ AnimationSet继承自Animation，是上面四种的组合容器管理类，没�
 
 可以看见上面第二步修改的是现有插值器的一些属性，但是有些插值器却不具备修改属性，具体如下：
 
-| 插值器 |
-| ----- |
-| **`<accelerateDecelerateInterpolator>`**  
-无可自定义的 attribute。| 
+**`<accelerateDecelerateInterpolator>`**  
+无可自定义的 attribute。
 
-| **`<accelerateInterpolator>`**  
-android:factor 浮点值，加速速率（默认值为1）。| 
+**`<accelerateInterpolator>`**  
+android:factor 浮点值，加速速率（默认值为1）。
 
-| **`<anticipateInterploator>`**  
-android:tension 浮点值，起始点后拉的张力数（默认值为2）。| 
+**`<anticipateInterploator>`**  
+android:tension 浮点值，起始点后拉的张力数（默认值为2）。
 
 **`<anticipateOvershootInterpolator>`**  
 android:tension 浮点值，起始点后拉的张力数（默认值为2）。 
