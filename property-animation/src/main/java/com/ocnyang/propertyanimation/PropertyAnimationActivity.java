@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.animation.ArgbEvaluator;
+import android.animation.LayoutTransition;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
@@ -13,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
@@ -50,12 +52,14 @@ public class PropertyAnimationActivity extends AppCompatActivity {
             finish();
         } else if (i == R.id.action_do_byxml) {
             doAnimation(getAnimationDrawable(false));
-        } else if (i == R.id.action_stop_bycode) {
+        } else if (i == R.id.action_bycode) {
             doAnimation(getAnimationDrawable(true));
-        } else if (i == R.id.action_stop_bycustom) {
+        } else if (i == R.id.action_bycustom) {
             doAnimation(getValueAnimatorByCustom());
-        } else if (i == R.id.action_stop_byviewpropertyanimator) {
+        } else if (i == R.id.action_byviewpropertyanimator) {
             doAnimatorByViewPropertyAnimator();
+        } else if (i == R.id.action_bylayoutanimator) {
+            doLayoutAnimator();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -258,6 +262,24 @@ public class PropertyAnimationActivity extends AppCompatActivity {
                 .setInterpolator(new AccelerateDecelerateInterpolator())
                 .setDuration(3000)
                 .setStartDelay(0);
+    }
+
+    //LayoutAnimator--------------------------------------------------------------------------------
+    private void doLayoutAnimator() {
+        LayoutTransition layoutTransition = new LayoutTransition();
+
+        layoutTransition.setAnimator(LayoutTransition.APPEARING, getObjectAnimator(false));
+        layoutTransition.setAnimator(LayoutTransition.DISAPPEARING, getObjectAnimator(true));
+        layoutTransition.setDuration(2000);
+
+        //mPuppet's parentView
+        ViewGroup contentView = (ViewGroup) ((ViewGroup) getWindow().getDecorView().findViewById(android.R.id.content)).getChildAt(0);
+        contentView.setLayoutTransition(layoutTransition);
+        if (contentView.findViewById(R.id.view_puppet) == null) {
+            contentView.addView(mPuppet);
+        } else {
+            contentView.removeView(mPuppet);
+        }
     }
 
 }

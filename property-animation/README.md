@@ -655,3 +655,114 @@ ViewPropertyAnimator 内部到底是如何运作的，同时又是如何优化�
 
 * 点我查看 [《ViewPropertyAnimator 原理解析》](https://github.com/OCNYang/Android-Animation-Set/blob/master/property-animation/ViewPropertyAnimator.md)
 * 或者查看 [WiKi](https://github.com/OCNYang/Android-Animation-Set/wiki/%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB%E4%B9%8B-ViewPropertyAnimator-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90)
+
+
+## 4. Java属性动画拓展之LayoutAnimator容器布局动画
+
+Property 动画系统还提供了对 ViewGroup 中 View 添加时的动画功能，我们可以用 LayoutTransition 对 ViewGroup 中的 View 
+进行动画设置显示。LayoutTransition 的动画效果都是设置给 ViewGroup，然后当被设置动画的 ViewGroup 中添加删除 View 时体现出来。
+该类用于当前布局容器中有 View 添加、删除、隐藏、显示等时候定义布局容器自身的动画和 View 的动画，也就是说当在一个 LinerLayout 
+中隐藏一个 View 的时候，我们可以自定义 整个由于 LinerLayout 隐藏 View 而改变的动画，同时还可以自定义被隐藏的 View 自己消失时候的动画等。
+
+我们可以发现 LayoutTransition 类中主要有五种容器转换动画类型，具体如下：
+
+* LayoutTransition.APPEARING：当View出现或者添加的时候View出现的动画。
+* LayoutTransition.CHANGE_APPEARING：当添加View导致布局容器改变的时候整个布局容器的动画。
+* LayoutTransition.DISAPPEARING：当View消失或者隐藏的时候View消失的动画。
+* LayoutTransition.CHANGE_DISAPPEARING：当删除或者隐藏View导致布局容器改变的时候整个布局容器的动画。
+* LayoutTransition.CHANGE：当不是由于View出现或消失造成对其他View位置造成改变的时候整个布局容器的动画。
+
+### 4-1 XML方式使用系统提供的默认 LayoutTransition 动画
+
+我们可以通过如下方式使用系统提供的默认ViewGroup的LayoutTransition动画：
+
+    android:animateLayoutChanges=”true”
+
+在 ViewGroup 添加如上 xml 属性默认是没有任何动画效果的，因为前面说了，该动画针对于 ViewGroup 内部东东发生改变时才有效，
+所以当我们设置如上属性然后调运 ViewGroup 的 addView、removeView 方法时就能看见系统默认的动画效果了。
+
+还有一种就是通过如下方式设置：
+
+    android:layoutAnimation=”@anim/customer_anim”
+
+通过这种方式就能实现很多吊炸天的动画,并在加载布局的时候就会自动播放 layout-animtion。其中设置的动画位于 res/anim 目录下的动画资源（如下）：
+
+    <layoutAnimation xmlns:android="http://schemas.android.com/apk/res/android"
+            android:delay="30%"
+            android:animationOrder="reverse"
+            android:animation="@anim/slide_right"/>
+
+> 每个属性的作用：  
+> * `android:delay` 表示动画播放的延时，既可以是百分比，也可以是 float 小数。
+> * `android:animationOrder` 表示动画的播放顺序，有三个取值 normal(顺序)、reverse(反序)、random(随机)。
+> * `android:animation` 指向了子控件所要播放的动画。
+
+### 4-2 Java方式使用系统提供的默认LayoutTransition动画
+
+在使用LayoutTransition时，你可以自定义这几种事件类型的动画，也可以使用默认的动画，总之最终都是通过 
+`setLayoutTransition(LayoutTransition lt)` 方法把这些动画以一个 LayoutTransition 对象设置给一个 ViewGroup。
+
+譬如实现如上 Xml 方式的默认系统 LayoutTransition 动画如下：
+
+    mTransitioner = new LayoutTransition();
+    mViewGroup.setLayoutTransition(mTransitioner);
+
+如果在xml中文件已经写好 LayoutAnimation，可以使用 AnimationUtils 直接加载：
+
+    AnimationUtils.loadLayoutAnimation(context, id)
+
+另外还可以手动java代码编写，如：
+
+    //通过加载XML动画设置文件来创建一个Animation对象；
+    Animation animation=AnimationUtils.loadAnimation(this, R.anim.slide_right);   //得到一个LayoutAnimationController对象；
+    LayoutAnimationController controller = new LayoutAnimationController(animation);   //设置控件显示的顺序；
+    controller.setOrder(LayoutAnimationController.ORDER_REVERSE);   //设置控件显示间隔时间；
+    controller.setDelay(0.3);   //为ListView设置LayoutAnimationController属性；
+    listView.setLayoutAnimation(controller);
+    listView.startLayoutAnimation();
+
+### 4-3 LayoutTransition的用法
+
+稍微再高端一点吧，我们来自定义这几类事件的动画，分别实现他们，那么你可以像下面这么处理：
+
+    mTransitioner = new LayoutTransition();
+    ......
+    ObjectAnimator anim = ObjectAnimator.ofFloat(this, "scaleX", 0, 1);
+    ......//设置更多动画
+    mTransition.setAnimator(LayoutTransition.APPEARING, anim);
+    ......//设置更多类型的动画
+    mViewGroup.setLayoutTransition(mTransitioner);
+
+到此通过 LayoutTransition 你就能实现类似小米手机计算器切换普通型和科学型的炫酷动画了。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+附录：  
+部分摘录自：[工匠若水 - Android应用开发之所有动画使用详解](https://blog.csdn.net/yanbober/article/details/46481171)  
+部分摘录自：[属性动画 - Property Animation 之 ViewPropertyAnimator 你应该知道的一切](https://blog.csdn.net/javazejian/article/details/52381558)  

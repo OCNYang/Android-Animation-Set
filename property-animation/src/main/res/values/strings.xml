@@ -4,4 +4,5 @@
     <string name="action_bycode">Do by Code</string>
     <string name="action_bycustom">Do by Custom</string>
     <string name="action_byviewpropertyanimator">ViewPropertyAnimator</string>
+    <string name="action_bylayoutanimator">LayoutAnimator</string>
 </resources>

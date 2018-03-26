@@ -326,3 +326,6 @@ setValue方法源码：
 7. 在动画的监听器的onAnimationUpdate方法中设置所有属性的变化值，并通过RenderNode类优化绘制性能，最后刷新界面。
 
 现在应该比较清晰了吧，以上就是 ViewPropertyAnimator 内部的大概执行流程。好~，ViewPropertyAnimator 介绍到这。
+
+附录：  
+本文摘录自：[《属性动画-Property Animation之ViewPropertyAnimator 你应该知道的一切》](https://blog.csdn.net/javazejian/article/details/52381558)  

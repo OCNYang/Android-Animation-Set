@@ -7,16 +7,20 @@
         android:orderInCategory="100"
         android:title="@string/action_byxml"/>
     <item
-        android:id="@+id/action_stop_bycode"
+        android:id="@+id/action_bycode"
         android:orderInCategory="100"
         android:title="@string/action_bycode"/>
     <item
-        android:id="@+id/action_stop_bycustom"
+        android:id="@+id/action_bycustom"
         android:orderInCategory="100"
         android:title="@string/action_bycustom"/>
     <item
-        android:id="@+id/action_stop_byviewpropertyanimator"
+        android:id="@+id/action_byviewpropertyanimator"
         android:orderInCategory="100"
         android:title="@string/action_byviewpropertyanimator"/>
+    <item
+        android:id="@+id/action_bylayoutanimator"
+        android:orderInCategory="100"
+        android:title="@string/action_bylayoutanimator"/>
 
 </menu>
