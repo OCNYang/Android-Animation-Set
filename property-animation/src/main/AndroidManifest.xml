@@ -1,2 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.ocnyang.propertyanimation"/>
+          package="com.ocnyang.propertyanimation">
+
+    <application>
+        <activity android:name=".PropertyAnimationActivity"
+            android:label="@string/module_property">
+        </activity>
+    </application>
+
+</manifest>

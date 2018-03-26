@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">PropertyAnimation</string>
+    <string name="module_property">PropertyAnimation</string>
+    <string name="action_byxml">Do by xml</string>
+    <string name="action_bycode">Do by code</string>
 </resources>

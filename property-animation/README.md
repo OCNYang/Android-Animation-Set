@@ -136,7 +136,7 @@ TypeEvaluator 使用了 IntEvaluator。所以这些类都是标准的API，我�
 
 ### 2-2 XML 方式属性动画
 
-在 xml 中可直接用的属性动画节点有 ValueAnimator、ObjectAnimator、AnimatorSet。
+在 xml 中(放在 res/animator/filename.xml )可直接用的属性动画节点有 ValueAnimator、ObjectAnimator、AnimatorSet。
 如下是官方的一个例子和解释（[详情点我](http://developer.android.com/guide/topics/resources/animation-resource.html)）：
 
     <set

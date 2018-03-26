@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ocnyang.drawableanimation.DrawableAnimationActivity;
+import com.ocnyang.propertyanimation.PropertyAnimationActivity;
 import com.ocnyang.viewanimation.ViewAnimationActivity;
 
 /*******************************************************************
@@ -50,7 +51,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             @Override
             public void onClick(View v) {
                 Toast.makeText(mContext, "fuck", Toast.LENGTH_SHORT).show();
-                switch(position){
+                switch (position) {
                     case 0:
                         mContext.startActivity(new Intent(mContext, ViewAnimationActivity.class));
                         break;
@@ -58,6 +59,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
                         mContext.startActivity(new Intent(mContext, DrawableAnimationActivity.class));
                         break;
                     case 2:
+                        mContext.startActivity(new Intent(mContext, PropertyAnimationActivity.class));
                         break;
                     case 3:
                         break;
