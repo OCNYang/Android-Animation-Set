@@ -76,7 +76,7 @@ Android 属性动画（注意最低兼容版本，不过可以使用开源项目
 
 接下来我们来详细的看一下，属性动画系统的重要组成部分是如何计算动画值的，下图描述了如上面所示动画的实现作用过程。
 
-[How animation are calculated](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/figure3.jpg?token=AQ83MnSifbDCzCdKG1s0beMPK_fPYJZMks5awY3awA%3D%3D)  
+![How animation are calculated](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/figure3.jpg?token=AQ83MnSifbDCzCdKG1s0beMPK_fPYJZMks5awY3awA%3D%3D)  
 
 其中的 ValueAnimator 是动画的执行类，跟踪了当前动画的执行时间和当前时间下的属性值；
 ValueAnimator 封装了动画的 TimeInterpolator 时间插值器和一个 TypeEvaluator 类型估值，用于设置动画属性的值，
