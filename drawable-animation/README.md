@@ -51,3 +51,8 @@ java方式翻墙点击我查看。
 所以最好的调运时机是 onWindowFocusChanged() 方法中。
 
 至此帧动画也就说明完成了。让我们接下来进入 Android 更牛叉的动画类型。
+
+
+
+附录：  
+本文摘录自：[工匠若水 - Android应用开发之所有动画使用详解](https://blog.csdn.net/yanbober/article/details/46481171)  
