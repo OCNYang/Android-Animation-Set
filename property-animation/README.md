@@ -445,4 +445,213 @@ Java 方式使用系统提供的默认 LayoutTransition 动画：
 
 到此通过 LayoutTransition 你就能实现类似小米手机计算器切换普通型和科学型的炫酷动画了。
 
-## ViewPropertyAnimator 动画(属性动画拓展)
+## 3. ViewPropertyAnimator 动画(属性动画拓展)
+
+### 3-1 ViewPropertyAnimator 概述
+
+通过上面的学习，我们应该明白了属性动画的推出已不再是针对于 View 而进行设计的了，而是一种对数值不断操作的过程，
+我们可以将属性动画对数值的操作过程设置到指定对象的属性上来，从而形成一种动画的效果。虽然属性动画给我们提供了 ValueAnimator 类
+和 ObjectAnimator 类，在正常情况下，基本都能满足我们对动画操作的需求，但 ValueAnimator 类和 ObjectAnimator 类
+本身并不是针对 View 对象的而设计的，而我们在大多数情况下主要都还是对 View 进行动画操作的，因此 Google 官方在 Android 3.1 
+系统中补充了 ViewPropertyAnimator 类，这个类便是专门为 View 动画而设计的。当然这个类不仅仅是为提供 View 而简单设计的，
+它存在以下优点： 
+
+* 专门针对View对象动画而操作的类。
+* 提供了更简洁的链式调用设置多个属性动画，这些动画可以同时进行的。
+* 拥有更好的性能，多个属性动画是一次同时变化，只执行一次UI刷新（也就是只调用一次 invalidate ,而 n 个 ObjectAnimator 就会
+进行 n 次属性变化，就有 n 次 invalidate）。
+* 每个属性提供两种类型方法设置。
+* 该类只能通过 View 的 animate() 获取其实例对象的引用
+
+好~，下面我们来了解一下 ViewPropertyAnimator 常规使用
+
+### 3-2 ViewPropertyAnimator 常规使用
+
+之前我们要设置一个View控件旋转 360 的代码是这样：
+
+    ObjectAnimator.ofFloat(btn,"rotation",360).setDuration(200).start();
+
+而现在我们使用 ViewPropertyAnimator 后是这样：
+
+    btn.animate().rotation(360).setDuration(200);
+
+代码是不是特简洁？这里我们来解析一下，首先必须用 View#animate() 方法来获取一个 ViewPropertyAnimator 的对象实例，
+前面我们说过 ViewPropertyAnimator 支持链式操作，所以这里直接通过 rotation 方法设置旋转角度，再设置时间即可，
+有没有发现连动画的启动都不用我们去操作！是的，ViewPropertyAnimator 内部会自动去调用。  
+对于 View#animate() 方法，这里再说明一下，animate() 方法是在 Android 3.1 系统上新增的一个方法，其作用就是返回 
+ViewPropertyAnimator 的实例对象，其源码如下，一目了然：
+
+     /**
+     * This method returns a ViewPropertyAnimator object, which can be used to animate
+     * specific properties on this View.
+     *
+     * @return ViewPropertyAnimator The ViewPropertyAnimator associated with this View.
+     */
+    public ViewPropertyAnimator animate() {
+        if (mAnimator == null) {
+            mAnimator = new ViewPropertyAnimator(this);
+        }
+        return mAnimator;
+    }
+
+> 可以看见通过 View 的 animate() 方法可以得到一个 ViewPropertyAnimator 的属性动画（有人说他没有继承 Animator 类，是的，
+他是成员关系，不是之前那种继承关系）。
+
+接着我们再来试试别的方法，同时设置一组动画集合如下：
+
+    AnimatorSet set = new AnimatorSet();
+    set.playTogether( ObjectAnimator.ofFloat(btn,"alpha",0.5f),
+            ObjectAnimator.ofFloat(btn,"rotation",360),
+            ObjectAnimator.ofFloat(btn,"scaleX",1.5f),
+            ObjectAnimator.ofFloat(btn,"scaleY",1.5f),
+            ObjectAnimator.ofFloat(btn,"translationX",0,50),
+            ObjectAnimator.ofFloat(btn,"translationY",0,50)
+    );
+    set.setDuration(5000).start();
+
+使用 ViewPropertyAnimator 设置代码如下：
+
+    btn.animate().alpha(0.5f).rotation(360).scaleX(1.5f).scaleY(1.5f)
+                 .translationX(50).translationY(50).setDuration(5000);
+
+是不是已经深深地爱上 ViewPropertyAnimator ？真的太简洁了！都快感动地哭出来了……先去厕所哭会…….好吧，
+ViewPropertyAnimator 简单用法讲完了，这里小结一下 ViewPropertyAnimator 的常用方法：
+
+| Method | Discription |
+| :----- | :---------- |
+| alpha(float value) | 设置透明度，value表示变化到多少，1不透明，0全透明。 | 
+| scaleY(float value) | 设置Y轴方向的缩放大小，value表示缩放到多少。1表示正常规格。小于1代表缩小，大于1代表放大。 | 
+| scaleX(float value) | 设置X轴方向的缩放大小，value表示缩放到多少。1表示正常规格。小于1代表缩小，大于1代表放大。 | 
+| translationY(float value) | 设置Y轴方向的移动值，作为增量来控制View对象相对于它父容器的左上角坐标偏移的位置，即移动到哪里。 | 
+| translationX(float value) | 设置X轴方向的移动值，作为增量来控制View对象相对于它父容器的左上角坐标偏移的位置。 | 
+| rotation(float value) | 控制View对象围绕支点进行旋转， rotation针对2D旋转 | 
+| rotationX (float value) | 控制View对象围绕X支点进行旋转， rotationX针对3D旋转 | 
+| rotationY(float value) | 控制View对象围绕Y支点进行旋转， rotationY针对3D旋转 | 
+| x(float value) | 控制View对象相对于它父容器的左上角坐标在X轴方向的最终位置。 | 
+| y(float value) | 控制View对象相对于它父容器的左上角坐标在Y轴方向的最终位置 | 
+| void cancel() | 取消当前正在执行的动画 | 
+| setListener(Animator.AnimatorListener listener) | 设置监听器，监听动画的开始，结束，取消，重复播放 | 
+| setUpdateListener(ValueAnimator.AnimatorUpdateListener listener) | 设置监听器，监听动画的每一帧的播放 | 
+| setInterpolator(TimeInterpolator interpolator) | 设置插值器 | 
+| setStartDelay(long startDelay) | 设置动画延长开始的时间 | 
+| setDuration(long duration) | 设置动画执行的时间 | 
+| withLayer() | 设置是否开启硬件加速 | 
+| withStartAction(Runnable runnable) | 设置用于动画监听开始（Animator.AnimatorListener）时运行的Runnable任务对象 | 
+| withEndAction(Runnable runnable) | 设置用于动画监听结束（Animator.AnimatorListener）时运行的Runnable任务对象 | 
+
+以上便是 ViewPropertyAnimator 一些操作方法，其实上面很多属性设置方法都对应着一个By结尾的方法，其变量则代表的是变化量，如下： 
+
+![ViewPropertyAnimator method]()  
+
+我们看看其中scaleY与scaleYBy的实现：
+
+    public ViewPropertyAnimator scaleY(float value) {
+            animateProperty(SCALE_Y, value);
+            return this;
+        }
+    
+    public ViewPropertyAnimator scaleYBy(float value) {
+        animatePropertyBy(SCALE_Y, value);
+        return this;
+    }
+
+再看看 animateProperty() 与 animatePropertyBy()
+
+    private void animateProperty(int constantName, float toValue) {
+        float fromValue = getValue(constantName);
+        float deltaValue = toValue - fromValue;
+        animatePropertyBy(constantName, fromValue, deltaValue);
+    }
+    
+    private void animatePropertyBy(int constantName, float byValue) {
+        float fromValue = getValue(constantName);
+        animatePropertyBy(constantName, fromValue, byValue);
+    }
+
+看了源码现在应该很清楚有By结尾（代表变化量的大小）和没By结尾（代表变化到多少）的方法的区别了吧。好~，再来看看监听器，
+实际上我们可以通过 `setListener(Animator.AnimatorListener listener)` 和 `setUpdateListener(ValueAnimator.AnimatorUpdateListener listener) `
+设置自定义监听器，而在 ViewPropertyAnimator 内部也有自己实现的监听器，同样我们可以看一下其实现源码：
+
+    private class AnimatorEventListener
+                implements Animator.AnimatorListener, ValueAnimator.AnimatorUpdateListener {
+        @Override
+        public void onAnimationStart(Animator animation) {
+            //调用了设置硬件加速的Runnable
+            if (mAnimatorSetupMap != null) {
+                Runnable r = mAnimatorSetupMap.get(animation);
+                if (r != null) {
+                    r.run();
+                }
+                mAnimatorSetupMap.remove(animation);
+            }
+            if (mAnimatorOnStartMap != null) {
+                  //调用我们通过withStartAction(Runnable runnable)方法设置的runnable
+                Runnable r = mAnimatorOnStartMap.get(animation);
+                if (r != null) {
+                    r.run();
+                }
+                mAnimatorOnStartMap.remove(animation);
+            }
+            if (mListener != null) {
+                //调用我们自定义的监听器方法
+                mListener.onAnimationStart(animation);
+            }
+        }
+    
+        @Override
+        public void onAnimationCancel(Animator animation) {
+            if (mListener != null) {
+                //调用我们自定义的监听器方法
+                mListener.onAnimationCancel(animation);
+            }
+            if (mAnimatorOnEndMap != null) {
+                mAnimatorOnEndMap.remove(animation);
+            }
+        }
+    
+        @Override
+        public void onAnimationRepeat(Animator animation) {
+            if (mListener != null) {
+                //调用我们自定义的监听器方法
+                mListener.onAnimationRepeat(animation);
+            }
+        }
+    
+        @Override
+        public void onAnimationEnd(Animator animation) {
+            mView.setHasTransientState(false);
+            if (mListener != null) {
+                //调用我们自定义的监听器方法
+                mListener.onAnimationEnd(animation);
+            }
+            if (mAnimatorOnEndMap != null) {
+                  //调用我们通过withEndAction(Runnable runnable)方法设置的runnable
+                Runnable r = mAnimatorOnEndMap.get(animation);
+                if (r != null) {
+                    r.run();
+                }
+                mAnimatorOnEndMap.remove(animation);
+            }
+            if (mAnimatorCleanupMap != null) {
+               //移除硬件加速
+                Runnable r = mAnimatorCleanupMap.get(animation);
+                if (r != null) {
+                    r.run();
+                }
+                mAnimatorCleanupMap.remove(animation);
+            }
+            mAnimatorMap.remove(animation);
+        }
+    }
+
+由源码我们知道当监听器仅需要监听动画的开始和结束时，我们可以通过 `withStartAction(Runnable runnable)` 和 `withEndAction(Runnable runnable)` 
+方法来设置一些特殊的监听操作。在 `AnimatorEventListener` 中的开始事件还会判断是否开启硬件加速，当然在动画结束时也会去关闭硬件加速。
+我们可以通过 `ViewPropertyAnimator #withLayer()` 方法开启硬件加速功能。到此对于 ViewPropertyAnimator 的常规使用方式
+已很清晰了。
+
+### 3-3 ViewPropertyAnimator 原理解析
+
+ViewPropertyAnimator 内部到底是如何运作的，同时又是如何优化动画性能的。详细的剖析我们另外篇幅介绍:   
+
+* 点我查看[《ViewPropertyAnimator 原理解析》]()
+* 或者查看WiKi[ViewPropertyAnimator]()
