@@ -27,13 +27,15 @@ Android 3.0 以后引入了属性动画，属性动画可以轻而易举的实�
 
 所有的属性动画的抽象基类就是他。我们看下他的实现子类： 
 
-![Animator 的子类关系]()
+![Animator 的子类关系](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/animator.jpg?token=AQ83MjGt06isEDv-5gp8_OXgN4E3qGguks5awY01wA%3D%3D)  
 
-其实可以看见，属性动画的实现有7个类（PS，之所以类继承关系列表会出来那么多是因为我下载了所有版本的 SDK，
+其实从上图可以看见，属性动画的实现有7个类（PS，之所以类继承关系列表会出来那么多是因为我下载了所有版本的 SDK，
 你只用关注我红点标注的就行，妹的，ubuntu 下图片处理工具怎么都这么难用），进去粗略分析可以发现，好几个是 hide 的类，
 而其他可用的类继承关系又如下：
 
-![Animator 继承关系]()
+![Animator 的非隐藏子类关系](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/animator_class.png?token=AQ83MuszqF5RrSwBdpb-4yVq5C7q5p2mks5awYzPwA%3D%3D)
+
+![Animator 继承关系](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/animator_extend.jpg?token=AQ83MgE22GBaO-BWdzQOwd8g1jZaD-cAks5awY1lwA%3D%3D)
 
 | java 类名 | xml 关键字 | 描述信息 |
 | :-------: | :------- | :----- |
@@ -62,19 +64,19 @@ Android 属性动画（注意最低兼容版本，不过可以使用开源项目
 
 接下来先来看官方为了解释原理给出的两幅图（其实就是初中物理题，不解释）：
 
-![Example of a linear animation]()  
+![Example of a linear animation](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/linear_animation.jpg?token=AQ83MvpgiY5jpLsu6SLeBimu6L72dLLtks5awY2ewA%3D%3D)  
 
 上面就是一个线性匀速动画，描述了一个 Object 的 X 属性运动动画，该对象的X坐标在 40ms 内从 0 移动到 40，
 每 10ms 刷新一次，移动 4 次，每次移动为 40/4=10pixel。 
 
-![Example of a non-linear animation]()  
+![Example of a non-linear animation](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/non_linear_animation.jpg?token=AQ83MksbwcZsgu55C1fnP-iCPrlgncunks5awY2vwA%3D%3D)  
 
 上面是一个非匀速动画，描述了一个 Object 的 X 属性运动动画，该对象的 X 坐标在 40ms 内从 0 移动到 40，每 10ms 刷新一次，移动4次，
 但是速率不同，开始和结束的速度要比中间部分慢，即先加速后减速。
 
 接下来我们来详细的看一下，属性动画系统的重要组成部分是如何计算动画值的，下图描述了如上面所示动画的实现作用过程。
 
-[How animation are calculated]()  
+[How animation are calculated](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/figure3.jpg?token=AQ83MnSifbDCzCdKG1s0beMPK_fPYJZMks5awY3awA%3D%3D)  
 
 其中的 ValueAnimator 是动画的执行类，跟踪了当前动画的执行时间和当前时间下的属性值；
 ValueAnimator 封装了动画的 TimeInterpolator 时间插值器和一个 TypeEvaluator 类型估值，用于设置动画属性的值，

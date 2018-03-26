@@ -8,7 +8,8 @@
       <module fileurl="file://F:\github\AndroidAnimationSet\drawable-animation\drawableanimation.iml" filepath="F:\github\AndroidAnimationSet\drawable-animation\drawableanimation.iml" />
       <module fileurl="file://$PROJECT_DIR$/property-animation/property-animation.iml" filepath="$PROJECT_DIR$/property-animation/property-animation.iml" />
       <module fileurl="file://F:\github\AndroidAnimationSet\property-animation\propertyanimation.iml" filepath="F:\github\AndroidAnimationSet\property-animation\propertyanimation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/view-animation/viewanimation.iml" filepath="$PROJECT_DIR$/view-animation/viewanimation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/view-animation/view-animation.iml" filepath="$PROJECT_DIR$/view-animation/view-animation.iml" />
+      <module fileurl="file://F:\github\AndroidAnimationSet\view-animation\viewanimation.iml" filepath="F:\github\AndroidAnimationSet\view-animation\viewanimation.iml" />
     </modules>
   </component>
 </project>
