@@ -51,6 +51,8 @@ public class PropertyAnimationActivity extends AppCompatActivity {
             doAnimation(getAnimationDrawable(false));
         } else if (i == R.id.action_stop_bycode) {
             doAnimation(getAnimationDrawable(true));
+        } else if (i == R.id.action_stop_bycustom) {
+            doAnimation(getValueAnimatorByCustom());
         }
         return super.onOptionsItemSelected(item);
     }
@@ -58,6 +60,8 @@ public class PropertyAnimationActivity extends AppCompatActivity {
     private Animator getAnimationDrawable(boolean formXml) {
         return formXml ? getAnimationByXml() : getAnimatorSet();
     }
+
+// Basic Usage (基本用法)----------------------------------------------------------------------------------
 
     /**
      * Animator usage
@@ -75,6 +79,7 @@ public class PropertyAnimationActivity extends AppCompatActivity {
 
     /**
      * use property animation by xml;
+     *
      * @return
      */
     private Animator getAnimationByXml() {
@@ -199,4 +204,46 @@ public class PropertyAnimationActivity extends AppCompatActivity {
         animatorSet.setInterpolator(new AccelerateDecelerateInterpolator());
         return animatorSet;
     }
+
+// Advanced Usage (高级用法)--------------------------------------------------------------------------
+
+    /**
+     * Custom Interpolator
+     * Custom Evaluator
+     *
+     * @return
+     */
+    private Animator getValueAnimatorByCustom() {
+        final int height = mPuppet.getLayoutParams().height;
+        final int width = mPuppet.getLayoutParams().width;
+        PropertyBean startPropertyBean = new PropertyBean(0xff009688, 0f, 1f);
+        PropertyBean endPropertyBean = new PropertyBean(0xff795548, 360f, 3.0f);
+
+//        ValueAnimator valueAnimator = ValueAnimator.ofObject(new MyTypeEvaluator(),startPropertyBean,endPropertyBean);
+        ValueAnimator valueAnimator = new ValueAnimator();
+        valueAnimator.setDuration(3000);
+        valueAnimator.setInterpolator(new SpeedUpInterpolator());//custom interpolator
+        valueAnimator.setRepeatMode(ValueAnimator.REVERSE);
+        valueAnimator.setRepeatCount(1);
+
+        valueAnimator.setObjectValues(startPropertyBean, endPropertyBean);
+        valueAnimator.setEvaluator(new MyTypeEvaluator());//custom evaluator
+
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                PropertyBean propertyBean = (PropertyBean) valueAnimator.getAnimatedValue();
+                if (propertyBean.getBackgroundColor() != 0 && propertyBean.getBackgroundColor() != 1) {
+                    mPuppet.setBackgroundColor(propertyBean.getBackgroundColor());
+                }
+                mPuppet.setRotationX(propertyBean.getRotationX());
+                mPuppet.getLayoutParams().height = (int) (height * propertyBean.getSize());
+                mPuppet.getLayoutParams().width = (int) (width * propertyBean.getSize());
+                mPuppet.requestLayout();
+//                mPuppet.postInvalidate();
+            }
+        });
+        return valueAnimator;
+    }
+
 }

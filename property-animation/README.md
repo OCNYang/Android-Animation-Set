@@ -444,3 +444,5 @@ Java 方式使用系统提供的默认 LayoutTransition 动画：
     ......//设置更多类型的动画                mViewGroup.setLayoutTransition(mTransitioner);
 
 到此通过 LayoutTransition 你就能实现类似小米手机计算器切换普通型和科学型的炫酷动画了。
+
+## ViewPropertyAnimator 动画(属性动画拓展)
