@@ -543,7 +543,7 @@ ViewPropertyAnimator 简单用法讲完了，这里小结一下 ViewPropertyAnim
 
 ![ViewPropertyAnimator method](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/propertyAnimationmethod.jpg?token=AQ83MmpyrucBHRhv58_DsUL8ixvcuHioks5awfWCwA%3D%3D)  
 
-我们看看其中scaleY与scaleYBy的实现：
+我们看看其中 scaleY 与 scaleYBy 的实现：
 
     public ViewPropertyAnimator scaleY(float value) {
             animateProperty(SCALE_Y, value);
@@ -657,7 +657,7 @@ ViewPropertyAnimator 内部到底是如何运作的，同时又是如何优化�
 * 或者查看 [WiKi](https://github.com/OCNYang/Android-Animation-Set/wiki/%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB%E4%B9%8B-ViewPropertyAnimator-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90)
 
 
-## 4. Java属性动画拓展之LayoutAnimator容器布局动画
+## 4. Java 属性动画拓展之 LayoutAnimator 容器布局动画
 
 Property 动画系统还提供了对 ViewGroup 中 View 添加时的动画功能，我们可以用 LayoutTransition 对 ViewGroup 中的 View 
 进行动画设置显示。LayoutTransition 的动画效果都是设置给 ViewGroup，然后当被设置动画的 ViewGroup 中添加删除 View 时体现出来。
@@ -672,7 +672,7 @@ Property 动画系统还提供了对 ViewGroup 中 View 添加时的动画功能
 * LayoutTransition.CHANGE_DISAPPEARING：当删除或者隐藏View导致布局容器改变的时候整个布局容器的动画。
 * LayoutTransition.CHANGE：当不是由于View出现或消失造成对其他View位置造成改变的时候整个布局容器的动画。
 
-### 4-1 XML方式使用系统提供的默认 LayoutTransition 动画
+### 4-1 XML 方式使用系统提供的默认 LayoutTransition 动画
 
 我们可以通过如下方式使用系统提供的默认ViewGroup的LayoutTransition动画：
 
@@ -697,7 +697,7 @@ Property 动画系统还提供了对 ViewGroup 中 View 添加时的动画功能
 > * `android:animationOrder` 表示动画的播放顺序，有三个取值 normal(顺序)、reverse(反序)、random(随机)。
 > * `android:animation` 指向了子控件所要播放的动画。
 
-### 4-2 Java方式使用系统提供的默认LayoutTransition动画
+### 4-2 Java 方式使用系统提供的默认 LayoutTransition 动画
 
 在使用LayoutTransition时，你可以自定义这几种事件类型的动画，也可以使用默认的动画，总之最终都是通过 
 `setLayoutTransition(LayoutTransition lt)` 方法把这些动画以一个 LayoutTransition 对象设置给一个 ViewGroup。
@@ -721,7 +721,7 @@ Property 动画系统还提供了对 ViewGroup 中 View 添加时的动画功能
     listView.setLayoutAnimation(controller);
     listView.startLayoutAnimation();
 
-### 4-3 LayoutTransition的用法
+### 4-3 LayoutTransition 的用法
 
 稍微再高端一点吧，我们来自定义这几类事件的动画，分别实现他们，那么你可以像下面这么处理：
 
