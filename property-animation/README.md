@@ -653,5 +653,5 @@ ViewPropertyAnimator 简单用法讲完了，这里小结一下 ViewPropertyAnim
 
 ViewPropertyAnimator 内部到底是如何运作的，同时又是如何优化动画性能的。详细的剖析我们另外篇幅介绍:   
 
-* 点我查看[《ViewPropertyAnimator 原理解析》]()
-* 或者查看WiKi[ViewPropertyAnimator]()
+* 点我查看[《ViewPropertyAnimator 原理解析》](https://github.com/OCNYang/Android-Animation-Set/blob/master/property-animation/ViewPropertyAnimator.md)
+* 或者查看[WiKi]()

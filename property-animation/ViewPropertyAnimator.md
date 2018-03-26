@@ -19,45 +19,45 @@
 到 ViewPropertyAnimator 实例后，可以通过 ViewPropertyAnimator 提供的多种方法来设置动画，如 translationX()、scaleX() 等等，
 而当调用完这些方法后，其内部最终则会通过多次调用 animatorPropertyBy()，我们先看看 animatePropertyBy 方法源码：
 
-    /**
-     * Utility function, called by animateProperty() and animatePropertyBy(), which handles the
-     * details of adding a pending animation and posting the request to start the animation.
-     *
-     * @param constantName The specifier for the property being animated
-     * @param startValue The starting value of the property
-     * @param byValue The amount by which the property will change
-     */
-    private void animatePropertyBy(int constantName, float startValue, float byValue) {
-        // First, cancel any existing animations on this property
-        //判断该属性上是否存在运行的动画，存在则结束。
-        if (mAnimatorMap.size() > 0) {
-            Animator animatorToCancel = null;
-            Set<Animator> animatorSet = mAnimatorMap.keySet();
-            for (Animator runningAnim : animatorSet) {
-                PropertyBundle bundle = mAnimatorMap.get(runningAnim);
-                if (bundle.cancel(constantName)) {// 结束对应属性动画
-                    // property was canceled - cancel the animation if it's now empty
-                    // Note that it's safe to break out here because every new animation
-                    // on a property will cancel a previous animation on that property, so
-                    // there can only ever be one such animation running.
-                    if (bundle.mPropertyMask == NONE) {//判断是否还有其他属性
-                        // the animation is no longer changing anything - cancel it
-                        animatorToCancel = runningAnim;
-                        break;
+        /**
+         * Utility function, called by animateProperty() and animatePropertyBy(), which handles the
+         * details of adding a pending animation and posting the request to start the animation.
+         *
+         * @param constantName The specifier for the property being animated
+         * @param startValue   The starting value of the property
+         * @param byValue      The amount by which the property will change
+         */
+        private void animatePropertyBy(int constantName, float startValue, float byValue) {
+            // First, cancel any existing animations on this property
+            //判断该属性上是否存在运行的动画，存在则结束。
+            if (mAnimatorMap.size() > 0) {
+                Animator animatorToCancel = null;
+                Set<Animator> animatorSet = mAnimatorMap.keySet();
+                for (Animator runningAnim : animatorSet) {
+                    PropertyBundle bundle = mAnimatorMap.get(runningAnim);
+                    if (bundle.cancel(constantName)) {// 结束对应属性动画
+                        // property was canceled - cancel the animation if it's now empty
+                        // Note that it's safe to break out here because every new animation
+                        // on a property will cancel a previous animation on that property, so
+                        // there can only ever be one such animation running.
+                        if (bundle.mPropertyMask == NONE) {//判断是否还有其他属性
+                            // the animation is no longer changing anything - cancel it
+                            animatorToCancel = runningAnim;
+                            break;
+                        }
                     }
                 }
+                if (animatorToCancel != null) {
+                    animatorToCancel.cancel();
+                }
             }
-            if (animatorToCancel != null) {
-                animatorToCancel.cancel();
-            }
+            //将要执行的属性的名称，开始值，变化值封装成NameValuesHolder对象
+            NameValuesHolder nameValuePair = new NameValuesHolder(constantName, startValue, byValue);
+            //添加到准备列表中
+            mPendingAnimations.add(nameValuePair);
+            mView.removeCallbacks(mAnimationStarter);
+            mView.postOnAnimation(mAnimationStarter);
         }
-    //将要执行的属性的名称，开始值，变化值封装成NameValuesHolder对象
-        NameValuesHolder nameValuePair = new NameValuesHolder(constantName, startValue, byValue);
-        //添加到准备列表中
-        mPendingAnimations.add(nameValuePair);
-        mView.removeCallbacks(mAnimationStarter);
-        mView.postOnAnimation(mAnimationStarter);
-    }
 
 从源码可以看出，animatePropertyBy 方法主要干了以下几件事：
 
@@ -66,7 +66,8 @@
 * 将每个 NameValuesHolder 对象添加到 mPendingAnimations 的准备列表中 
 
 NameValuesHolder对象是一个内部类，其相关信息如下:  
-**NameValueHolder：** 内部类，封装每个要进行动画属性值开始值和变化值，比如 translationX(200)，那么这个动画的属性值、
+**NameValueHolder：**   
+内部类，封装每个要进行动画属性值开始值和变化值，比如 translationX(200)，那么这个动画的属性值、
 开始值和变化值将被封装成一个 NameValueHolder，其源码也非常简单：
 
     static class NameValuesHolder {
@@ -81,13 +82,15 @@ NameValuesHolder对象是一个内部类，其相关信息如下:
     }
 
 而 mPendingAnimations 的相关信息如下：  
-**mPendingAnimations：** 装载的是准备进行动画的属性值（NameValueHolder）所有列表，也就是每次要同时进行动画的全部属性的集合
+**mPendingAnimations：**  
+装载的是准备进行动画的属性值（NameValueHolder）所有列表，也就是每次要同时进行动画的全部属性的集合
 
     ArrayList<NameValuesHolder> mPendingAnimations = new ArrayList<NameValuesHolder>();
 
 当添加完每个要运行的属性动画后，则会通过 mAnimationStarter 对象去调用 startAnimation()，启动动画。 
 
-**Runnable mAnimationStarter：** 用来执行动画的 Runnable。它会执行 startAnimation 方法，而在 startAnimation 方法中
+**Runnable mAnimationStarter：**  
+用来执行动画的 Runnable。它会执行 startAnimation 方法，而在 startAnimation 方法中
 会通过 `animator.start()` 启动动画，源码非常简洁：
 
     private Runnable mAnimationStarter = new Runnable() {
@@ -175,18 +178,21 @@ mAnimatorEventListener 中使用。
 * 启动 animator 动画。
 
 关于PropertyBundle的分析如下： 
-**PropertyBundle：** 内部类，存放着将要执行的动画的属性集合信息，每次调用 animator.start(); 前，都会将存放在 
+**PropertyBundle：**  
+内部类，存放着将要执行的动画的属性集合信息，每次调用 animator.start(); 前，都会将存放在 
 mPendingAnimations 的 clone 一份存入 PropertyBundle 的内部变量 mNameValuesHolder 中，然后再将遍历 
 mPendingAnimations 中的 NameValueHolder 类，取出要执行的属性进行 ”|” 操作,最后记录成一个 mPropertyMask 的变量，
 存放在 PropertyBundle 中，PropertyBundle 就是最终要执行动画的全部属性的封装类，其内部结构如下图 
 
 ![PropertyBundle]()  
 
-**AnimatorEventListener:** ViewPropertyAnimator 内部的监听器。这个类实现了 Animator.AnimatorListener, 
+**AnimatorEventListener:**  
+ViewPropertyAnimator 内部的监听器。这个类实现了 Animator.AnimatorListener, 
 ValueAnimator.AnimatorUpdateListener 接口。我们前面已经分享过它的部分源码，这个类还有一个 onAnimationUpdate() 
 的监听方法，这个方法我们放在后面解析，它是动画执行的关键所在。
 
-**HashMap mAnimatorMap:** 存放 PropertyBundle 类的Map。这个Map中存放的是正在执行的动画的 PropertyBundle，
+**HashMap mAnimatorMap:**  
+存放 PropertyBundle 类的Map。这个Map中存放的是正在执行的动画的 PropertyBundle，
 这个 PropertyBundle 包含这本次动画的所有属性的信息。最终在 AnimatorEventListener 的 onAnimationUpdate() 
 方法中会通过这个map获取相应的属性，然后不断更新每帧的属性值以达到动画效果。通过前面对 animatePropertyBy 方法的分析，
 我们可以知道该Map会保证当前只有一个 Animator 对象对该 View 的属性进行操作，不会存在两个 Animator 在操作同一个属性，其声明如下：
