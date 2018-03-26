@@ -14,5 +14,9 @@
         android:id="@+id/action_stop_bycustom"
         android:orderInCategory="100"
         android:title="@string/action_bycustom"/>
+    <item
+        android:id="@+id/action_stop_byviewpropertyanimator"
+        android:orderInCategory="100"
+        android:title="@string/action_byviewpropertyanimator"/>
 
 </menu>

@@ -1,6 +1,7 @@
 <resources>
     <string name="module_property">PropertyAnimation</string>
-    <string name="action_byxml">Do by xml</string>
-    <string name="action_bycode">Do by code</string>
-    <string name="action_bycustom">Do by custom</string>
+    <string name="action_byxml">Do by Xml</string>
+    <string name="action_bycode">Do by Code</string>
+    <string name="action_bycustom">Do by Custom</string>
+    <string name="action_byviewpropertyanimator">ViewPropertyAnimator</string>
 </resources>

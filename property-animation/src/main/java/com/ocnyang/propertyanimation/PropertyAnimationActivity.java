@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewPropertyAnimator;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
 import java.util.ArrayList;
@@ -53,6 +54,8 @@ public class PropertyAnimationActivity extends AppCompatActivity {
             doAnimation(getAnimationDrawable(true));
         } else if (i == R.id.action_stop_bycustom) {
             doAnimation(getValueAnimatorByCustom());
+        } else if (i == R.id.action_stop_byviewpropertyanimator) {
+            doAnimatorByViewPropertyAnimator();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -244,6 +247,17 @@ public class PropertyAnimationActivity extends AppCompatActivity {
             }
         });
         return valueAnimator;
+    }
+
+    //ViewPropertyAnimator------------------------------------------------------------------------------
+    private void doAnimatorByViewPropertyAnimator() {
+        ViewPropertyAnimator viewPropertyAnimator = mPuppet.animate()
+                .rotationX(360f)
+                .alpha(0.5f)
+                .scaleX(3).scaleY(3)
+                .setInterpolator(new AccelerateDecelerateInterpolator())
+                .setDuration(3000)
+                .setStartDelay(0);
     }
 
 }
