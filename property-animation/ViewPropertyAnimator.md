@@ -2,7 +2,7 @@
 
 我们先通过一副图来大概了解一下 ViewPropertyAnimator 内部的整体运行工作原理（图太小的话请右键在新页面打开哈）： 
 
-![ViewPropertyAnimator]()  
+![ViewPropertyAnimator](https://github.com/OCNYang/Android-Animation-Set/blob/master/README_Res/ViewPropertyAnimator.jpg)  
 
 我们这里先给出整体执行流程（有个整体的概念就行哈，不理解也没有关系，看完下面的分析，再回来来看看也是可以），然后再详细分析：
 
@@ -184,7 +184,7 @@ mPendingAnimations 的 clone 一份存入 PropertyBundle 的内部变量 mNameVa
 mPendingAnimations 中的 NameValueHolder 类，取出要执行的属性进行 ”|” 操作,最后记录成一个 mPropertyMask 的变量，
 存放在 PropertyBundle 中，PropertyBundle 就是最终要执行动画的全部属性的封装类，其内部结构如下图 
 
-![PropertyBundle]()  
+![PropertyBundle](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/PropertyBundle.jpg?token=AQ83MuTmmPsjVKQwY_S3KP8KOvh8RIaHks5awfU8wA%3D%3D)  
 
 **AnimatorEventListener:**  
 ViewPropertyAnimator 内部的监听器。这个类实现了 Animator.AnimatorListener, 

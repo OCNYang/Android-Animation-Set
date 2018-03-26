@@ -541,7 +541,7 @@ ViewPropertyAnimator 简单用法讲完了，这里小结一下 ViewPropertyAnim
 
 以上便是 ViewPropertyAnimator 一些操作方法，其实上面很多属性设置方法都对应着一个By结尾的方法，其变量则代表的是变化量，如下： 
 
-![ViewPropertyAnimator method]()  
+![ViewPropertyAnimator method](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/propertyAnimationmethod.jpg?token=AQ83MmpyrucBHRhv58_DsUL8ixvcuHioks5awfWCwA%3D%3D)  
 
 我们看看其中scaleY与scaleYBy的实现：
 
@@ -654,4 +654,4 @@ ViewPropertyAnimator 简单用法讲完了，这里小结一下 ViewPropertyAnim
 ViewPropertyAnimator 内部到底是如何运作的，同时又是如何优化动画性能的。详细的剖析我们另外篇幅介绍:   
 
 * 点我查看[《ViewPropertyAnimator 原理解析》](https://github.com/OCNYang/Android-Animation-Set/blob/master/property-animation/ViewPropertyAnimator.md)
-* 或者查看[WiKi]()
+* 或者查看[WiKi](https://github.com/OCNYang/Android-Animation-Set/wiki/%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB%E4%B9%8B-ViewPropertyAnimator-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90)
