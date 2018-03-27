@@ -1,6 +1,7 @@
 package com.ocnyang.rippleanimation;
 
 import android.content.res.TypedArray;
+import android.graphics.drawable.RippleDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
