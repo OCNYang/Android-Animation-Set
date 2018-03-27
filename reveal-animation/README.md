@@ -58,7 +58,7 @@ Reveal Animation 要掌握的内容就这么多了，这里通过粗略分析一
 
 这里以上面的效果图来分析：  
 
-![]()  
+![Reveal demo 分析图](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/reveal_animation_demo.png?token=AQ83MjmWChaucjT435XpyFqG0J8F9OOQks5aw135wA%3D%3D)  
 
 通过这个分析图，其实应该就很容易理解了，我们要做的所有事情就是确定 `ViewAnimationUtils.createCircularReveal()` 这
 个方法的四个参数。
