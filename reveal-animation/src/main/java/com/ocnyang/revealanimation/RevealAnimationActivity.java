@@ -35,7 +35,7 @@ public class RevealAnimationActivity extends AppCompatActivity {
 
     private void launchRevealAnimation() {
         Animation animation = mPuppet.getAnimation();
-        if (animation!=null){
+        if (animation != null) {
             animation.cancel();
         }
 
@@ -79,7 +79,7 @@ public class RevealAnimationActivity extends AppCompatActivity {
             circularReveal.addListener(new Animator.AnimatorListener() {
                 @Override
                 public void onAnimationStart(Animator animation) {
-
+                    mPuppet.setVisibility(View.VISIBLE);
                 }
 
                 @Override
@@ -96,7 +96,6 @@ public class RevealAnimationActivity extends AppCompatActivity {
 
                 }
             });
-            mPuppet.setVisibility(View.VISIBLE);
             circularReveal.start();
             flag = true;
         }
