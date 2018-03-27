@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.ocnyang.revealanimation">
+
+    <application>
+        <activity android:name=".RevealEffectActivity">
+        </activity>
+        <activity
+            android:name=".RevealAnimationActivity"
+            android:label="@string/title_activity_reveal_animation"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+    </application>
+
+</manifest>

@@ -6,9 +6,9 @@
 
 ## Ⅲ. [Property Animation / 属性动画](https://github.com/OCNYang/Android-Animation-Set/tree/master/property-animation)  
 
-## Ⅳ. [Ripple Animation / Touch Feedback / 触摸反馈动画](https://github.com/OCNYang/Android-Animation-Set/tree/master/ripple-animation)
+## Ⅳ. [Ripple Effect / Touch Feedback / 触摸反馈动画](https://github.com/OCNYang/Android-Animation-Set/tree/master/ripple-animation)
 
-## Ⅴ. 揭露动画
+## Ⅴ. [Reveal Effect / 揭露动画]()
 
 ## Ⅵ. 转场动画 & 共享元素
 

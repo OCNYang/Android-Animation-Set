@@ -1,4 +1,4 @@
-# Ⅳ. Ripple Animation / Touch Feedback / 触摸反馈动画
+# Ⅳ. Ripple Effect / Touch Feedback / 触摸反馈动画
 
 ## 1. 简介
 
