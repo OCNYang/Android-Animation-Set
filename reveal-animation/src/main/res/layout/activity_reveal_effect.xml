@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     tools:context="com.ocnyang.revealanimation.RevealEffectActivity">
 
     <android.support.v7.widget.Toolbar
@@ -35,7 +36,7 @@
         android:layout_margin="15dp"
         android:src="@drawable/ic_toys_black_24dp"
         android:tint="@android:color/white"
-        app:backgroundTint="?attr/colorAccent"
+        app:backgroundTint="?attr/colorPrimary"
         app:elevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"

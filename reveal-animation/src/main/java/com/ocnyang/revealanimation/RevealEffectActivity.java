@@ -3,39 +3,49 @@ package com.ocnyang.revealanimation;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 
 public class RevealEffectActivity extends AppCompatActivity implements View.OnClickListener {
 
+    boolean flag = false;
+    FloatingActionButton fab;
+    Toolbar toolbar;
     private View mPuppet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reveal_effect);
-        mPuppet = findViewById(R.id.view_puppet);
-        findViewById(R.id.fab).setOnClickListener(this);
         initToolbar();
+
+        mPuppet = findViewById(R.id.view_puppet);
+        fab = findViewById(R.id.fab);
+        fab.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
+        doRevealAnimation();
+    }
+
+    private void doRevealAnimation() {
         int[] vLocation = new int[2];
-        v.getLocationInWindow(vLocation);
-        int centerX = vLocation[0] + v.getMeasuredWidth() / 2;
-        int centerY = vLocation[1] + v.getMeasuredHeight() / 2;
+        fab.getLocationInWindow(vLocation);
+        int centerX = vLocation[0] + fab.getMeasuredWidth() / 2;
+        int centerY = vLocation[1] + fab.getMeasuredHeight() / 2;
 
         int height = mPuppet.getHeight();
         int width = mPuppet.getWidth();
         int maxRradius = (int) Math.hypot(height, width);
+        Log.e("hei", maxRradius + "");
 
-        final boolean b = mPuppet.getVisibility() == View.VISIBLE;
-
-        if (b) {
+        if (flag) {
             Animator animator = ViewAnimationUtils.createCircularReveal(mPuppet, centerX, centerY, maxRradius, 0);
             animator.setDuration(1000);
             animator.addListener(new AnimatorListenerAdapter() {
@@ -46,22 +56,37 @@ public class RevealEffectActivity extends AppCompatActivity implements View.OnCl
                 }
             });
             animator.start();
+            flag = false;
         } else {
             Animator animator = ViewAnimationUtils.createCircularReveal(mPuppet, centerX, centerY, 0, maxRradius);
             animator.setDuration(1000);
-            animator.addListener(new AnimatorListenerAdapter() {
+            animator.addListener(new Animator.AnimatorListener() {
+                @Override
+                public void onAnimationStart(Animator animation) {
+                    mPuppet.setVisibility(View.VISIBLE);
+                }
+
                 @Override
                 public void onAnimationEnd(Animator animation) {
-                    super.onAnimationEnd(animation);
+                }
+
+                @Override
+                public void onAnimationCancel(Animator animation) {
+
+                }
+
+                @Override
+                public void onAnimationRepeat(Animator animation) {
+
                 }
             });
-            mPuppet.setVisibility(View.VISIBLE);
             animator.start();
+            flag = true;
         }
     }
 
     private void initToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

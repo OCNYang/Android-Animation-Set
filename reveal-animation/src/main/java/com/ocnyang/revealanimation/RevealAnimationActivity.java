@@ -1,10 +1,12 @@
 package com.ocnyang.revealanimation;
 
 import android.animation.Animator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewAnimationUtils;
@@ -48,7 +50,7 @@ public class RevealAnimationActivity extends AppCompatActivity {
         int hypotenuse = (int) Math.hypot(view.getWidth(), view.getHeight());
 
         if (flag) {
-            Animator circularReveal = ViewAnimationUtils.createCircularReveal(mPuppet, centerX, centerY, hypotenuse, 0);
+            final Animator circularReveal = ViewAnimationUtils.createCircularReveal(mPuppet, centerX, centerY, hypotenuse, 0);
             circularReveal.setDuration(2000);
             circularReveal.addListener(new Animator.AnimatorListener() {
                 @Override
@@ -59,6 +61,7 @@ public class RevealAnimationActivity extends AppCompatActivity {
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     mPuppet.setVisibility(View.GONE);
+                    circularReveal.removeListener(this);
                 }
 
                 @Override
@@ -74,16 +77,17 @@ public class RevealAnimationActivity extends AppCompatActivity {
             circularReveal.start();
             flag = false;
         } else {
-            Animator circularReveal = ViewAnimationUtils.createCircularReveal(mPuppet, centerX, centerY, 0, hypotenuse);
+            final Animator circularReveal = ViewAnimationUtils.createCircularReveal(mPuppet, centerX, centerY, 0, hypotenuse);
             circularReveal.setDuration(2000);
             circularReveal.addListener(new Animator.AnimatorListener() {
                 @Override
                 public void onAnimationStart(Animator animation) {
-                    mPuppet.setVisibility(View.VISIBLE);
+
                 }
 
                 @Override
                 public void onAnimationEnd(Animator animation) {
+                    circularReveal.removeListener(this);
                 }
 
                 @Override
@@ -96,6 +100,7 @@ public class RevealAnimationActivity extends AppCompatActivity {
 
                 }
             });
+            mPuppet.setVisibility(View.VISIBLE);
             circularReveal.start();
             flag = true;
         }
@@ -112,7 +117,15 @@ public class RevealAnimationActivity extends AppCompatActivity {
         int i = item.getItemId();
         if (i == android.R.id.home) {
             finish();
+        }else if (i == R.id.action_settings){
+            startActivity(new Intent(RevealAnimationActivity.this,RevealEffectActivity.class));
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_reveal_animation, menu);
+        return true;
     }
 }

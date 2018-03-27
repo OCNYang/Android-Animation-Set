@@ -18,6 +18,9 @@
         </activity>
         <activity android:name="com.ocnyang.rippleanimation.TouchFeedbackActivity"
                   android:theme="@style/MyRippleAnimationTheme"/>
+
+        <activity android:name="com.ocnyang.revealanimation.RevealEffectActivity">
+        </activity>
     </application>
 
 </manifest>

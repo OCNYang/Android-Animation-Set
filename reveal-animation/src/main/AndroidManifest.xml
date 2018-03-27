@@ -3,8 +3,7 @@
           package="com.ocnyang.revealanimation">
 
     <application>
-        <activity android:name=".RevealEffectActivity">
-        </activity>
+
         <activity
             android:name=".RevealAnimationActivity"
             android:label="@string/title_activity_reveal_animation"

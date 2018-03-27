@@ -4,7 +4,8 @@
       tools:context="com.ocnyang.revealanimation.RevealAnimationActivity">
     <item
         android:id="@+id/action_settings"
+        android:icon="@drawable/ic_chevron_right"
         android:orderInCategory="100"
         android:title="@string/action_settings"
-        app:showAsAction="never"/>
+        app:showAsAction="always"/>
 </menu>
