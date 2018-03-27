@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ocnyang.rippleanimation.TouchFeedbackActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/view_puppet1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="Background:selectableItemBackground (by code)"
+                app:layout_constraintDimensionRatio="5:1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:background="?attr/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@+id/view_puppet1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <TextView
+                android:id="@+id/view_puppet1_1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="Foreground:selectableItemBackground"
+                app:layout_constraintDimensionRatio="5:1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_puppet1"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:background="?attr/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@+id/view_puppet1_1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <TextView
+                android:id="@+id/view_puppet2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="Background:selectableItemBackgroundBorderless"
+                app:layout_constraintDimensionRatio="5:1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_puppet1_1"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:background="?attr/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@+id/view_puppet2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+
+            <TextView
+                android:id="@+id/view_puppet3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:text="Foreground:selectableItemBackgroundBorderless"
+                app:layout_constraintDimensionRatio="5:1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_puppet2"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:background="?attr/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@+id/view_puppet3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <TextView
+                android:id="@+id/view_puppet10"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/shape_bg_click_borderless"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="Background:custom ripple bg"
+                app:layout_constraintDimensionRatio="5:1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_puppet3"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:background="?attr/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@+id/view_puppet10"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <TextView
+                android:id="@+id/view_puppet8"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/shape_bg_click"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="Background:custom ripple bg borderless"
+                app:layout_constraintDimensionRatio="5:1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_puppet10"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:background="?attr/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@+id/view_puppet8"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <Button
+                android:id="@+id/view_puppet4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Button:Default"
+                android:textAllCaps="false"
+                app:layout_constraintDimensionRatio="5:1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_puppet8"/>
+
+            <Button
+                android:id="@+id/view_puppet5"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="?attr/colorAccent"
+                android:text="Button:set general background"
+                android:textAllCaps="false"
+                app:layout_constraintDimensionRatio="5:1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_puppet4"/>
+
+            <Button
+                android:id="@+id/view_puppet6"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Button:set Bg by Theme"
+                android:textAllCaps="false"
+                android:theme="@style/AutoButton"
+                app:layout_constraintDimensionRatio="5:1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_puppet5"/>
+
+            <Button
+                android:id="@+id/view_puppet7"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="?attr/colorAccent"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:text="Button:set Bg with ripple foreground"
+                android:textAllCaps="false"
+                app:layout_constraintDimensionRatio="5:1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_puppet6"/>
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

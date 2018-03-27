@@ -31,4 +31,5 @@ dependencies {
     implementation 'com.android.support:cardview-v7:27.1.0'
     implementation project(':drawable-animation')
     implementation project(':property-animation')
+    implementation project(':ripple-animation')
 }

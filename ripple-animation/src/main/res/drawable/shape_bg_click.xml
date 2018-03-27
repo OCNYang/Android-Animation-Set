@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@android:color/white" android:state_pressed="false"/>  //点击时手指松开的背景
+    <item android:drawable="?attr/colorAccent" android:state_pressed="true"/>   //点击时手指未松开的背景
+    <item android:drawable="@android:color/white"/>  //本身的背景
+</selector>

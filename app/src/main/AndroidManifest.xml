@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name="com.ocnyang.rippleanimation.TouchFeedbackActivity"
+                  android:theme="@style/MyRippleAnimationTheme"/>
     </application>
 
 </manifest>

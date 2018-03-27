@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.ocnyang.drawableanimation.DrawableAnimationActivity;
 import com.ocnyang.propertyanimation.PropertyAnimationActivity;
+import com.ocnyang.rippleanimation.TouchFeedbackActivity;
 import com.ocnyang.viewanimation.ViewAnimationActivity;
 
 /*******************************************************************
@@ -62,6 +63,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
                         mContext.startActivity(new Intent(mContext, PropertyAnimationActivity.class));
                         break;
                     case 3:
+                        mContext.startActivity(new Intent(mContext, TouchFeedbackActivity.class));
                         break;
                     case 4:
                         break;

@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/drawable-animation" />
             <option value="$PROJECT_DIR$/property-animation" />
+            <option value="$PROJECT_DIR$/ripple-animation" />
             <option value="$PROJECT_DIR$/view-animation" />
           </set>
         </option>
