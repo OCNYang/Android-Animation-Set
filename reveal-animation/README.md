@@ -41,7 +41,7 @@
 
 如下图所示： 
 
-![通过坐标系分析各个参数]()  
+![通过坐标系分析各个参数](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/createCircularReveal.jpg?token=AQ83Mvo2qlmhlBhInyMZGjUQVcrGzOAbks5aw1ERwA%3D%3D)  
 
 揭露动画有两种效果，一种是显示一组UI元素，另一种是隐藏一组UI元素：   
 * 以中心点为轴点，当开始半径小于结束半径时，从开始半径处向外扩大到结束半径处显示View 
