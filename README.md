@@ -8,7 +8,7 @@
 
 ## Ⅳ. [Ripple Effect / Touch Feedback / 触摸反馈动画](https://github.com/OCNYang/Android-Animation-Set/tree/master/ripple-animation)
 
-## Ⅴ. [Reveal Effect / 揭露动画]()
+## Ⅴ. [Reveal Effect / 揭露动画](https://github.com/OCNYang/Android-Animation-Set/tree/master/reveal-animation)
 
 ## Ⅵ. 转场动画 & 共享元素
 

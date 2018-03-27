@@ -6,7 +6,7 @@
 从某一个点向四周展开或者从四周向某一点聚合起来，本文实现的效果如下所示，可以用在 Activity 里面的 View 动画效果，
 也可以使用在 Activity 跳转过渡动画中，如下图使用在 View 的显示隐藏的效果图：
  
-![Reveal Effect]()  
+![Reveal Effect](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/reveal_animation.gif?token=AQ83MgST0wsEcQCDDGjxTfrFlGcSs9aVks5aw1BwwA%3D%3D)  
 
 ## 2. 使用
 
@@ -41,7 +41,7 @@
 
 如下图所示： 
 
-![]()  
+![通过坐标系分析各个参数]()  
 
 揭露动画有两种效果，一种是显示一组UI元素，另一种是隐藏一组UI元素：   
 * 以中心点为轴点，当开始半径小于结束半径时，从开始半径处向外扩大到结束半径处显示View 
