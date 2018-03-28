@@ -163,7 +163,8 @@ Activity 布局中可见的目标 Views，驱动这些 Views 按照过渡的规�
 4. On Back Pressed(按返回键) Transition Framework 会执行把 Enter and Exit 过渡动画反过来执行(但是如果定义了 
 returnTransition 和 reenterTransition，那么就会执行这些定义的动画)
 
-> 更加详细的分析请到 [**深入理解 Content Transition**]() 或 [**Wiki**]() 查看。
+> 更加详细的分析请到 [**深入理解 Content Transition**](https://github.com/OCNYang/Android-Animation-Set/blob/master/transition-animation/ContentTransition.md) 
+或 [**Wiki**]() 查看。
 
 > 译注:
 > * Exit Transition: 可以理解为 activity 进入后台的过渡动画
