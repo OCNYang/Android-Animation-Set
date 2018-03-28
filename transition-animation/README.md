@@ -40,7 +40,8 @@ Activity 或者 Fragment 的动画切换，但是他们仅仅局限与将整个�
 ## 2. Transitions 在 Activity 切换过程中的效果
 
 首先，我们回顾下，我们之前是如何设置 Activity 切换过程中的动画，毫无疑问，通过 overridePendingTransition，
-更多具体实现请看 [**WIKI:实现 Activity 的切换动画**]()  
+更多具体实现请看 [**WIKI**](https://github.com/OCNYang/Android-Animation-Set/wiki/%E5%AE%9E%E7%8E%B0-Activity-%E7%9A%84%E5%88%87%E6%8D%A2%E5%8A%A8%E7%94%BB)
+或到[实现 Activity 的切换动画](https://github.com/OCNYang/Android-Animation-Set/blob/master/transition-animation/ActivitySkipAnimation.md)  
 
 这里我们直接介绍通过 Transitions 实现的切换效果。
 
