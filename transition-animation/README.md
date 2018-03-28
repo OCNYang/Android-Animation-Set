@@ -431,7 +431,7 @@ Transition Framework会考虑当前场景内所有可见的View并计算需出�
 
 
 **附录**  
-本文转载自[https://www.jianshu.com/p/1b5212d84a15](https://www.jianshu.com/p/1b5212d84a15)  
+本文转载自  
 The address of the article in English：  
 [Material-Animations](https://github.com/lgvalle/Material-Animations) 
 
