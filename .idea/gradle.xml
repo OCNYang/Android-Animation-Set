@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/ripple-animation" />
             <option value="$PROJECT_DIR$/state-animation" />
             <option value="$PROJECT_DIR$/transition-animation" />
+            <option value="$PROJECT_DIR$/vector-animation" />
             <option value="$PROJECT_DIR$/view-animation" />
           </set>
         </option>

@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/ripple-animation/ripple-animation.iml" filepath="$PROJECT_DIR$/ripple-animation/ripple-animation.iml" />
       <module fileurl="file://$PROJECT_DIR$/state-animation/state-animation.iml" filepath="$PROJECT_DIR$/state-animation/state-animation.iml" />
       <module fileurl="file://$PROJECT_DIR$/transition-animation/transition-animation.iml" filepath="$PROJECT_DIR$/transition-animation/transition-animation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vector-animation/vector-animation.iml" filepath="$PROJECT_DIR$/vector-animation/vector-animation.iml" />
       <module fileurl="file://$PROJECT_DIR$/view-animation/view-animation.iml" filepath="$PROJECT_DIR$/view-animation/view-animation.iml" />
       <module fileurl="file://F:\github\AndroidAnimationSet\view-animation\viewanimation.iml" filepath="F:\github\AndroidAnimationSet\view-animation\viewanimation.iml" />
     </modules>

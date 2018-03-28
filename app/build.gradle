@@ -35,4 +35,5 @@ dependencies {
     implementation project(':reveal-animation')
     implementation project(':transition-animation')
     implementation project(':state-animation')
+    implementation project(':vector-animation')
 }
