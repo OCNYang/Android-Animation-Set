@@ -1,7 +1,7 @@
 # Android Animation Detailed Tutorial / Android 动画详尽教程
 
 * **中文讲解请直接点击对应标题**  
-* **English explanation(or readme),please click reminder address.**
+* **English explanation(or readme), Do not click on the title, please click on the tip address**
 
 ## Ⅰ. [View Animation / 视图动画](https://github.com/OCNYang/Android-Animation-Set/tree/master/view-animation)
 
