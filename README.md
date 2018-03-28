@@ -1,4 +1,7 @@
-# Android 动画详尽教程
+# Android Animation Detailed Tutorial / Android 动画详尽教程
+
+* **中文讲解请直接点击对应标题**  
+* **English explanation(or readme),please click reminder address.**
 
 ## Ⅰ. [View Animation / 视图动画](https://github.com/OCNYang/Android-Animation-Set/tree/master/view-animation)
 
@@ -22,7 +25,7 @@
 
 ## Ⅵ. [Transition Animation / 转场动画 & 共享元素](https://github.com/OCNYang/Android-Animation-Set/tree/master/transition-animation)
 
-[English explanation can go to read this article](http://anjithsasindran.in/blog/2015/08/15/material-sharing-card/)  
+[English explanation can go to read this readme](https://github.com/OCNYang/Android-Animation-Set/blob/master/transition-animation/README_EN.md)  
 
 ## Ⅶ. 视图状态动画
 
