@@ -6,14 +6,14 @@
 
 咱先看一下实现的一种效果图(点击时Z轴抬高):
 
-![点击时Z轴抬高]()  
+![点击时Z轴抬高](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/view_state_change_animation.gif?token=AQ83MkyhlHVruXxcDTI07XfPKKW_ja9Tks5axLfpwA%3D%3D)  
 
 ## 使用
 
 因为视图状态动画是在 View 不同的状态下产生的动画效果，所以我们先来看一下 View 都有哪些状态：  
 
 | State | 说明 |
-| :-------: | ------ | 
+| :------- | ------ | 
 | android:constantSize | If true, the drawable's reported internal size will remain constant as the state changes; the size is the maximum of all of the states. | 
 | android:state_activated | State value for StateListDrawable, set when a view or its parent has been "activated" meaning the user has currently marked it as being of interest. | 
 | android:state_active | State value for StateListDrawable. | 
