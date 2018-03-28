@@ -19,7 +19,7 @@ import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 
 public class ViewAnimationActivity extends AppCompatActivity {
-    public static final String TAG = "View Animation";
+    private static final String TAG = "View Animation";
     private View mPuppet;
 
     @Override

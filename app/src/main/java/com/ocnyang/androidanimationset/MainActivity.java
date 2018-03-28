@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity{
             }
         });
         mRecyclerView = ((RecyclerView) findViewById(R.id.recycler));
+        mRecyclerView.setFocusable(false);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         mRecyclerView.setNestedScrollingEnabled(false);
         mAdapter = new MyRecyclerViewAdapter(this,
