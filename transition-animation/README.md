@@ -24,9 +24,9 @@ Activity 或者 Fragment 的动画切换，但是他们仅仅局限与将整个�
 
 这里先看一张官方的效果图：  
 
-![共享元素转场动画]()  
+![共享元素转场动画](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_animation.gif?token=AQ83MnpsS0QFIfOphNBZ--ahkoxDvan1ks5axHvFwA%3D%3D)  
 
-![共享元素转场动画 过程细化]()  
+![共享元素转场动画 过程细化](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/SceneTransition.png?token=AQ83Mn28u76WmQPF2MNnecm8kmcNCzVbks5axHv_wA%3D%3D)  
 
 对转场动画更加详细的介绍可以查看[官方介绍](https://developer.android.com/training/transitions/index.html)。
 
@@ -44,7 +44,7 @@ Activity 或者 Fragment 的动画切换，但是他们仅仅局限与将整个�
 
 这里我们直接介绍通过 Transitions 实现的切换效果。
 
-![transition_A_to_B]()
+![transition_A_to_B](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_A_to_B.png?token=AQ83Mhs5y3VQZ-RwFXpL_62sYpQiKMOOks5axHwcwA%3D%3D)
 
 当从 Activity A 切换到  Activity B 的时候，Activity 布局的内容会按照预先定义好的动画来执行过渡动画。
 在 android.transition 包中，已经有三种现成的动画可以用: Explode，Slide 和 Fade。所有这些过渡都会跟踪 
@@ -52,7 +52,7 @@ Activity 布局中可见的目标 Views，驱动这些 Views 按照过渡的规�
 
 | Explode | Slide |　Fade　|
 | :-----: | :----: | :----: |
-| ![transition_explode]() | ![transition_slide]() | ![transition_fade]() |
+| ![transition_explode](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_explode.gif?token=AQ83Ml7jMuekilxc7547E0ytJLeYkm8wks5axHxcwA%3D%3D) | ![transition_slide](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_slide.gif?token=AQ83Mr2PgHwzU2Rkmqzeo9tvvrIRz36gks5axHx_wA%3D%3D) | ![transition_fade](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_fade.gif?token=AQ83Mn7qK6FrN9Yshyb0L0LHdWw04fMnks5axHyNwA%3D%3D) |
 
 你可以在 xml 中创建这些过渡效果，也可以通过代码来创建。对于 Fade 过渡效果来说，它看起来是这样子的：
 
@@ -152,7 +152,7 @@ Activity 布局中可见的目标 Views，驱动这些 Views 按照过渡的规�
 
 不管哪种创建方法都会产生如下的效果:
 
-![transition_fade]()
+![transition_fade](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_fade.gif?token=AQ83Mn7qK6FrN9Yshyb0L0LHdWw04fMnks5axHyNwA%3D%3D)
 
 **那么这里面一步一步的到底发生了什么:**  
 
@@ -180,7 +180,7 @@ Return and Reenter Transitions 是与进入和退出动画相对应的.
 如果 Return or Reenter 没有创建, Android 会把 Enter and Exit Transitions 反过来执行. 但是如果你创建了 
 Return or Reenter，那 Android 就会执行你创建的动画，并且这些动画可以不同.
 
-![b back a]()
+![b back a](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_B_to_A.png?token=AQ83MmuLIaE4S4KUdEuCNQmgFIaBjzX3ks5axHw1wA%3D%3D)
 
 我们可以修改下前面 Fade 的例子，给 TransitionActivity 创建 ReturnTransition。这里我们就拿 Slide 过渡效果来举例子。
 这样，如果我们从 B 返回到 A 的时候，B 就会执行一个 Slide 的过渡效果。
@@ -211,7 +211,7 @@ Return or Reenter，那 Android 就会执行你创建的动画，并且这些动
 | :-------------------: | :----------------: |
 | Enter: Fade In | Enter: Fade In | 
 | Exit: Fade Out | Exit: Slide out | 
-| ![transition_fade]() | ![transition_fade2]() | 
+| ![transition_fade](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_fade.gif?token=AQ83Mn7qK6FrN9Yshyb0L0LHdWw04fMnks5axHyNwA%3D%3D) | ![transition_fade2](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_fade2.gif?token=AQ83Mp57J5U15fqDFnimNrMgacq6hI_Tks5axHzDwA%3D%3D) | 
 
 
 
