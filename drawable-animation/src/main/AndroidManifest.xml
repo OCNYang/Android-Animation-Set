@@ -3,7 +3,8 @@
           package="com.ocnyang.drawableanimation">
 
     <application>
-        <activity android:name=".DrawableAnimationActivity">
+        <activity android:name=".DrawableAnimationActivity"
+            android:label="@string/module_drawable">
         </activity>
     </application>
 

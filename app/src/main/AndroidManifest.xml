@@ -16,10 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.ocnyang.rippleanimation.TouchFeedbackActivity"
-                  android:theme="@style/MyRippleAnimationTheme"/>
+        <activity
+            android:name="com.ocnyang.rippleanimation.TouchFeedbackActivity"
+            android:label="Touch Feedback"
+            android:theme="@style/MyRippleAnimationTheme"/>
 
-        <activity android:name="com.ocnyang.revealanimation.RevealEffectActivity">
+        <activity
+            android:name="com.ocnyang.revealanimation.RevealEffectActivity"
+            android:label="Reveal Effect">
         </activity>
     </application>
 

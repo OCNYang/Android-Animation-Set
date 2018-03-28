@@ -33,4 +33,5 @@ dependencies {
     implementation project(':property-animation')
     implementation project(':ripple-animation')
     implementation project(':reveal-animation')
+    implementation project(':transition-animation')
 }

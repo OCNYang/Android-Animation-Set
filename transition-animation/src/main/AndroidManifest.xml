@@ -1,2 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.ocnyang.transitionanimation"/>
+          package="com.ocnyang.transitionanimation">
+
+    <application>
+        <activity android:name=".TransitionAnimationActivity"
+            android:label="@string/module_transition">
+        </activity>
+    </application>
+
+</manifest>

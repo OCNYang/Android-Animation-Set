@@ -1,5 +1,8 @@
 # Ⅵ. Transition Animation / 转场动画 & 共享元素
 
+> 本节暂时未提供 Demo,如果想查看相关代码可以先参考项目 [Material-Animations](https://github.com/lgvalle/Material-Animations) .  
+Material-Animations 项目的作者虽早已停止维护这个项目，但相关代码还能够参考。我也会尽快补上最新的 Demo。
+
 ## 1. 什么是 Transition?
 
 安卓 5.0 中 Activity 和 Fragment 变换是建立在名叫 Transitions 的安卓新特性之上的。这个诞生于 4.4 的 transition 框架
