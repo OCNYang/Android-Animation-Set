@@ -29,4 +29,7 @@
 
 ## Ⅶ. [Animate View State Changes / 视图状态动画](https://github.com/OCNYang/Android-Animation-Set/tree/master/state-animation)
 
+[English explanation can go to read ](https://developer.android.com/training/material/animations.html)
+[**StateListAnimator**](https://developer.android.com/reference/android/animation/StateListAnimator.html) and [**StateListDrawable**](https://developer.android.com/reference/android/graphics/drawable/StateListDrawable.html)
+
 ## Ⅷ. 矢量图动画
