@@ -218,5 +218,219 @@ Return or Reenter，那 Android 就会执行你创建的动画，并且这些动
 | ![transition_fade](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_fade.gif?token=AQ83Mn7qK6FrN9Yshyb0L0LHdWw04fMnks5axHyNwA%3D%3D) | ![transition_fade2](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_fade2.gif?token=AQ83Mp57J5U15fqDFnimNrMgacq6hI_Tks5axHzDwA%3D%3D) | 
 
 
+## 3. Activity 之间共享元素 (Share Elements)
+
+这里的思想就是通过动画的形式将两个不同布局中的两个不同的View联系起来。  
+然后 Transition framework 就会在用户从一个View切换到另一个View的时候给用户展现一些必要的动画。  
+但你要记住:发生动画的View并不是从一个布局中移动到另一个布局。他们是两个独立的View。
+
+![A Start B with shared]()  
+
+### 3_a 设置 Window Content Transition 属性
+
+你需要在 app 的 `styles.xml` 中进行设置.[ps]我没有设置也没问题
+
+`values/styles.xml`
+
+    <style name="MaterialAnimations" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        ...
+        <item name="android:windowContentTransitions">true</item
+        ...
+    </style>
+
+如果你愿意的话，你也可以给整个app设置一个默认的转场动画和共享元素动画。
+
+    <style name="MaterialAnimations" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        ...
+        <!-- specify enter and exit transitions -->
+        <item name="android:windowEnterTransition">@transition/explode</item>
+        <item name="android:windowExitTransition">@transition/explode</item>
+    
+        <!-- specify shared element transitions -->
+        <item name="android:windowSharedElementEnterTransition">@transition/changebounds</item>
+        <item name="android:windowSharedElementExitTransition">@transition/changebounds</item>
+        ...
+    </style>
+
+### 3_b 设置相同的 transition name
+
+为了使共享元素动画生效，你需要给共享元素的两个View设置相同的android:transitionName属性值。不过他们的id和其他属性可以不同。
+
+`layout/activity_a.xml`
+
+    <ImageView
+        android:id="@+id/small_blue_icon"
+        style="@style/MaterialAnimations.Icon.Small"
+        android:src="@drawable/circle"
+        android:transitionName="@string/blue_name" />
+        
+`layout/activity_b.xml`
+
+    <ImageView
+        android:id="@+id/big_blue_icon"
+        style="@style/MaterialAnimations.Icon.Big"
+        android:src="@drawable/circle"
+        android:transitionName="@string/blue_name" />
+    
+### 3_c 用共享元素来启动 activity
+
+使用 `ActivityOptions.makeSceneTransitionAnimation()` 方法指定要共享元素的 View 和 
+`android:transitionName` 属性的值
+
+`MainActivity.java`
+
+    blueIconImageView.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent i = new Intent(MainActivity.this, SharedElementActivity.class);
+    
+            View sharedView = blueIconImageView;
+            String transitionName = getString(R.string.blue_name);
+    
+            ActivityOptions transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, sharedView, transitionName);
+            startActivity(i, transitionActivityOptions.toBundle());
+        }
+    });
+
+这样就可以有下面漂亮的过渡效果了:
+
+![a to b with shared element]()  
+
+可以看到, Transition framework 创建并执行了一个动画。动画的视觉效果就是一个View从一个activity移动到另一个activity中
+并伴随着形状的变化。
+
+## 4. 在 fragment 之间实现 Shared elements 过渡动画
+
+这个activity中的做法几乎是一样的。
+
+步骤 a) 和步骤 b)完全一样， 只有步骤 c)有点区别
+
+### 4_c 启动带有共享元素的 fragment
+
+在你使用 FragmentTransaction 启动 fragment 的时候，你需要同时带上共享元素过渡动画的先关信息。
+
+    FragmentB fragmentB = FragmentB.newInstance(sample);
+    
+    // Defines enter transition for all fragment views
+    Slide slideTransition = new Slide(Gravity.RIGHT);
+    slideTransition.setDuration(1000);
+    sharedElementFragment2.setEnterTransition(slideTransition);
+    
+    // Defines enter transition only for shared element
+    ChangeBounds changeBoundsTransition = TransitionInflater.from(this).inflateTransition(R.transition.change_bounds);
+    fragmentB.setSharedElementEnterTransition(changeBoundsTransition);
+    
+    getFragmentManager().beginTransaction()
+            .replace(R.id.content, fragmentB)
+            .addSharedElement(blueView, getString(R.string.blue_name))
+            .commit();
+        
+最终的效果就是这样的:
+
+![shared_element_no_overlap]()
+
+## 5. 允许过渡效果之间的重叠
+
+You can define if enter and exit transitions can overlap each other.  
+你可以设置一个 activity 的退出效果和另一个 activity 的进入效果产生重叠部分。
+
+[Android 文档](https://developer.android.com/reference/android/app/Fragment.html?hl=ko#getAllowEnterTransitionOverlap()) 这么说的:
+
+> 当设置为 true, enter transition 会立马执行>
+> 当设置为 false, enter transition 会等到退出 exit transition 结束后再执行.
+
+这对Fragments和Activities的共享元素过渡效果都是有用的。
+
+    FragmentB fragmentB = FragmentB.newInstance(sample);
+    
+    // Defines enter transition for all fragment views
+    Slide slideTransition = new Slide(Gravity.RIGHT);
+    slideTransition.setDuration(1000);
+    sharedElementFragment2.setEnterTransition(slideTransition);
+    
+    // Defines enter transition only for shared element
+    ChangeBounds changeBoundsTransition = TransitionInflater.from(this).inflateTransition(R.transition.change_bounds);
+    fragmentB.setSharedElementEnterTransition(changeBoundsTransition);
+    
+    // Prevent transitions for overlapping
+    fragmentB.setAllowEnterTransitionOverlap(overlap);
+    fragmentB.setAllowReturnTransitionOverlap(overlap);
+    
+    getFragmentManager().beginTransaction()
+            .replace(R.id.content, fragmentB)
+            .addSharedElement(blueView, getString(R.string.blue_name))
+            .commit();
+        
+可以看到，效果还是挺明显的:
+
+| Overlap True | Overlap False |
+| :-----------: | :----------: |
+| Fragment_2 出现在Fragment_1的上面 | Fragment_2 等到Fragment_1消失后才出现 | 
+| ![shared_element_overlap]() | ![shared_element_no_overlap]() | 
+
+## 6. 布局元素动画
+
+### 6_1 Scenes (场景)  
+
+也可以用来驱动一个activity中的布局发生变化时，让其中的View产生过渡动画。
+
+过渡效果发生在场景之间。场景就是一个定义了静态UI的普通布局。Transition Framework可以在两个场景之间添加切换过渡动画。
+
+    scene1 = Scene.getSceneForLayout(sceneRoot, R.layout.activity_animations_scene1, this);
+    scene2 = Scene.getSceneForLayout(sceneRoot, R.layout.activity_animations_scene2, this);
+    scene3 = Scene.getSceneForLayout(sceneRoot, R.layout.activity_animations_scene3, this);
+    scene4 = Scene.getSceneForLayout(sceneRoot, R.layout.activity_animations_scene4, this);
+    
+    (...)
+    
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button1:
+                TransitionManager.go(scene1, new ChangeBounds());
+                break;
+            case R.id.button2:
+                TransitionManager.go(scene2, TransitionInflater.from(this).inflateTransition(R.transition.slide_and_changebounds));
+                break;
+            case R.id.button3:
+                TransitionManager.go(scene3, TransitionInflater.from(this).inflateTransition(R.transition.slide_and_changebounds_sequential));
+                break;
+            case R.id.button4:
+                TransitionManager.go(scene4, TransitionInflater.from(this).inflateTransition(R.transition.slide_and_changebounds_sequential_with_interpolators));
+                break;  
+        }
+    }
+
+上面的代码会在同一个activity中的4个场景切换时产生过渡动画。每一次切花的动画都是不一样的。
+
+Transition Framework会考虑当前场景内所有可见的View并计算需出需要的动画来安排两个场景之间的view的位置。
+
+![scenes_anim]()
+
+### 6_2 布局的改变
+
+也可以用来给布局属性的变化加上过渡效果。你只需要做你想要的改变然后其他的就交给Transition Framework，它会为你添加动画。
+
+**a) 开启演示过渡效果**
+
+下面这行代码告诉framework我们将要对UI进行一些改变，请你给我加上过渡效果。
+
+    TransitionManager.beginDelayedTransition(sceneRoot);
+
+**b) 改变布局参数**  
+
+    ViewGroup.LayoutParams params = greenIconView.getLayoutParams();
+    params.width = 200;
+    greenIconView.setLayoutParams(params);
+
+改变View的宽度属性让他变小，这会触发layoutMeasure。这个点上，Transition framework会记录开始和结束时的相关值，
+并给这个变化加上过渡效果。
+
+![view layout animation]()
+
+
+
+**附录**  
+本文转载自[https://www.jianshu.com/p/1b5212d84a15](https://www.jianshu.com/p/1b5212d84a15)
 
 
