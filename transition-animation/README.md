@@ -433,11 +433,7 @@ Transition Framework会考虑当前场景内所有可见的View并计算需出�
 **附录**  
 本文转载自[https://www.jianshu.com/p/1b5212d84a15](https://www.jianshu.com/p/1b5212d84a15)  
 The address of the article in English：  
-[Alex Lockwood posts about Transition Framework. A great in deep into this topic](http://www.androiddesignpatterns.com/2014/12/activity-fragment-transitions-in-android-lollipop-part1.html)  
-
-[Amazing repository with lot of Material Design samples by Saul Molinero](https://github.com/saulmm/Android-Material-Examples)  
-
-[Chet Hasse video explaining Transition framework](https://www.youtube.com/watch?v=S3H7nJ4QaD8)  
+[Material-Animations](https://github.com/lgvalle/Material-Animations) 
 
 
 
