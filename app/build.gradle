@@ -34,4 +34,5 @@ dependencies {
     implementation project(':ripple-animation')
     implementation project(':reveal-animation')
     implementation project(':transition-animation')
+    implementation project(':state-animation')
 }
