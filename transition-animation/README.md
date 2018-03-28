@@ -224,7 +224,7 @@ Return or Reenter，那 Android 就会执行你创建的动画，并且这些动
 然后 Transition framework 就会在用户从一个View切换到另一个View的时候给用户展现一些必要的动画。  
 但你要记住:发生动画的View并不是从一个布局中移动到另一个布局。他们是两个独立的View。
 
-![A Start B with shared]()  
+![A Start B with shared](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/shared_element.png?token=AQ83Mvh-_twlcYFredjHZjl6mYeTMskZks5axIYXwA%3D%3D)  
 
 ### 3_a 设置 Window Content Transition 属性
 
@@ -294,7 +294,7 @@ Return or Reenter，那 Android 就会执行你创建的动画，并且这些动
 
 这样就可以有下面漂亮的过渡效果了:
 
-![a to b with shared element]()  
+![a to b with shared element](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/shared_element_anim.gif?token=AQ83MlHk7M9_AVjW54jAMd9pWMrDXmzQks5axI2wwA%3D%3D)  
 
 可以看到, Transition framework 创建并执行了一个动画。动画的视觉效果就是一个View从一个activity移动到另一个activity中
 并伴随着形状的变化。
@@ -327,7 +327,7 @@ Return or Reenter，那 Android 就会执行你创建的动画，并且这些动
         
 最终的效果就是这样的:
 
-![shared_element_no_overlap]()
+![shared_element_no_overlap](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/shared_element_no_overlap.gif?token=AQ83MggDmMsVVZXZIzq8QR4MrDkNioWDks5axI3LwA%3D%3D)
 
 ## 5. 允许过渡效果之间的重叠
 
@@ -366,7 +366,7 @@ You can define if enter and exit transitions can overlap each other.
 | Overlap True | Overlap False |
 | :-----------: | :----------: |
 | Fragment_2 出现在Fragment_1的上面 | Fragment_2 等到Fragment_1消失后才出现 | 
-| ![shared_element_overlap]() | ![shared_element_no_overlap]() | 
+| ![shared_element_overlap](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/shared_element_overlap.gif?token=AQ83Mp2_73_X0IHlShlWuyTLD6oWqswJks5axI3qwA%3D%3D) | ![shared_element_no_overlap](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/shared_element_no_overlap.gif?token=AQ83MggDmMsVVZXZIzq8QR4MrDkNioWDks5axI3LwA%3D%3D) | 
 
 ## 6. 布局元素动画
 
@@ -405,7 +405,7 @@ You can define if enter and exit transitions can overlap each other.
 
 Transition Framework会考虑当前场景内所有可见的View并计算需出需要的动画来安排两个场景之间的view的位置。
 
-![scenes_anim]()
+![scenes_anim](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/scenes_anim.gif?token=AQ83Mtdyms3whHdwFywgrs2DIFVbloupks5axI4CwA%3D%3D)
 
 ### 6_2 布局的改变
 
@@ -426,7 +426,7 @@ Transition Framework会考虑当前场景内所有可见的View并计算需出�
 改变View的宽度属性让他变小，这会触发layoutMeasure。这个点上，Transition framework会记录开始和结束时的相关值，
 并给这个变化加上过渡效果。
 
-![view layout animation]()
+![view layout animation](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/view_layout_anim.gif?token=AQ83Mv91EWsQVDHAy8cdj0x3WPdc7ldOks5axI4bwA%3D%3D)
 
 
 
