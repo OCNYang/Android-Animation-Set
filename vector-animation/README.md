@@ -141,8 +141,8 @@ VectorDrawable 一般是以 `<vector>` 为根标签定义的 XML 文件，`<vect
 
 类型说明：  
 * src_in 只显示设置的遮罩颜色。 相当于遮罩在里面。 
-* src_over遮罩颜色和图片都显示。相当于遮罩在图片上方。(特别是色值带透明度的) 
-* src_atop遮罩在图片上方 
+* src_over 遮罩颜色和图片都显示。相当于遮罩在图片上方。(特别是色值带透明度的) 
+* src_atop 遮罩在图片上方 
 * multiply 混合色遮罩 
 
 screen  
@@ -168,3 +168,126 @@ add 混合遮罩，drawable 颜色和透明度。
          </group>
     </vector>
 
+
+##　2. AnimatedVectorDrawable
+
+我们还可以用 AnimatedVectorDrawable　给矢量图添加动画。AnimatedVectorDawable　可以实现一些很特别的效果，对　VectorDrawable　里的　pathData　做动画，
+可以从一个图形渐变到另一个图形，比如　Material Design　里的　toolbar icon；对　trimPathStart、trimPathEnd　做动画，可以得到图形的绘制轨迹。
+
+AnimatedVectorDrawable　通过　ObjectAnimator　或　AnimatorSet　对　VectorDrawable　的某个属性作一个矢量资源的动画。
+
+你通常在三个　XML　文件中定义矢量资源的动画载体：
+
+* `<vector>` 元素的矢量资源，在 res/drawable/(文件夹)
+* `<animated-vector>` 元素的矢量资源动画，在 res/drawable/(文件夹)
+* `<objectAnimator>` 元素的一个或多个对象动画器，在 res/animator/(文件夹)
+
+矢量资源动画能创建  `<group>` 和 `<path>` 元素属性的动画。`<group>` 元素定义了一组路径或子组，并且 `<path>` 元素定义了要被绘制的路径。
+
+当你想要创建动画时去定义矢量资源，使用 `android:name` 属性分配一个唯一的名字给组和路径，这样你可以从你的动画定义中查询到它们。
+
+从 API-25 开始，AnimatedVectorDrawable 运行在 RenderThread (相反地，早期 API 是运行在 UI 线程)。这也就是说 AnimatedVectorDrawable 在UI线程繁忙时也能保持流畅运行。
+
+如果UI线程没有反应，RenderThread 会持续动画计算，直到UI线程有能力推进下一帧。因此，没有办法准确地同步 RenderThread-enabled 的 
+AnimatedVectorDrawable 和 UI 线程中的 Animations。此外，`Animatable2.AnimationCallback.onAnimationEnd(drawable)` 
+肯定会在 RenderThread 渲染完 AnimatedVectorDrawable 最后一帧时被调用。
+
+AnimatedVectorDrawable 可以被定义在三个XML文件或一个XML中。
+
+**定义在一个文件中:**
+
+[]()
+
+**定义在 3 个文件中**  
+
+`animated-vector 代码(drawable 是对应的 vector 矢量图资源)`  
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+                     android:drawable="@drawable/vectordrawable">
+        <target
+            android:name="rotationGroup"
+            android:animation="@animator/rotation"/>
+        <target
+            android:name="v"
+            android:animation="@animator/path_morph"/>
+    </animated-vector>
+    
+`rotation 代码`
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <set xmlns:android="http://schemas.android.com/apk/res/android">
+        <objectAnimator
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:duration="6000"
+            android:propertyName="rotation"
+            android:valueFrom="0"
+            android:valueTo="360"/>
+    </set>
+    
+`path_morph 代码`
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <set xmlns:android="http://schemas.android.com/apk/res/android">
+        <objectAnimator
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:duration="3000"
+            android:propertyName="pathData"
+            android:valueFrom="M300,70 l 0,-70 70,70 0,0   -70,70z"
+            android:valueTo="M300,70 l 0,-70 70,0  0,140 -70,0 z"
+            android:valueType="pathType"/>
+    </set>
+
+
+
+AnimatedVectorDrawable 主要方法有：
+
+    void draw(Canvas canvas)
+    //Draws the AnimatedVectorDrawable into the given canvas. 
+    
+    int getOpacity()
+    //Return the opacity/transparency of this Drawable. 
+    
+    int getAlpha()
+    //For API 25 and later, AnimatedVectorDrawable runs on RenderThread. 
+    
+    void setAlpha(int alpha)
+    //Specify an alpha value for the drawable. 
+    
+    boolean setVisible(boolean visible, boolean restart)
+    //Set whether this Drawable is visible.
+    
+    int getIntrinsicHeight()
+    //Returns the drawable's intrinsic height.
+    
+    int getIntrinsicWidth()
+    //Returns the drawable's intrinsic width. 
+    
+    Drawable mutate()
+    //Make this drawable mutable. 
+    
+    boolean isRunning()
+    //Indicates whether the animation is running.
+    
+    void reset()
+    //Resets the AnimatedVectorDrawable to the start state as specified in the animators.
+    
+    void start()
+    //Starts the drawable's animation.
+    
+    void stop()
+    //Stops the drawable's animation.
+    
+    void clearAnimationCallbacks()
+    //Removes all existing animation callbacks. 
+    
+    boolean unregisterAnimationCallback(Animatable2.AnimationCallback callback)
+    //Removes the specified animation callback. 
+
+代码中使用：
+
+    mImageView.setImageResource(R.drawable.animated_vector);
+    Drawable drawable = mImageView.getDrawable();
+    if (drawable instanceof Animatable) {
+        ((Animatable) drawable).start();
+    }
