@@ -85,7 +85,7 @@ xml文件：你可以改成任意一种objectAnimator动画。 这里使用的�
 
 ### AnimatedStateListDrawable
 
-xml布局：这个效果有点意思（ps:但没卵用啊，目前我是没有发现那种场景可以使用）   
+xml布局：这个效果有点意思（ps:但没卵用啊，目前我是没有发现适合哪种场景使用）   
 当你是 pressed 状态的时候 animation-list 正着走一遍，drawable 使用最后一个。  
 当你是 default 状态时 animation-list 反着走一遍，drawable 使用第一个。
 
