@@ -33,3 +33,7 @@
 [**StateListAnimator**](https://developer.android.com/reference/android/animation/StateListAnimator.html) and [**StateListDrawable**](https://developer.android.com/reference/android/graphics/drawable/StateListDrawable.html)
 
 ## Ⅷ. [AnimatedVectorDrawable / 矢量图动画](https://github.com/OCNYang/Android-Animation-Set/tree/master/vector-animation)
+
+[English explanation can go to read this article](https://www.androiddesignpatterns.com/2016/11/introduction-to-icon-animation-techniques.html) 
+or [AnimatedVectorDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html) 
+or [VectorDrawable](https://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html?hl=zh-cn)

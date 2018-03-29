@@ -3,7 +3,9 @@
           package="com.ocnyang.stateanimation">
 
     <application>
-        <activity android:name=".StateAnimationActivity">
+        <activity
+            android:name=".StateAnimationActivity"
+            android:label="module_state">
         </activity>
     </application>
 

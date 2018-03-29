@@ -333,3 +333,7 @@ S命令前面必须是一个C命令，或者是另一个S命令，才能达到�
   
 [SVG 贝塞尔曲线参考一](http://justcoding.iteye.com/blog/2226354)  
 [SVG 贝塞尔曲线参考二](http://www.zhangxinxu.com/wordpress/2014/06/deep-understand-svg-path-bezier-curves-command/)
+
+
+**附录**  
+本文摘录自：[原文地址](https://blog.csdn.net/nemo__/article/details/71099839)

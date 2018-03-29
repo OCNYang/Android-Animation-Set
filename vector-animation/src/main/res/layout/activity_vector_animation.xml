@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.ocnyang.stateanimation.StateAnimationActivity">
+    tools:context="com.ocnyang.vectoranimation.VectorAnimationActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -15,34 +15,35 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"/>
 
-    <TextView
-        android:id="@+id/view_puppet1"
-        android:layout_width="200dp"
-        android:layout_height="80dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="15dp"
-        android:background="@android:color/white"
-        android:clickable="true"
-        android:stateListAnimator="@anim/anim_view_state_change"/>
-
-    <TextView
-        android:id="@+id/view_puppet2"
-        android:layout_width="200dp"
-        android:layout_height="80dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="15dp"
-        android:background="@android:color/white"
-        android:clickable="true"/>
-
     <ImageView
-        android:id="@+id/view_puppet3"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:id="@+id/iv_puppet1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="15dp"
-        android:background="@drawable/bg_animated_statelist_drawable"
-        android:clickable="true"
+        android:layout_margin="20dp"
+        android:background="@android:color/white"
+        android:src="@drawable/animated_vector"
+        android:tint="?attr/colorAccent"
         android:translationZ="3dp"/>
 
+    <ImageView
+        android:id="@+id/iv_puppet2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:background="@android:color/white"
+        android:tint="?attr/colorAccent"
+        android:translationZ="3dp"/>
+
+    <ImageView
+        android:id="@+id/iv_puppet3"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:background="@android:color/white"
+        android:src="@drawable/avd_endless_pin_jump"
+        android:translationZ="3dp"/>
 
 </LinearLayout>

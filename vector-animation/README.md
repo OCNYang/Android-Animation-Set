@@ -291,3 +291,6 @@ AnimatedVectorDrawable 主要方法有：
     if (drawable instanceof Animatable) {
         ((Animatable) drawable).start();
     }
+
+**附录**  
+本文摘录自：[原文地址](https://blog.csdn.net/nemo__/article/details/71099839)

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2016 Google Inc.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+       http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+
+    <aapt:attr name="android:drawable">
+
+        <vector
+            android:width="400dp"
+            android:height="300dp"
+            android:viewportHeight="600"
+            android:viewportWidth="800">
+
+            <path
+                android:name="horizon"
+                android:pathData="M189,409.5C189,409.5 294.7,409.6 411.2,409.5C527.8,409.4 649.2,409 649.2,409"
+                android:strokeColor="#E2E2E2"
+                android:strokeLineCap="square"
+                android:strokeWidth="1" />
+
+            <group android:name="dots">
+
+                <path
+                    android:name="dot_1"
+                    android:fillColor="@color/dot"
+                    android:pathData="M363.5 409a9.5 9.5 0 0 1 -9.5 9.5 9.5 9.5 0 0 1 -9.5 -9.5 9.5 9.5 0 0 1 9.5 -9.5 9.5 9.5 0 0 1 9.5 9.5z" />
+
+                <path
+                    android:name="dot_2"
+                    android:fillColor="@color/dot"
+                    android:pathData="M600 409a9.5 9.5 0 0 1 -9.5 9.5 9.5 9.5 0 0 1 -9.5 -9.5 9.5 9.5 0 0 1 9.5 -9.5 9.5 9.5 0 0 1 9.5 9.5z" />
+
+                <path
+                    android:name="dot_3"
+                    android:fillColor="@color/pin"
+                    android:pathData="M843.5 409A16.5 16.5 0 0 1 827 425.5 16.5 16.5 0 0 1 810.5 409 16.5 16.5 0 0 1 827 392.5 16.5 16.5 0 0 1 843.5 409Z" />
+
+                <path
+                    android:name="dot_4"
+                    android:fillColor="@color/dot"
+                    android:pathData="M1073 409a9.5 9.5 0 0 1 -9.5 9.5 9.5 9.5 0 0 1 -9.5 -9.5 9.5 9.5 0 0 1 9.5 -9.5 9.5 9.5 0 0 1 9.5 9.5z" />
+
+                <path
+                    android:name="dot_5"
+                    android:fillColor="@color/dot"
+                    android:pathData="M1319.5 409a9.5 9.5 0 0 1 -9.5 9.5 9.5 9.5 0 0 1 -9.5 -9.5 9.5 9.5 0 0 1 9.5 -9.5 9.5 9.5 0 0 1 9.5 9.5z" />
+
+            </group>
+
+            <path
+                android:name="pin"
+                android:fillColor="@color/pin"
+                android:pathData="@string/pin_path_1" />
+
+        </vector>
+
+    </aapt:attr>
+
+    <target android:name="pin">
+
+        <aapt:attr name="android:animation">
+
+            <!-- This anim makes the pin jump 3 times. Each jump is performed by morphing the path
+                 of the pin between 5 different 'poses'. -->
+
+            <set android:ordering="sequentially">
+
+                <!-- Jump 1 -->
+
+                <objectAnimator
+                    android:duration="120"
+                    android:interpolator="@android:interpolator/linear_out_slow_in"
+                    android:propertyName="pathData"
+                    android:valueFrom="@string/pin_path_1"
+                    android:valueTo="@string/pin_path_5"
+                    android:valueType="pathType" />
+
+                <objectAnimator
+                    android:duration="120"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="pathData"
+                    android:valueFrom="@string/pin_path_5"
+                    android:valueTo="@string/pin_path_9"
+                    android:valueType="pathType" />
+
+                <objectAnimator
+                    android:duration="120"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="pathData"
+                    android:valueFrom="@string/pin_path_9"
+                    android:valueTo="@string/pin_path_13"
+                    android:valueType="pathType" />
+
+                <objectAnimator
+                    android:duration="150"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="pathData"
+                    android:valueFrom="@string/pin_path_13"
+                    android:valueTo="@string/pin_path_19"
+                    android:valueType="pathType" />
+
+                <objectAnimator
+                    android:duration="180"
+                    android:interpolator="@android:interpolator/fast_out_linear_in"
+                    android:propertyName="pathData"
+                    android:valueFrom="@string/pin_path_19"
+                    android:valueTo="@string/pin_path_1"
+                    android:valueType="pathType" />
+
+                <!-- Jump 2 -->
+
+                <objectAnimator
+                    android:duration="120"
+                    android:interpolator="@android:interpolator/linear_out_slow_in"
+                    android:propertyName="pathData"
+                    android:valueFrom="@string/pin_path_1"
+                    android:valueTo="@string/pin_path_5"
+                    android:valueType="pathType" />
+
+                <objectAnimator
+                    android:duration="120"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="pathData"
+                    android:valueFrom="@string/pin_path_5"
+                    android:valueTo="@string/pin_path_9"
+                    android:valueType="pathType" />
+
+                <objectAnimator
+                    android:duration="120"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="pathData"
+                    android:valueFrom="@string/pin_path_9"
+                    android:valueTo="@string/pin_path_13"
+                    android:valueType="pathType" />
+
+                <objectAnimator
+                    android:duration="150"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="pathData"
+                    android:valueFrom="@string/pin_path_13"
+                    android:valueTo="@string/pin_path_19"
+                    android:valueType="pathType" />
+
+                <objectAnimator
+                    android:duration="180"
+                    android:interpolator="@android:interpolator/fast_out_linear_in"
+                    android:propertyName="pathData"
+                    android:valueFrom="@string/pin_path_19"
+                    android:valueTo="@string/pin_path_1"
+                    android:valueType="pathType" />
+
+                <!-- Jump 3 -->
+
+                <objectAnimator
+                    android:duration="120"
+                    android:interpolator="@android:interpolator/linear_out_slow_in"
+                    android:propertyName="pathData"
+                    android:valueFrom="@string/pin_path_1"
+                    android:valueTo="@string/pin_path_5"
+                    android:valueType="pathType" />
+
+                <objectAnimator
+                    android:duration="120"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="pathData"
+                    android:valueFrom="@string/pin_path_5"
+                    android:valueTo="@string/pin_path_9"
+                    android:valueType="pathType" />
+
+                <objectAnimator
+                    android:duration="120"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="pathData"
+                    android:valueFrom="@string/pin_path_9"
+                    android:valueTo="@string/pin_path_13"
+                    android:valueType="pathType" />
+
+                <objectAnimator
+                    android:duration="150"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="pathData"
+                    android:valueFrom="@string/pin_path_13"
+                    android:valueTo="@string/pin_path_19"
+                    android:valueType="pathType" />
+
+                <objectAnimator
+                    android:duration="180"
+                    android:interpolator="@android:interpolator/fast_out_linear_in"
+                    android:propertyName="pathData"
+                    android:valueFrom="@string/pin_path_19"
+                    android:valueTo="@string/pin_path_1"
+                    android:valueType="pathType" />
+
+            </set>
+
+        </aapt:attr>
+
+    </target>
+
+    <target android:name="dots">
+
+        <aapt:attr name="android:animation">
+
+            <!-- This animation moves the dots leftward. The trick is that there are actually 5 dots
+                 in the image (2 grey, a red then 2 more grey). By correctly timing the loop this
+                 makes it look like an uninterrupted sequence. -->
+
+            <objectAnimator
+                android:duration="2070"
+                android:interpolator="@android:interpolator/linear"
+                android:propertyName="translateX"
+                android:valueFrom="0"
+                android:valueTo="-710" />
+
+        </aapt:attr>
+
+    </target>
+
+    <target android:name="dot_1">
+
+        <aapt:attr name="android:animation">
+
+            <!-- Fade out dot 1 as it exits the scene -->
+
+            <objectAnimator
+                android:duration="60"
+                android:interpolator="@android:interpolator/linear"
+                android:propertyName="fillAlpha"
+                android:startOffset="460"
+                android:valueFrom="1"
+                android:valueTo="0" />
+
+        </aapt:attr>
+
+    </target>
+
+    <target android:name="dot_2">
+
+        <aapt:attr name="android:animation">
+
+            <!-- Fade out dot 2 as it exits the scene -->
+
+            <objectAnimator
+                android:duration="60"
+                android:interpolator="@android:interpolator/linear"
+                android:propertyName="fillAlpha"
+                android:startOffset="1150"
+                android:valueFrom="1"
+                android:valueTo="0" />
+
+        </aapt:attr>
+
+    </target>
+
+    <target android:name="dot_3">
+
+        <aapt:attr name="android:animation">
+
+            <!-- Fade dot 3 in as it enters the scene and out as it exits -->
+
+            <set>
+
+                <objectAnimator
+                    android:duration="60"
+                    android:interpolator="@android:interpolator/linear"
+                    android:propertyName="fillAlpha"
+                    android:startOffset="420"
+                    android:valueFrom="0"
+                    android:valueTo="1" />
+
+                <objectAnimator
+                    android:duration="60"
+                    android:interpolator="@android:interpolator/linear"
+                    android:propertyName="fillAlpha"
+                    android:startOffset="1840"
+                    android:valueFrom="1"
+                    android:valueTo="0" />
+
+            </set>
+
+        </aapt:attr>
+
+    </target>
+
+    <target android:name="dot_4">
+
+        <aapt:attr name="android:animation">
+
+            <!-- Fade dot 4 in as it enters the scene -->
+
+            <objectAnimator
+                android:name="dot_4"
+                android:duration="60"
+                android:interpolator="@android:interpolator/linear"
+                android:propertyName="fillAlpha"
+                android:startOffset="1110"
+                android:valueFrom="0"
+                android:valueTo="1" />
+
+        </aapt:attr>
+
+    </target>
+
+    <target android:name="dot_5">
+
+        <aapt:attr name="android:animation">
+
+            <!-- Fade dot 5 in as it enters the scene -->
+
+            <objectAnimator
+                android:name="dot_5"
+                android:duration="60"
+                android:interpolator="@android:interpolator/linear"
+                android:propertyName="fillAlpha"
+                android:startOffset="1800"
+                android:valueFrom="0"
+                android:valueTo="1" />
+
+        </aapt:attr>
+
+    </target>
+
+</animated-vector>
