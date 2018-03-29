@@ -36,4 +36,4 @@
 
 [English explanation can go to read this article](https://www.androiddesignpatterns.com/2016/11/introduction-to-icon-animation-techniques.html) 
 or [AnimatedVectorDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html) 
-or [VectorDrawable](https://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html?hl=zh-cn)
+or [VectorDrawable](https://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html)
