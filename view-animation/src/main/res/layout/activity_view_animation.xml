@@ -11,17 +11,20 @@
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:background="?attr/colorPrimary"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
         android:id="@+id/view_puppet"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@android:color/white"
+        android:padding="20dp"
         android:src="@drawable/ic_taiji"
+        android:translationZ="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -30,13 +33,12 @@
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btn_doit"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/do_btn_bg"
+        android:text="Do it"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:text="Do it"
-        android:background="@drawable/do_btn_bg"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="30dp"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintRight_toRightOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -34,8 +34,8 @@
             android:pivotY="50%"
             android:repeatCount="2"
             android:repeatMode="reverse"
-            android:toXScale="4.0"
-            android:toYScale="4.0"/>
+            android:toXScale="2.0"
+            android:toYScale="2.0"/>
         <translate
             android:duration="2000"
             android:fillAfter="true"

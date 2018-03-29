@@ -1,6 +1,5 @@
 package com.ocnyang.viewanimation;
 
-import android.graphics.drawable.AnimatedVectorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -141,8 +140,8 @@ public class ViewAnimationActivity extends AppCompatActivity {
     }
 
     private Animation getScaleAnimation() {
-        ScaleAnimation scaleAnimation = new ScaleAnimation(1f, 4f,
-                1f, 4f,
+        ScaleAnimation scaleAnimation = new ScaleAnimation(1f, 2f,
+                1f, 2f,
                 getWidth() / 2, getHeight() / 2);
         scaleAnimation.setDuration(2000);
         scaleAnimation.setRepeatCount(2);

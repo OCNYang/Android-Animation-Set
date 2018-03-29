@@ -9,12 +9,12 @@
         android:topLeftRadius="40dp"
         android:topRightRadius="40dp"/>
 
-    <gradient
-        android:centerColor="?attr/colorPrimaryDark"
-        android:endColor="?attr/colorAccent"
-        android:startColor="?attr/colorPrimary"
-        android:type="linear"
-        android:angle="0.3"/>
+    <!--<gradient-->
+    <!--android:centerColor="?attr/colorPrimaryDark"-->
+    <!--android:endColor="?attr/colorAccent"-->
+    <!--android:startColor="?attr/colorPrimary"-->
+    <!--android:type="linear"-->
+    <!--android:angle="0.3"/>-->
 
     <padding
         android:bottom="5dp"
@@ -22,7 +22,6 @@
         android:right="20dp"
         android:top="5dp"/>
 
-    <!--<solid-->
-    <!--android:color="?attr/colorAccent"/>-->
-
+    <solid
+        android:color="@android:color/white"/>
 </shape>

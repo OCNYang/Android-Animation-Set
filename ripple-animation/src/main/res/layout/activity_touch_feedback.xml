@@ -20,184 +20,147 @@
         android:layout_height="match_parent"
         android:overScrollMode="never">
 
-        <android.support.constraint.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp">
 
             <TextView
                 android:id="@+id/view_puppet1"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="15dp"
                 android:clickable="true"
                 android:gravity="center"
                 android:text="Background:selectableItemBackground (by code)"
-                app:layout_constraintDimensionRatio="5:1"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1px"
-                android:background="?attr/colorPrimary"
-                app:layout_constraintBottom_toBottomOf="@+id/view_puppet1"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"/>
+                android:textColor="@android:color/black"
+                android:translationZ="3dp"/>
 
             <TextView
                 android:id="@+id/view_puppet1_1"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="15dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:gravity="center"
-                android:text="Foreground:selectableItemBackground"
-                app:layout_constraintDimensionRatio="5:1"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view_puppet1"/>
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1px"
-                android:background="?attr/colorPrimary"
-                app:layout_constraintBottom_toBottomOf="@+id/view_puppet1_1"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"/>
+                android:text="Foreground:selectableItemBackground (by xml)"
+                android:textColor="@android:color/black"
+                android:translationZ="3dp"/>
 
             <TextView
                 android:id="@+id/view_puppet2"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="15dp"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:gravity="center"
                 android:text="Background:selectableItemBackgroundBorderless"
-                app:layout_constraintDimensionRatio="5:1"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view_puppet1_1"/>
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1px"
-                android:background="?attr/colorPrimary"
-                app:layout_constraintBottom_toBottomOf="@+id/view_puppet2"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"/>
-
+                android:textColor="@android:color/black"
+                android:translationZ="3dp"/>
 
             <TextView
                 android:id="@+id/view_puppet3"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="15dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackgroundBorderless"
                 android:gravity="center"
                 android:text="Foreground:selectableItemBackgroundBorderless"
-                app:layout_constraintDimensionRatio="5:1"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view_puppet2"/>
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1px"
-                android:background="?attr/colorPrimary"
-                app:layout_constraintBottom_toBottomOf="@+id/view_puppet3"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"/>
+                android:textColor="@android:color/black"/>
 
             <TextView
                 android:id="@+id/view_puppet10"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/shape_bg_click_borderless"
                 android:clickable="true"
                 android:gravity="center"
                 android:text="Background:custom ripple bg"
-                app:layout_constraintDimensionRatio="5:1"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view_puppet3"/>
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1px"
-                android:background="?attr/colorPrimary"
-                app:layout_constraintBottom_toBottomOf="@+id/view_puppet10"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"/>
+                android:textColor="@android:color/black"/>
 
             <TextView
                 android:id="@+id/view_puppet8"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/shape_bg_click"
                 android:clickable="true"
                 android:gravity="center"
                 android:text="Background:custom ripple bg borderless"
-                app:layout_constraintDimensionRatio="5:1"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view_puppet10"/>
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1px"
-                android:background="?attr/colorPrimary"
-                app:layout_constraintBottom_toBottomOf="@+id/view_puppet8"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"/>
+                android:textColor="@android:color/black"/>
 
             <Button
                 android:id="@+id/view_puppet4"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="15dp"
                 android:text="Button:Default"
-                android:textAllCaps="false"
-                app:layout_constraintDimensionRatio="5:1"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view_puppet8"/>
+                android:textAllCaps="false"/>
 
             <Button
                 android:id="@+id/view_puppet5"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="15dp"
                 android:background="?attr/colorAccent"
                 android:text="Button:set general background"
-                android:textAllCaps="false"
-                app:layout_constraintDimensionRatio="5:1"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view_puppet4"/>
+                android:textAllCaps="false"/>
 
             <Button
                 android:id="@+id/view_puppet6"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="15dp"
                 android:text="Button:set Bg by Theme"
                 android:textAllCaps="false"
-                android:theme="@style/AutoButton"
-                app:layout_constraintDimensionRatio="5:1"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view_puppet5"/>
+                android:theme="@style/AutoButton"/>
 
             <Button
                 android:id="@+id/view_puppet7"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="15dp"
                 android:background="?attr/colorAccent"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:text="Button:set Bg with ripple foreground"
-                android:textAllCaps="false"
-                app:layout_constraintDimensionRatio="5:1"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view_puppet6"/>
+                android:textAllCaps="false"/>
 
-        </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
     </ScrollView>
 </LinearLayout>
