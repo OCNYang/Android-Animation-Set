@@ -36,8 +36,12 @@
 > 如果一个item没有任何的状态说明，那么它将可以被任何一个状态匹配。
 
 View 状态改变的动画主要是两个类： 
-1. StateListAnimator 是个动画, 在res/anim中  
-2. AnimatedStateListDrawable 是个 Drawable, 在res/drawable中。 
+1. StateListAnimator 是个动画, 在 res/anim (或者 res/animator)中  
+2. AnimatedStateListDrawable 是个 Drawable, 在 res/drawable 中。 
+
+> ps:这里的 StateListAnimator 大多教程都说放在 `res/anim` 目录下，放在此目录下能够正常使用，但在 AS3.0.1 中会有警示
+*`<selector> XML file should be in either "animator" or "drawable", not "anim"`* 。  
+> 我尝试放到 `res/animator` 后不再有警示，并且完全不影响使用。所以这里建议大家以后都放到此目录下。
 
 ### StateListAnimator 
 
@@ -81,8 +85,8 @@ xml文件：你可以改成任意一种objectAnimator动画。 这里使用的�
 
 ### AnimatedStateListDrawable
 
-xml布局：这个效果有点意思   
-当你是 pressed 状态的时候 animation-list 正着走一遍，drawable 使用最后一个。 
+xml布局：这个效果有点意思（ps:但没卵用啊，目前我是没有发现那种场景可以使用）   
+当你是 pressed 状态的时候 animation-list 正着走一遍，drawable 使用最后一个。  
 当你是 default 状态时 animation-list 反着走一遍，drawable 使用第一个。
 
 `res/drawable/myanimstatedrawable`

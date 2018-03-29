@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- provide a different drawable for each state -->
+    <item
+        android:id="@+id/pressed"
+        android:drawable="@drawable/img29"
+        android:state_pressed="true"/>
+    <!-- <item
+        android:id="@+id/focused"
+        android:drawable="@drawable/btn_focused"
+        android:state_focused="true"/> -->
+    <item
+        android:id="@id/default1"
+        android:drawable="@drawable/img1"/>
+
+    <!-- specify a transition -->
+    <transition
+        android:fromId="@+id/default1"
+        android:toId="@+id/pressed">
+        <animation-list>
+            <item
+                android:drawable="@drawable/img2"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img3"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img4"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img5"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img6"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img7"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img8"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img9"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img10"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img13"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img14"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img15"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img17"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img18"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img19"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img20"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img21"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img22"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img23"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img24"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img25"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img26"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img27"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img28"
+                android:duration="100"/>
+            <item
+                android:drawable="@drawable/img29"
+                android:duration="100"/>
+        </animation-list>
+    </transition>
+</animated-selector>

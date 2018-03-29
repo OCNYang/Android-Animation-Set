@@ -15,6 +15,7 @@ import com.ocnyang.drawableanimation.DrawableAnimationActivity;
 import com.ocnyang.propertyanimation.PropertyAnimationActivity;
 import com.ocnyang.revealanimation.RevealAnimationActivity;
 import com.ocnyang.rippleanimation.TouchFeedbackActivity;
+import com.ocnyang.stateanimation.StateAnimationActivity;
 import com.ocnyang.transitionanimation.TransitionAnimationActivity;
 import com.ocnyang.viewanimation.ViewAnimationActivity;
 
@@ -74,6 +75,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
                         mContext.startActivity(new Intent(mContext,TransitionAnimationActivity.class));
                         break;
                     case 6:
+                        mContext.startActivity(new Intent(mContext, StateAnimationActivity.class));
                         break;
                     case 7:
                         break;
