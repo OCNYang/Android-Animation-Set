@@ -4,7 +4,9 @@
 可以点击 [SVG 讲解](https://github.com/OCNYang/Android-Animation-Set/blob/master/vector-animation/SVG.md) 
 或 [Wiki](https://github.com/OCNYang/Android-Animation-Set/wiki/SVG-%E8%AE%B2%E8%A7%A3) 查看。
 
-我们在这里只讲解 Android SVG 动画 相关的内容。
+我们在这里只讲解 Android SVG 动画 相关的内容。相信大家一定看到过下图这个矢量动画：  
+
+![图钉暴走]()  
 
 ## Android SVG 动画
 
@@ -172,7 +174,9 @@ add 混合遮罩，drawable 颜色和透明度。
 ##　2. AnimatedVectorDrawable
 
 我们还可以用 AnimatedVectorDrawable　给矢量图添加动画。AnimatedVectorDawable　可以实现一些很特别的效果，对　VectorDrawable　里的　pathData　做动画，
-可以从一个图形渐变到另一个图形，比如　Material Design　里的　toolbar icon；对　trimPathStart、trimPathEnd　做动画，可以得到图形的绘制轨迹。
+可以从一个图形渐变到另一个图形，比如　Material Design　里的　toolbar icon；对　trimPathStart、trimPathEnd　做动画，可以得到图形的绘制轨迹。  
+
+![]()  
 
 AnimatedVectorDrawable　通过　ObjectAnimator　或　AnimatorSet　对　VectorDrawable　的某个属性作一个矢量资源的动画。
 
