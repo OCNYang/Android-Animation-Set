@@ -50,7 +50,7 @@ SVG 文件可通过以下标签嵌入 HTML 文档：`<embed>、<object> 或者 <
         type="image/svg+xml"
         pluginspage="http://www.adobe.com/svg/viewer/install/"/>
 
-**使用<object>标签**  
+**使用 `<object>` 标签**  
 
 `<object>` 标签是 HTML 4 的标准标签，被所有较新的浏览器支持。它的缺点是不允许使用脚本。假如您安装了最新版本的 `Adobe SVG Viewer`，
 那么当使用 `<object>` 标签时 SVG 文件无法工作（至少不能在 IE 中工作）！
@@ -61,16 +61,16 @@ SVG 文件可通过以下标签嵌入 HTML 文档：`<embed>、<object> 或者 <
 
 **使用 `<iframe>` 标签**  
 
-<iframe>标签可工作在大部分的浏览器中。
+`<iframe>` 标签可工作在大部分的浏览器中。
 
     <iframe src="rect.svg" width="300" height="100">
     </iframe>
 
-## 三、SVG /<path/>
+## 三、SVG &lt;path&gt;
 
 SVG 的 `<path>` 元素用于定义一些复杂的图形，其定义在 W3 SVG Path。
 
-<path>可用的命令如下：
+`<path>` 可用的命令如下：
 
 |   名称   |    解释   |
 | :------ | :------- |
