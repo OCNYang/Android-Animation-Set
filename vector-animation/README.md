@@ -196,7 +196,7 @@ AnimatedVectorDrawable 可以被定义在三个XML文件或一个XML中。
 
 **定义在一个文件中:**
 
-[]()
+[查看代码](https://github.com/OCNYang/Android-Animation-Set/blob/master/vector-animation/src/main/res/drawable/drawable_animated_vector.xml#L1-L45)
 
 **定义在 3 个文件中**  
 
