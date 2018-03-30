@@ -1,8 +1,10 @@
 # Android Animation Detailed Tutorial / Android 动画详尽教程
 
 <div  align="center">
-<img src="https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/app/src/main/res/drawable/header_bg.jpg?token=AQ83Mm1lTKd-0jwgDJ9K3tNGJbk9OI9iks5axtyQwA%3D%3D" width = "800" alt="Android Animation Set" align=center />
+<img src="https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/app/src/main/res/drawable/header_bg.jpg?token=AQ83Mm1lTKd-0jwgDJ9K3tNGJbk9OI9iks5axtyQwA%3D%3D" alt="Android Animation Set" align=center />
 </div>
+
+<br/>
 
 * **中文讲解（README）请直接点击对应标题**  
 * **English explanation(or readme), Do not click on the title, please click on the tip address**
