@@ -46,10 +46,10 @@ or [VectorDrawable](https://developer.android.com/reference/android/graphics/dra
 
 ## [Wiki 附属文章](https://github.com/OCNYang/Android-Animation-Set/wiki)
 
-[实现 Activity 的切换动画](https://github.com/OCNYang/Android-Animation-Set/wiki/%E5%AE%9E%E7%8E%B0-Activity-%E7%9A%84%E5%88%87%E6%8D%A2%E5%8A%A8%E7%94%BB)  
-[SVG 讲解](https://github.com/OCNYang/Android-Animation-Set/wiki/SVG-%E8%AE%B2%E8%A7%A3)  
-[属性动画之 ViewPropertyAnimator 原理解析](https://github.com/OCNYang/Android-Animation-Set/wiki/%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB%E4%B9%8B-ViewPropertyAnimator-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90)  
-[深入理解 Content Transition](https://github.com/OCNYang/Android-Animation-Set/wiki/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Content-Transition)  
+* [实现 Activity 的切换动画](https://github.com/OCNYang/Android-Animation-Set/wiki/%E5%AE%9E%E7%8E%B0-Activity-%E7%9A%84%E5%88%87%E6%8D%A2%E5%8A%A8%E7%94%BB)  
+* [SVG 讲解](https://github.com/OCNYang/Android-Animation-Set/wiki/SVG-%E8%AE%B2%E8%A7%A3)  
+* [属性动画之 ViewPropertyAnimator 原理解析](https://github.com/OCNYang/Android-Animation-Set/wiki/%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB%E4%B9%8B-ViewPropertyAnimator-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90)  
+* [深入理解 Content Transition](https://github.com/OCNYang/Android-Animation-Set/wiki/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Content-Transition)  
 
 
-*更全面的讲解将会逐步补充 | 欢迎 Star | 欢迎 Fork*
+*更全面的讲解将会逐步补充 / 欢迎 Star / 欢迎 Fork*
