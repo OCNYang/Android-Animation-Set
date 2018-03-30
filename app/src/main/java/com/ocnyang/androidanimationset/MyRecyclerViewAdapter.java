@@ -2,15 +2,18 @@ package com.ocnyang.androidanimationset;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.interfaces.DraweeController;
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.ocnyang.drawableanimation.DrawableAnimationActivity;
 import com.ocnyang.propertyanimation.PropertyAnimationActivity;
 import com.ocnyang.revealanimation.RevealAnimationActivity;
@@ -50,8 +53,16 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-        holder.itemView.setBackgroundColor(mIntArray[position]);
+//        holder.itemView.setBackgroundColor(mIntArray[position]);
         holder.itemNameTv.setText(mStringArray[position]);
+
+        Uri uri = Uri.parse("res://" + mContext.getPackageName() + "/" + mIntArray[position]);
+        DraweeController build = Fresco.newDraweeControllerBuilder()
+                .setUri(uri)
+                .setAutoPlayAnimations(true)
+                .build();
+        holder.itemImg.setController(build);
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,7 +108,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     class ViewHolder extends RecyclerView.ViewHolder {
         View itemView;
         TextView itemNameTv;
-        ImageView itemImg;
+        SimpleDraweeView itemImg;
 
         ViewHolder(View view) {
             super(view);

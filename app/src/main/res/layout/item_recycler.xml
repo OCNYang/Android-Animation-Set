@@ -1,35 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/view_content"
     android:layout_width="match_parent"
-    android:stateListAnimator="@anim/touch_raise"
     android:layout_height="wrap_content"
-    android:foreground="?android:selectableItemBackground"
-    android:padding="10dp">
+    android:layout_marginBottom="20dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:stateListAnimator="@anim/touch_raise"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="3dp">
 
-    <ImageView
-        android:id="@+id/img_item"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintBottom_toTopOf="@+id/tv_item"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <TextView
-        android:id="@+id/tv_item"
-        android:layout_width="wrap_content"
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/view_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:text="@string/app_name"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_item"/>
+        android:foreground="?android:selectableItemBackground">
 
-</android.support.constraint.ConstraintLayout>
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/img_item"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_item"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/item_text_bg"
+            android:lines="1"
+            android:paddingBottom="5dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_item"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

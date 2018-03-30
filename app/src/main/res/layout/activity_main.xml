@@ -5,20 +5,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f6f6f6"
     tools:context="com.ocnyang.androidanimationset.MainActivity">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
+        <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/view_header"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="@string/app_name"
-            android:textColor="@android:color/white"
             app:layout_constraintDimensionRatio="2:1"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -28,6 +25,10 @@
             android:id="@+id/recycler"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view_header"/>
@@ -35,11 +36,9 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
             android:gravity="center"
-            android:paddingBottom="10dp"
-            android:paddingTop="5dp"
-            android:text="www.ocnyang.com"
+            android:paddingBottom="5dp"
+            android:text="https://github.com/OCNYang/Android-Animation-Set/"
             android:textColor="@android:color/darker_gray"
             android:textSize="10sp"
             app:layout_constraintLeft_toLeftOf="parent"
