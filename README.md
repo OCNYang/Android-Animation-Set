@@ -51,5 +51,18 @@ or [VectorDrawable](https://developer.android.com/reference/android/graphics/dra
 * [属性动画之 ViewPropertyAnimator 原理解析](https://github.com/OCNYang/Android-Animation-Set/wiki/%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB%E4%B9%8B-ViewPropertyAnimator-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90)  
 * [深入理解 Content Transition](https://github.com/OCNYang/Android-Animation-Set/wiki/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Content-Transition)  
 
+## Demo  
+
+![View Animation / 视图动画](./README_Res/demo1.gif)  
+![Drawable Animation / 帧动画 / Frame 动画](./README_Res/demo2.gif)  
+![Property Animation / 属性动画](./README_Res/demo3.gif)  
+![Ripple Effect / Touch Feedback / 触摸反馈动画](./README_Res/demo4.gif)  
+![Reveal Effect / 揭露动画](./README_Res/demo5.gif)  
+![Transition Animation / 转场动画 & 共享元素](./README_Res/demo7.gif)  
+![AnimatedVectorDrawable / 矢量图动画](./README_Res/demo8.gif)  
+
+
+Download [**Demo Apk**](./README_Res/app-debug.apk)
+
 
 *更全面的讲解将会逐步补充 / 欢迎 Star / 欢迎 Fork*

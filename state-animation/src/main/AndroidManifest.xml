@@ -5,7 +5,7 @@
     <application>
         <activity
             android:name=".StateAnimationActivity"
-            android:label="module_state">
+            android:label="@string/module_state">
         </activity>
     </application>
 
