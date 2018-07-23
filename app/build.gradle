@@ -25,12 +25,15 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    implementation project(':view-animation')
+
     implementation 'com.android.support:design:27.1.0'
     implementation 'com.android.support:support-vector-drawable:27.1.0'
     implementation 'com.android.support:cardview-v7:27.1.0'
+
     implementation 'com.facebook.fresco:fresco:1.8.1'
     implementation 'com.facebook.fresco:animated-gif:1.8.1'
+
+    implementation project(':view-animation')
     implementation project(':drawable-animation')
     implementation project(':property-animation')
     implementation project(':ripple-animation')

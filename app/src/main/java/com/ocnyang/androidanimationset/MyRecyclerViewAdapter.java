@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
@@ -53,7 +52,6 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-//        holder.itemView.setBackgroundColor(mIntArray[position]);
         holder.itemNameTv.setText(mStringArray[position]);
 
         Uri uri = Uri.parse("res://" + mContext.getPackageName() + "/" + mIntArray[position]);
@@ -66,7 +64,6 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "fuck", Toast.LENGTH_SHORT).show();
                 switch (position) {
                     case 0:
                         mContext.startActivity(new Intent(mContext, ViewAnimationActivity.class));
@@ -97,7 +94,6 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
                 }
             }
         });
-
     }
 
     @Override

@@ -31,7 +31,5 @@ public class MainActivity extends AppCompatActivity {
                         R.drawable.reveal_effect_gif, R.drawable.transition_gif, R.drawable.view_state_gif, R.drawable.vector_gif},
                 getResources().getStringArray(R.array.itemName));
         mRecyclerView.setAdapter(mAdapter);
-
     }
-
 }
