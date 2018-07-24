@@ -55,11 +55,9 @@ or [VectorDrawable](https://developer.android.com/reference/android/graphics/dra
 
 <img src="./README_Res/demo1.gif"  width="400px" alt="View Animation / 视图动画"/> <img src="./README_Res/demo2.gif"  width="400px" alt="Drawable Animation / 帧动画 / Frame 动画"/>  
 
-<img src="./README_Res/demo3.gif"  width="400px" alt="Property Animation / 属性动画"/>
-<img src="./README_Res/demo4.gif"  width="400px" alt="Ripple Effect / Touch Feedback / 触摸反馈动画"/>  
+<img src="./README_Res/demo3.gif"  width="400px" alt="Property Animation / 属性动画"/> <img src="./README_Res/demo4.gif"  width="400px" alt="Ripple Effect / Touch Feedback / 触摸反馈动画"/>  
 
-<img src="./README_Res/demo5.gif"  width="400px" alt="Reveal Effect / 揭露动画"/>
-<img src="./README_Res/demo7.gif"  width="400px" alt="Transition Animation / 转场动画 & 共享元素"/>  
+<img src="./README_Res/demo5.gif"  width="400px" alt="Reveal Effect / 揭露动画"/> <img src="./README_Res/demo7.gif"  width="400px" alt="Transition Animation / 转场动画 & 共享元素"/>  
 
 <img src="./README_Res/demo8.gif"  width="400px" alt="AnimatedVectorDrawable / 矢量图动画"/>  
 
