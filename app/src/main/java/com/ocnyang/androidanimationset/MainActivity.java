@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.transition.Slide;
+import android.view.Gravity;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setupWindowAnimations();
 
         ((SimpleDraweeView) findViewById(R.id.view_header))
                 .setImageURI(Uri.parse("res://" + getPackageName() + "/" + R.drawable.header_bg));
@@ -31,5 +34,13 @@ public class MainActivity extends AppCompatActivity {
                         R.drawable.reveal_effect_gif, R.drawable.transition_gif, R.drawable.view_state_gif, R.drawable.vector_gif},
                 getResources().getStringArray(R.array.itemName));
         mRecyclerView.setAdapter(mAdapter);
+    }
+
+    private void setupWindowAnimations() {
+        Slide slide = new Slide();
+        slide.setSlideEdge(Gravity.LEFT);
+        slide.setDuration(1000);
+        getWindow().setReenterTransition(slide);
+        getWindow().setExitTransition(slide);
     }
 }

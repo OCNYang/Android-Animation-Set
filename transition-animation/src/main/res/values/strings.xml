@@ -2,4 +2,8 @@
     <string name="module_transition">Transition Animation</string>
     <string name="tip">本节暂时未提供 Demo,\n如果想查看相关代码可以先参考项目\n [Material-Animations](https://github.com/lgvalle/Material-Animations) \n
 Material-Animations 项目的作者虽早已停止维护这个项目，但相关代码还能够参考。\n我也会尽快补上最新的 Demo。</string>
+    <string name="text_no_love">无人与我立黄昏，无人问我粥可温。\n无人告我夜已深，无人与我把酒分。\n--------------\n黄昏将近粥可温，你我畅饮把酒分。\n家常琐事都可聊，不知不觉夜已深。</string>
+    <string name="share_element_imageview">share element imageview</string>
+    <string name="share_element_header">share element header</string>
+    <string name="share_element_tv_info">share element tv info</string>
 </resources>

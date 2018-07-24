@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -81,7 +82,9 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
                         mContext.startActivity(new Intent(mContext, RevealAnimationActivity.class));
                         break;
                     case 5:
-                        mContext.startActivity(new Intent(mContext, TransitionAnimationActivity.class));
+                        ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(((MainActivity) mContext), null);
+                        Intent intent = new Intent(mContext, TransitionAnimationActivity.class);
+                        mContext.startActivity(intent,activityOptionsCompat.toBundle());
                         break;
                     case 6:
                         mContext.startActivity(new Intent(mContext, StateAnimationActivity.class));

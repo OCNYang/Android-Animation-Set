@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.ocnyang.transitionanimation">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application>
-        <activity android:name=".TransitionAnimationActivity"
+        <activity
+            android:name=".TransitionAnimationActivity"
             android:label="@string/module_transition">
+        </activity>
+        <activity android:name=".ShareElementsActivity">
         </activity>
     </application>
 
