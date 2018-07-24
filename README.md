@@ -62,7 +62,7 @@ or [VectorDrawable](https://developer.android.com/reference/android/graphics/dra
 ![AnimatedVectorDrawable / 矢量图动画](./README_Res/demo8.gif)  
 
 
-Download [**Demo Apk**](./README_Res/app-debug.apk)
+Download [**Demo Apk**](https://github.com/OCNYang/Android-Animation-Set/raw/master/README_Res/app-debug.apk)
 
 
 *更全面的讲解将会逐步补充 / 欢迎 Star / 欢迎 Fork*
