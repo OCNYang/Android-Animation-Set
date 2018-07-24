@@ -52,7 +52,7 @@ or [VectorDrawable](https://developer.android.com/reference/android/graphics/dra
 * [深入理解 Content Transition](https://github.com/OCNYang/Android-Animation-Set/wiki/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Content-Transition)  
 
 ## Demo  
-
+<img src="./README_Res/demo1.gif" style="zoom:50%" />  
 ![View Animation / 视图动画](./README_Res/demo1.gif)  
 ![Drawable Animation / 帧动画 / Frame 动画](./README_Res/demo2.gif)  
 ![Property Animation / 属性动画](./README_Res/demo3.gif)  
