@@ -812,8 +812,16 @@ connect: 我想要 view 上添加 constraint。这个方法需要5个参数。
 
 哇哦，我们已经完成了 ConstraitLayout 动画。
 
+## 另外附上讲解 ConstraintLayout 的同系列其他几篇文章
+
+* [第一部分：ConstraintLayout (这到底是什么)](./Constraint-layout-hell.md)  
+* [第二部分：ConstraintLayout (小贴士及小技巧)](./Constraint-layout-concepts-hell-tips-tricks-parts-2.md)  
+* [第三部分：Constraint Layout 动画 | 动态 Constraint | 用 Java 实现的 UI(本文)](./README.md)  
+* [第四部分：ConstraintLayout 可视化【Design】编辑器](./Constranit-layout-visual-design-editor-hell.md)  
+
+
 > * 原文地址：[Constraint Layout [Animations | Dynamic Constraints | UI by Java] ( What the hell is this )[Part3]](http://www.uwanttolearn.com/android/constraint-layout-animations-dynamic-constraints-ui-java-hell/)
-* 原文作者：[Hafiz Waleed Hussain](http://www.uwanttolearn.com/author/admin/)
-* 译文出自：[掘金翻译计划](https://github.com/xitu/gold-miner)
-* 译者：[Siegen](https://github.com/siegeout)
-* 校对者：[tanglie1993](https://github.com/tanglie1993),[yazhi1992](https://github.com/yazhi1992)
+> * 原文作者：[Hafiz Waleed Hussain](http://www.uwanttolearn.com/author/admin/)
+> * 译文出自：[掘金翻译计划](https://github.com/xitu/gold-miner)
+> * 译者：[Siegen](https://github.com/siegeout)
+> * 校对者：[tanglie1993](https://github.com/tanglie1993),[yazhi1992](https://github.com/yazhi1992)

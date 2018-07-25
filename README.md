@@ -44,6 +44,10 @@
 or [AnimatedVectorDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html) 
 or [VectorDrawable](https://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html)
 
+## Ⅸ. [Constraint Animation / ConstraintSet / 约束布局关键帧动画](https://github.com/OCNYang/Android-Animation-Set/tree/master/constraint-animation)
+
+[English explanation can go to read this article](http://www.uwanttolearn.com/android/constraint-layout-animations-dynamic-constraints-ui-java-hell/) 
+
 ## [Wiki 附属文章](https://github.com/OCNYang/Android-Animation-Set/wiki)
 
 * [实现 Activity 的切换动画](https://github.com/OCNYang/Android-Animation-Set/wiki/%E5%AE%9E%E7%8E%B0-Activity-%E7%9A%84%E5%88%87%E6%8D%A2%E5%8A%A8%E7%94%BB)  
