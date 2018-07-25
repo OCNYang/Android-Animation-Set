@@ -3,8 +3,6 @@ package com.ocnyang.transitionanimation;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.transition.Slide;
-import android.view.Gravity;
 import android.view.MenuItem;
 
 public class ShareElementsActivity extends AppCompatActivity {
@@ -13,7 +11,6 @@ public class ShareElementsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_share_elements);
-        setupWindowAnimations();
         initToolbar();
     }
 
@@ -32,12 +29,5 @@ public class ShareElementsActivity extends AppCompatActivity {
             supportFinishAfterTransition();
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    private void setupWindowAnimations() {
-        Slide slide = new Slide();
-        slide.setSlideEdge(Gravity.RIGHT);
-        slide.setDuration(500);
-        getWindow().setEnterTransition(slide);
     }
 }

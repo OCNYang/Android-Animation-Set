@@ -41,6 +41,7 @@
                     android:divider="@drawable/divider_linearlayout"
                     android:orientation="horizontal"
                     android:paddingBottom="15dp"
+                    android:id="@+id/viewgroup_transition"
                     android:paddingTop="15dp"
                     android:showDividers="middle|beginning|end">
 
@@ -48,42 +49,42 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/shape_bg_item_linearlayout"
-                        android:text="Explode by code"
+                        android:text="Explode by CODE"
                         android:textColor="?attr/colorPrimaryDark"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/shape_bg_item_linearlayout"
-                        android:text="Explode by code"
+                        android:text="Explode by XML"
                         android:textColor="?attr/colorPrimaryDark"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/shape_bg_item_linearlayout"
-                        android:text="Explode by code"
+                        android:text="Slide by CODE"
                         android:textColor="?attr/colorPrimaryDark"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/shape_bg_item_linearlayout"
-                        android:text="Explode by code"
+                        android:text="Slide by XML"
                         android:textColor="?attr/colorPrimaryDark"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/shape_bg_item_linearlayout"
-                        android:text="Explode by code"
+                        android:text="Exit"
                         android:textColor="?attr/colorPrimaryDark"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/shape_bg_item_linearlayout"
-                        android:text="Explode by code"
+                        android:text="Exit by Overriding return transition"
                         android:textColor="?attr/colorPrimaryDark"/>
                 </LinearLayout>
             </HorizontalScrollView>
