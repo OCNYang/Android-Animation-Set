@@ -8,9 +8,15 @@
         <activity
             android:name=".TransitionAnimationActivity"
             android:label="@string/module_transition"/>
-        <activity android:name=".ShareElementsActivity"/>
-        <activity android:name=".TransitionAnimationBySlideActivity"/>
-        <activity android:name=".TransitionAnimationByExplodeActivity"/>
+        <activity
+            android:name=".ShareElementsActivity"
+            android:label="Share Elements"/>
+        <activity
+            android:name=".TransitionAnimationBySlideActivity"
+            android:label="Transition by Slide"/>
+        <activity
+            android:name=".TransitionAnimationByExplodeActivity"
+            android:label="Transition by Explode"/>
     </application>
 
 </manifest>
