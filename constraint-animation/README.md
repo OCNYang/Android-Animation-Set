@@ -1,4 +1,6 @@
-**动机：**
+# Constraint Layout 动画 | 动态 Constraint | 用 Java 实现的 UI
+
+## **动机：**
 
 在这篇文章里我主要谈论的是关于 Constraint Layout 的动画。关于这个主题有一个坏消息，那就是 Android 的开发文档并没有提供足够的帮助。在开始这篇文章之前我想先道个歉，由于知识的欠缺我可能会在某些地方出现错误的观点。但是我可以 100% 的保证通过我的讲述，最终你会喜欢并且适应这些动画。
 
@@ -13,9 +15,7 @@
 我们需要下载 2.3 版本的 Android studio。在之前的版本里 Visual Editor 不太好，在 Design Tab 里经常会出现一些错误信息。所以下载  2.3 测试版的 Android studio 非常重要，这个版本在我写这篇文章的时候是可以下载到的。
  
 
-**介绍:**
-
-
+## **介绍:**
 
 
 在这篇文章里我们主要使用 Java 语言来工作，但是在开始之前我打算解释下在这篇文章里一切是如何运作的。
@@ -136,7 +136,7 @@
 
 
 
-**新需求:**
+## **新需求:1**
 
 我想要让按钮 1 动起来，当用户点击启动按钮的时候，让它与父控件的左边对齐。你能帮我一下么？
 用开发语言来说：
@@ -145,7 +145,7 @@
 
 
 
-**解决方案:**
+### **解决方案:**
 
     public void onApplyClick(View view) {
         applyConstraintSet.setMargin(R.id.button1,ConstraintSet.START,8);
@@ -203,7 +203,7 @@ SetMargin() 方法将使用三个参数(viewId, anchor, margin)。
 简单来说我们只使用了两个 API。ConstraintSet 和 TransitionManager。从现在起我们将只使用 ConstraintSet API。
 
 
-**新需求:**
+## **新需求:2**
 
 
 
@@ -217,7 +217,7 @@ SetMargin() 方法将使用三个参数(viewId, anchor, margin)。
 
 兄弟我想要当用户点击应用按钮的时候通过使用 Java 代码让所有的按钮在 constraint layout 里移动到水平居中的位置。你能帮我一下么？
 
-**解决方案:**
+### **解决方案:**
 
     public void onApplyClick(View view) {
         TransitionManager.beginDelayedTransition(constraintLayout);
@@ -263,7 +263,7 @@ SetMargin() 方法将使用三个参数(viewId, anchor, margin)。
 
 [![](http://www.uwanttolearn.com/wp-content/uploads/2017/01/Jan-21-2017-11-51-11.gif)](http://www.uwanttolearn.com/wp-content/uploads/2017/01/Jan-21-2017-11-51-11.gif)
 
-**新需求:**
+## **新需求:3**
 
 
 
@@ -275,7 +275,7 @@ SetMargin() 方法将使用三个参数(viewId, anchor, margin)。
 
 当用户点击应用按钮的时候，我想要通过在 constraint layout 里使用 Java 代码让按钮 3 移动到父控件的中心。你能帮我一下么？
 
-**解决方案:**
+### **解决方案:**
 
     public void onApplyClick(View view) {
         TransitionManager.beginDelayedTransition(constraintLayout);
@@ -300,7 +300,7 @@ SetMargin() 方法将使用三个参数(viewId, anchor, margin)。
 
 
 
-**新需求:**
+## **新需求:4**
 
 
 用户语言：
@@ -312,7 +312,7 @@ SetMargin() 方法将使用三个参数(viewId, anchor, margin)。
 
 
 
-**解决方案:**
+### **解决方案:**
 
         public void onApplyClick(View view) {
             TransitionManager.beginDelayedTransition(constraintLayout);
@@ -335,7 +335,7 @@ SetMargin() 方法将使用三个参数(viewId, anchor, margin)。
 [![](http://www.uwanttolearn.com/wp-content/uploads/2017/01/Jan-21-2017-17-31-53.gif)
 ](http://www.uwanttolearn.com/wp-content/uploads/2017/01/Jan-21-2017-17-31-53.gif)
 
-**新需求:**
+## **新需求:5**
 
 
 
@@ -349,7 +349,7 @@ SetMargin() 方法将使用三个参数(viewId, anchor, margin)。
 开发者语言：
 当用户点击应用按钮的时候，我想要通过在 constraint layout 里使用 Java 代码让按钮1的宽度和高度都 match_parent， 并且让其他的视图 gone，你能帮我一下么？
 
-**解决方案:**
+### **解决方案:**
 
     public void onApplyClick(View view) {
         TransitionManager.beginDelayedTransition(constraintLayout);
@@ -391,7 +391,7 @@ connect: 我想要 view 上添加 constraint。这个方法需要5个参数。
 
 是时候开始进一步的操作了。在[教程2](https://github.com/xitu/gold-miner/blob/master/TODO/constraint-layout-concepts-hell-tips-tricks-part-2.md)里我们已经了解到了 Chaining 的概念了。我将向你们展示如何使用 Java 语言来实现它。 
 
-**新需求:**
+## **新需求:6**
 
 
 
@@ -402,7 +402,7 @@ connect: 我想要 view 上添加 constraint。这个方法需要5个参数。
 开发者语言：
 当用户点击应用按钮的时候，我想要通过在 constraint layout 里使用 Java 代码来实现这三个按钮的 packed chaining 逻辑。你能帮我一下么？
 
-**解决方案:**
+### **解决方案:**
 
 
 
@@ -561,7 +561,7 @@ connect: 我想要 view 上添加 constraint。这个方法需要5个参数。
 
 [![](http://www.uwanttolearn.com/wp-content/uploads/2017/01/Jan-21-2017-15-07-46.gif)](http://www.uwanttolearn.com/wp-content/uploads/2017/01/Jan-21-2017-15-07-46.gif)
 
-**奖励**:
+## **奖励**:
 
 
 我将向你们展示 ConstraintSet 的另一个用法，这个用法在 Android API 文档里有提及到。所以如下所示，首先我们先在同一个 ConstraintLayout 里应用两个不同的 ConstraintSet。

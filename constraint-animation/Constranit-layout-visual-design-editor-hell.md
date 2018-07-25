@@ -1,6 +1,6 @@
 > * 原文地址：[Constraint Layout Visual [Design] Editor ( What the hell is this )[Part4]](http://www.uwanttolearn.com/android/constraint-layout-visual-design-editor-hell/)
-* 原文作者：[Hafiz Waleed Hussain](http://www.uwanttolearn.com/author/admin/)
-* 译文出自：[掘金翻译计划](https://github.com/xitu/gold-miner)
+> * 原文作者：[Hafiz Waleed Hussain](http://www.uwanttolearn.com/author/admin/)
+> * 译文出自：[掘金翻译计划](https://github.com/xitu/gold-miner)
 
 # ConstraintLayout 可视化[Design]编辑器 （这到底是什么）[第四部分]
 

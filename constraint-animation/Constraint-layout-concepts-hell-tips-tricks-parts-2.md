@@ -1,6 +1,6 @@
 > * 原文地址：[Constraint Layout Concepts ( What the hell is this ) (Tips and Tricks) Part 2 ](http://www.uwanttolearn.com/android/constraint-layout-concepts-hell-tips-tricks-part-2/)
-* 原文作者：[Hafiz Waleed Hussain](http://www.uwanttolearn.com/author/admin/)
-* 译文出自：[掘金翻译计划](https://github.com/xitu/gold-miner)
+> * 原文作者：[Hafiz Waleed Hussain](http://www.uwanttolearn.com/author/admin/)
+> * 译文出自：[掘金翻译计划](https://github.com/xitu/gold-miner)
 
 # ConstraintLayout ( 这到底是什么 ) (小贴士及小技巧) [第二部分]
 
