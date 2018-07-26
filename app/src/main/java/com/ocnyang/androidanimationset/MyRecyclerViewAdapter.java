@@ -84,7 +84,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
                     case 5:
                         ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(((MainActivity) mContext), null);
                         Intent intent = new Intent(mContext, TransitionAnimationActivity.class);
-                        mContext.startActivity(intent,activityOptionsCompat.toBundle());
+                        mContext.startActivity(intent, activityOptionsCompat.toBundle());
                         break;
                     case 6:
                         mContext.startActivity(new Intent(mContext, StateAnimationActivity.class));

@@ -4,8 +4,17 @@
 
     <application>
         <activity
-            android:name=".ViewAnimationActivity"
+            android:name=".CommonViewAnimationActivity"
+            android:label="Common ViewAnimation">
+        </activity>
+        <activity android:name=".PopupWindowViewAnimationActivity"
+            android:label="ViewAnimation in PopupWindow">
+        </activity>
+        <activity android:name=".ViewAnimationActivity"
             android:label="@string/module_name">
+        </activity>
+        <activity android:name=".ListViewAnimationActivity"
+            android:label="Layout Animation">
         </activity>
     </application>
 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="colors">
+        <item>0xff123456</item>
+        <item>0xff222333</item>
+        <item>0xff333444</item>
+        <item>0xff444555</item>
+        <item>0xff555666</item>
+        <item>0xff666777</item>
+        <item>0xff777888</item>
+    </integer-array>
+</resources>
