@@ -253,6 +253,11 @@ TimeInterpolator 接口定义了一个 float getInterpolation(float input);方�
 
 到此整个补间动画与补间动画的插值器都分析完毕了。
 
+## 使用场景
+
+上面介绍的都是 View 动画的基本概念，在开发中我们都将在哪些场景中使用它们呢？  
+大家可以查看[**【View 动画几种特殊使用场景】**](./ViewAnimationUseTips.md) 
+
 附录：  
 本文摘录自：[工匠若水 - Android应用开发之所有动画使用详解](https://blog.csdn.net/yanbober/article/details/46481171)  
 

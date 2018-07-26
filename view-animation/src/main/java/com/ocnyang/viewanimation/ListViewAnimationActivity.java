@@ -2,7 +2,6 @@ package com.ocnyang.viewanimation;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -21,7 +20,6 @@ public class ListViewAnimationActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         MyRecyclerViewAdapter adapter = new MyRecyclerViewAdapter(this, 10);
         recyclerView.setAdapter(adapter);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
     }
 
     private void initToolbar() {
