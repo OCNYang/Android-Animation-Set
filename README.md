@@ -50,7 +50,7 @@ or [VectorDrawable](https://developer.android.com/reference/android/graphics/dra
 
 ## [Wiki 附属文章](https://github.com/OCNYang/Android-Animation-Set/wiki)
 
-* [实现 Activity 的切换动画](https://github.com/OCNYang/Android-Animation-Set/wiki/%E5%AE%9E%E7%8E%B0-Activity-%E7%9A%84%E5%88%87%E6%8D%A2%E5%8A%A8%E7%94%BB)  
+* [View 动画几种特殊使用场景](https://github.com/OCNYang/Android-Animation-Set/wiki/View-%E5%8A%A8%E7%94%BB%E5%87%A0%E7%A7%8D%E7%89%B9%E6%AE%8A%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF)  
 * [实现 Activity 的切换动画](https://github.com/OCNYang/Android-Animation-Set/wiki/%E5%AE%9E%E7%8E%B0-Activity-%E7%9A%84%E5%88%87%E6%8D%A2%E5%8A%A8%E7%94%BB)  
 * [SVG 讲解](https://github.com/OCNYang/Android-Animation-Set/wiki/SVG-%E8%AE%B2%E8%A7%A3)  
 * [属性动画之 ViewPropertyAnimator 原理解析](https://github.com/OCNYang/Android-Animation-Set/wiki/%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB%E4%B9%8B-ViewPropertyAnimator-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90)  
