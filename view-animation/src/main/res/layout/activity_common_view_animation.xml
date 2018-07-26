@@ -37,6 +37,7 @@
         android:layout_marginBottom="30dp"
         android:background="@drawable/do_btn_bg"
         android:text="Do it"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
