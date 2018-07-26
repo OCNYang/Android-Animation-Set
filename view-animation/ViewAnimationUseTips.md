@@ -30,7 +30,7 @@ View 除了会用作[直接作用页面中的 View ](https://github.com/OCNYang/
 
 这时的效果是这样的：  
 
-[Popupwindow 默认弹出动画]()
+[Popupwindow 默认弹出动画](../README_Res/popup_viewanimation1.gif)
 
 ### 加动画
 
@@ -87,7 +87,7 @@ View 除了会用作[直接作用页面中的 View ](https://github.com/OCNYang/
 
 这时效果就成下面那样了： 
 
-[popupWindow 添加动画效果]()
+[popupWindow 添加动画效果](../README_Res/popup_viewanimation2.gif)
 
 ## Activity 过场动画
 
@@ -138,7 +138,7 @@ View 除了会用作[直接作用页面中的 View ](https://github.com/OCNYang/
 
 效果： 
 
-[效果]()
+[效果](../README_Res/activity_viewanimation1.gif)
 
 ### 通过 style
 
@@ -255,7 +255,7 @@ activity_close_out:
 
 最终的效果是：
  
-[activity 效果]()
+[activity 效果](../README_Res/activity_viewanimation2.gif)
 
 实现 Activity 转场的动画有很多种方式，更多方式可以查看 [WiKi:实现 Activity 的切换动画](https://github.com/OCNYang/Android-Animation-Set/wiki/%E5%AE%9E%E7%8E%B0-Activity-%E7%9A%84%E5%88%87%E6%8D%A2%E5%8A%A8%E7%94%BB)
 
@@ -316,7 +316,7 @@ LayoutAnimation 是作用于 ViewGroup 的，用来指定 ViewGroup 的子控件
 
 然后进入这个 Activity 时就会看到这个效果： 
 
-[LayoutAnimation 效果]()
+[LayoutAnimation 效果](../README_Res/layout_animation1.gif)
 
 ### 通过 java
 
