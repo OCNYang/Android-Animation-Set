@@ -9,6 +9,8 @@
 * **中文讲解（README）请直接点击对应标题**  
 * **English explanation(or readme), Do not click on the title, please click on the tip address**
 
+**文章开篇总结性文章：**[Android 一共有多少种动画？准确告诉你！](./AndroidAnimationTips.md)  
+
 ## Ⅰ. [View Animation / 视图动画](https://github.com/OCNYang/Android-Animation-Set/tree/master/view-animation)
 
 [English explanation can go to read this article](https://developer.android.com/guide/topics/graphics/view-animation.html)  
