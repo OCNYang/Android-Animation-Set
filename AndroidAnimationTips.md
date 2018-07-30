@@ -205,7 +205,7 @@ Ripple 波纹效果有两种：
 
 不知道大家现在在开发中，在图标显示上是不是还在切各种尺寸的 .png 图片适配。现在我可是一直在使用 svg 图标（在开发中是通过[转换成 Vector ](http://inloop.github.io/svg2android/)再使用，现在 AS 中导入，可以自动完成转换，转换不成功的再用上面网址转换），svg 图标的好处自不用说了。那矢量图动画有是怎么回事呢？  
 
-VectorDrawable 一般是以 <vector> 为根标签定义的 XML 文件，<vector>、<group>、<clip-path>、<path> 元素都有各自可以播放动画的属性。具体怎么生成具有动画效果的图标，可以在[系列教程](https://github.com/OCNYang/Android-Animation-Set)中查看。  
+VectorDrawable 一般是以 `<vector>` 为根标签定义的 XML 文件，`<vector>、<group>、<clip-path>、<path>` 元素都有各自可以播放动画的属性。具体怎么生成具有动画效果的图标，可以在[系列教程](https://github.com/OCNYang/Android-Animation-Set)中查看。  
 
 我们可以在以下场景使用：  
 * 具有动态变换效果的图标；
