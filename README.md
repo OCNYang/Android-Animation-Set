@@ -1,5 +1,9 @@
 # Android Animation Detailed Tutorial / Android 动画详尽教程
 
+[![GitHub issues](https://img.shields.io/github/issues/OCNYang/Android-Animation-Set.svg)](https://github.com/OCNYang/Android-Animation-Set/issues)&ensp;&ensp;
+[![GitHub forks](https://img.shields.io/github/forks/OCNYang/Android-Animation-Set.svg)](https://github.com/OCNYang/Android-Animation-Set/network)&ensp;&ensp;
+[![GitHub stars](https://img.shields.io/github/stars/OCNYang/Android-Animation-Set.svg)](https://github.com/OCNYang/Android-Animation-Set/stargazers)  
+
 <div  align="center">
 <img src="https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/app/src/main/res/drawable/header_bg.jpg?token=AQ83Mm1lTKd-0jwgDJ9K3tNGJbk9OI9iks5axtyQwA%3D%3D" alt="Android Animation Set" align=center />
 </div>
@@ -79,8 +83,15 @@ or [VectorDrawable](https://developer.android.com/reference/android/graphics/dra
 -->
 
 Download [**Demo Apk**](https://github.com/OCNYang/Android-Animation-Set/raw/master/README_Res/app-debug.apk)  
-or scan code to download  
+or scan code to download（扫码下载）  
 ![Scan code to download](./README_Res/apk_url.png)
 
 
 *更全面的讲解将会逐步补充 / 欢迎 Star / 欢迎 Fork*
+
+
+[![CSDN](https://img.shields.io/badge/CSDN-http://blog.csdn.net/shedoor-blue.svg?style=social)](http://blog.csdn.net/shedoor)  
+[![掘金](https://img.shields.io/badge/%E6%8E%98%E9%87%91-https%3A%2F%2Fjuejin.im%2Fuser%2F593a09f9fe88c2006a0034ea-red.svg?style=social)](https://juejin.im/user/593a09f9fe88c2006a0034ea)  
+<br>
+[![ocnyang.com](https://img.shields.io/badge/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-www.ocnyang.com-lightgrey.svg?style=flat-square)](http://ocnyang.com/)&ensp;&ensp;
+[![新浪微博](https://img.shields.io/badge/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A-欧神杨-red.svg?style=flat-square)](http://weibo.com/ocnyang/)
