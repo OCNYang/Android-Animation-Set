@@ -62,6 +62,10 @@ or [VectorDrawable](https://developer.android.com/reference/android/graphics/dra
 * [属性动画之 ViewPropertyAnimator 原理解析](https://github.com/OCNYang/Android-Animation-Set/wiki/%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB%E4%B9%8B-ViewPropertyAnimator-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90)  
 * [深入理解 Content Transition](https://github.com/OCNYang/Android-Animation-Set/wiki/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Content-Transition)  
 
+## 遗漏提交  
+
+由于个人能力局限，难免会有遗漏的动画，大家如果发现有遗漏的动画、或者发现问题，可以[提交 Issues ](https://github.com/OCNYang/Android-Animation-Set/issues/new)（请注明“遗漏提交”，也可以附上推荐的对应讲解教程地址），我会逐渐完善这个系列教程。
+
 ## Demo  
 
 <img src="./README_Res/demo1.gif"  width="400px" alt="View Animation / 视图动画"/> <img src="./README_Res/demo2.gif"  width="400px" alt="Drawable Animation / 帧动画 / Frame 动画"/>  
