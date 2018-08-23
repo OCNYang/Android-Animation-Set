@@ -1,6 +1,7 @@
 package com.ocnyang.drawableanimation;
 
 import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -66,7 +67,10 @@ public class DrawableAnimationActivity extends AppCompatActivity {
             AnimationDrawable animationDrawable = new AnimationDrawable();
             for (int i = 1; i < 8; i++) {
                 int id = getResources().getIdentifier("run" + i, "drawable", getPackageName());
-                animationDrawable.addFrame(getResources().getDrawable(id), 100);
+                Drawable drawable = getDrawable(id);
+                if (null != drawable) {
+                    animationDrawable.addFrame(drawable, 100);
+                }
             }
             mPuppet.setImageDrawable(animationDrawable);
             return animationDrawable;

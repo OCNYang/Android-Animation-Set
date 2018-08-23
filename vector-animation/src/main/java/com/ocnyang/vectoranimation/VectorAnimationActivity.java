@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -29,7 +30,7 @@ public class VectorAnimationActivity extends AppCompatActivity implements View.O
 
     private void initPuppet2() {
         ImageView imageView = (ImageView) findViewById(R.id.iv_puppet2);
-        imageView.setImageDrawable(getResources().getDrawable(R.drawable.drawable_animated_vector));
+        imageView.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.drawable_animated_vector));
         imageView.setOnClickListener(this);
     }
 
