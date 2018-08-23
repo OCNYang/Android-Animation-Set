@@ -40,13 +40,13 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
-
+    @SuppressWarnings("unchecked")
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ActivityOptionsCompat activityOptionsCompat = null;
-                if (position % 2 == 0) {
+                ActivityOptionsCompat activityOptionsCompat;
+                if (holder.getAdapterPosition() % 2 == 0) {
                     Pair<View, String> pair1 = new Pair<View, String>(holder.mImageView, mContext.getString(R.string.share_element_imageview));
                     Pair<View, String> pair2 = new Pair<View, String>(holder.mHeader, mContext.getString(R.string.share_element_header));
                     Pair<View, String> pair3 = new Pair<View, String>(holder.mTextView, mContext.getString(R.string.share_element_tv_info));

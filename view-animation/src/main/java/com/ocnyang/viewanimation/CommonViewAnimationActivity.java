@@ -72,7 +72,6 @@ public class CommonViewAnimationActivity extends AppCompatActivity {
         Animation oldAnimation = mPuppet.getAnimation();
         if (oldAnimation != null) {
             if (oldAnimation.hasStarted() || (!oldAnimation.hasEnded())) {
-                //oldAnimation.reset();
                 oldAnimation.cancel();
                 mPuppet.clearAnimation();
             }

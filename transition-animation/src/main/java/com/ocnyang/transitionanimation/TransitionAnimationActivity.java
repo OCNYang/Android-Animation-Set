@@ -61,6 +61,7 @@ public class TransitionAnimationActivity extends AppCompatActivity implements Vi
      *          5: Exit by Overriding return transition.
      */
     @Override
+    @SuppressWarnings("unchecked")
     public void onClick(View v) {
         for (int i = 0; i < ((ViewGroup) v.getParent()).getChildCount(); i++) {
             if (v == (((ViewGroup) v.getParent()).getChildAt(i))) {
@@ -68,22 +69,22 @@ public class TransitionAnimationActivity extends AppCompatActivity implements Vi
                     case 0:
                         Intent explodeByCodeIntent = new Intent(TransitionAnimationActivity.this, TransitionAnimationByExplodeActivity.class);
                         explodeByCodeIntent.putExtra(TransitionAnimationByExplodeActivity.EXPLODE_TYPE, TransitionAnimationByExplodeActivity.EXPLODE_CODE);
-                        startActivity(explodeByCodeIntent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
+                        startActivity(explodeByCodeIntent, ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle());
                         break;
                     case 1:
                         Intent explodeByXmlIntent = new Intent(TransitionAnimationActivity.this, TransitionAnimationByExplodeActivity.class);
                         explodeByXmlIntent.putExtra(TransitionAnimationByExplodeActivity.EXPLODE_TYPE, TransitionAnimationByExplodeActivity.EXPLODE_XML);
-                        startActivity(explodeByXmlIntent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
+                        startActivity(explodeByXmlIntent, ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle());
                         break;
                     case 2:
                         Intent slideByCodeIntent = new Intent(TransitionAnimationActivity.this, TransitionAnimationBySlideActivity.class);
                         slideByCodeIntent.putExtra(TransitionAnimationBySlideActivity.SLIDE_TYPE, TransitionAnimationBySlideActivity.SLIDE_CODE);
-                        startActivity(slideByCodeIntent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
+                        startActivity(slideByCodeIntent, ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle());
                         break;
                     case 3:
                         Intent slideByXmlIntent = new Intent(TransitionAnimationActivity.this, TransitionAnimationBySlideActivity.class);
                         slideByXmlIntent.putExtra(TransitionAnimationBySlideActivity.SLIDE_TYPE, TransitionAnimationBySlideActivity.SLIDE_XML);
-                        startActivity(slideByXmlIntent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
+                        startActivity(slideByXmlIntent, ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle());
                         break;
                     case 4:
                         finishAfterTransition();
