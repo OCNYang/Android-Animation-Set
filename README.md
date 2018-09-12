@@ -61,6 +61,7 @@ or [VectorDrawable](https://developer.android.com/reference/android/graphics/dra
 * [SVG 讲解](https://github.com/OCNYang/Android-Animation-Set/wiki/SVG-%E8%AE%B2%E8%A7%A3)  
 * [属性动画之 ViewPropertyAnimator 原理解析](https://github.com/OCNYang/Android-Animation-Set/wiki/%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB%E4%B9%8B-ViewPropertyAnimator-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90)  
 * [深入理解 Content Transition](https://github.com/OCNYang/Android-Animation-Set/wiki/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Content-Transition)  
+* [动画差值器之 PathInterpolator](https://github.com/OCNYang/Android-Animation-Set/wiki/%E5%8A%A8%E7%94%BB%E5%B7%AE%E5%80%BC%E5%99%A8%E4%B9%8B-PathInterpolator)
 
 ## 遗漏提交  
 
