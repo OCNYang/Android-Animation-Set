@@ -1,4 +1,4 @@
-# Android Animation Detailed Tutorial / Android 动画详尽教程
+# Android Animation Tutorial Collection / Android 动画详尽教程
 
 [![GitHub issues](https://img.shields.io/github/issues/OCNYang/Android-Animation-Set.svg)](https://github.com/OCNYang/Android-Animation-Set/issues)&ensp;&ensp;
 [![GitHub forks](https://img.shields.io/github/forks/OCNYang/Android-Animation-Set.svg)](https://github.com/OCNYang/Android-Animation-Set/network)&ensp;&ensp;
@@ -10,49 +10,50 @@
 
 <br/>
 
-* **中文讲解（README）请直接点击对应标题**  
-* **English explanation(or readme), Do not click on the title, please click on the tip address**
+## Reading Guide
+* **中文讲解（Readme）请直接点击对应标题**  
+* **For English explanation (or Readme): do not click on the title, but please click on the link under each title**
 
 **文章开篇总结性文章：**[《Android 一共有多少种动画？准确告诉你！》](./AndroidAnimationTips.md)  
 
 ## Ⅰ. [View Animation / 视图动画](https://github.com/OCNYang/Android-Animation-Set/tree/master/view-animation)
 
-[English explanation can go to read this article](https://developer.android.com/guide/topics/graphics/view-animation.html)  
+[English documentation can be found here](https://developer.android.com/guide/topics/graphics/view-animation.html)  
 
 ## Ⅱ. [Drawable Animation / 帧动画 / Frame 动画](https://github.com/OCNYang/Android-Animation-Set/tree/master/drawable-animation)
 
-[English explanation can go to read this article](https://developer.android.com/reference/android/graphics/drawable/AnimationDrawable.html)  
+[English documentation can be found here](https://developer.android.com/reference/android/graphics/drawable/AnimationDrawable.html)  
 
 ## Ⅲ. [Property Animation / 属性动画](https://github.com/OCNYang/Android-Animation-Set/tree/master/property-animation)  
 
-[English explanation can go to read this article](https://developer.android.com/guide/topics/graphics/prop-animation.html)  
+[English documentation can be found here](https://developer.android.com/guide/topics/graphics/prop-animation.html)  
 
 ## Ⅳ. [Ripple Effect / Touch Feedback / 触摸反馈动画](https://github.com/OCNYang/Android-Animation-Set/tree/master/ripple-animation)
 
-[English explanation can go to read this article](https://guides.codepath.com/android/Ripple-Animation)  
+[English documentation can be found here](https://guides.codepath.com/android/Ripple-Animation)  
 
 ## Ⅴ. [Reveal Effect / 揭露动画](https://github.com/OCNYang/Android-Animation-Set/tree/master/reveal-animation)
 
-[English explanation can go to read this article](http://anjithsasindran.in/blog/2015/08/15/material-sharing-card/)  
+[English documentation can be found here](http://anjithsasindran.in/blog/2015/08/15/material-sharing-card/)  
 
 ## Ⅵ. [Transition Animation / 转场动画 & 共享元素](https://github.com/OCNYang/Android-Animation-Set/tree/master/transition-animation)
 
-[English explanation can go to read this readme](https://github.com/OCNYang/Android-Animation-Set/blob/master/transition-animation/README_EN.md)  
+[English tutorial can be found here](https://github.com/OCNYang/Android-Animation-Set/blob/master/transition-animation/README_EN.md)  
 
 ## Ⅶ. [Animate View State Changes / 视图状态动画](https://github.com/OCNYang/Android-Animation-Set/tree/master/state-animation)
 
-[English explanation can go to read ](https://developer.android.com/training/material/animations.html)
+[English documentation can be found here](https://developer.android.com/training/material/animations.html), also 
 [**StateListAnimator**](https://developer.android.com/reference/android/animation/StateListAnimator.html) and [**StateListDrawable**](https://developer.android.com/reference/android/graphics/drawable/StateListDrawable.html)
 
 ## Ⅷ. [AnimatedVectorDrawable / 矢量图动画](https://github.com/OCNYang/Android-Animation-Set/tree/master/vector-animation)
 
-[English explanation can go to read this article](https://www.androiddesignpatterns.com/2016/11/introduction-to-icon-animation-techniques.html) 
+[English tutorial can be found here](https://www.androiddesignpatterns.com/2016/11/introduction-to-icon-animation-techniques.html), more information at  
 or [AnimatedVectorDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html) 
 or [VectorDrawable](https://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html)
 
 ## Ⅸ. [Constraint Animation / ConstraintSet / 约束布局关键帧动画](https://github.com/OCNYang/Android-Animation-Set/tree/master/constraint-animation)
 
-[English explanation can go to read this article](http://www.uwanttolearn.com/android/constraint-layout-animations-dynamic-constraints-ui-java-hell/) 
+[English documentation can be found here](http://www.uwanttolearn.com/android/constraint-layout-animations-dynamic-constraints-ui-java-hell/) 
 
 ## [Wiki 附属文章](https://github.com/OCNYang/Android-Animation-Set/wiki)
 
