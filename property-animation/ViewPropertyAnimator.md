@@ -184,7 +184,7 @@ mPendingAnimations 的 clone 一份存入 PropertyBundle 的内部变量 mNameVa
 mPendingAnimations 中的 NameValueHolder 类，取出要执行的属性进行 ”|” 操作,最后记录成一个 mPropertyMask 的变量，
 存放在 PropertyBundle 中，PropertyBundle 就是最终要执行动画的全部属性的封装类，其内部结构如下图 
 
-![PropertyBundle](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/PropertyBundle.jpg?token=AQ83MuTmmPsjVKQwY_S3KP8KOvh8RIaHks5awfU8wA%3D%3D)  
+![PropertyBundle](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/PropertyBundle.jpg?token=AQ83MuTmmPsjVKQwY_S3KP8KOvh8RIaHks5awfU8wA%3D%3D)  
 
 **AnimatorEventListener:**  
 ViewPropertyAnimator 内部的监听器。这个类实现了 Animator.AnimatorListener, 

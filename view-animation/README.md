@@ -8,7 +8,7 @@
 
 如下是视图动画相关的类继承关系：
 
-![视图动画相关的类继承关系](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/view_animation_class.png?token=AQ83MggSP_dWoz60_jMj1OXBnKWS5hJMks5awhndwA%3D%3D)
+![视图动画相关的类继承关系](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/view_animation_class.png?token=AQ83MggSP_dWoz60_jMj1OXBnKWS5hJMks5awhndwA%3D%3D)
 
 | java 类名 | xml 关键字 | 描述信息 |
 | :-----: | :------- | :----- |
@@ -160,7 +160,7 @@ AnimationSet 继承自 Animation，是上面四种的组合容器管理类，没
 
 介绍补间动画插值器之前我们先来看一幅图，如下：
 
-![补间动画插值器子类结构图](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/interpolator_class.png?token=AQ83MmXiA8vZpTql3vI6zIjps7VcTNRGks5awhogwA%3D%3D)  
+![补间动画插值器子类结构图](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/interpolator_class.png?token=AQ83MmXiA8vZpTql3vI6zIjps7VcTNRGks5awhogwA%3D%3D)  
 
 可以看见其实各种插值器都是实现了 Interpolator 接口而已，同时可以看见系统提供了许多已经实现 OK 的插值器，  
 具体如下：

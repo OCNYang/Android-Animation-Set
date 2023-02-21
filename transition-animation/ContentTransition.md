@@ -14,7 +14,7 @@ Material Design 设计语言，content transition 让我们毫不费力的去协
 以下图为例，演示了 google play Games app 如何通过 content transition 实现 activity 之间的平滑切换。当第二个 activity 开始的时候，
 enter  transition 让用户的头像从底部边缘慢慢滑入。而在 activity  退出的时候，屏幕被分成两半，各自消失在上下边缘。
 
-![Content Transition 1](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/ContentTransition1.gif?token=AQ83Mv4u2K4n4EEQlh5d-eIn_W7k6C3eks5axIYSwA%3D%3D)
+![Content Transition 1](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/ContentTransition1.gif?token=AQ83Mv4u2K4n4EEQlh5d-eIn_W7k6C3eks5axIYSwA%3D%3D)
 
 到目前位置我们只是肤浅的勾勒出了 content transition 轮廓，有几个非常重要的问题仍然存在。content transition 触发的内部机制，
 有哪些 Transition 类可用？framework 如何确定哪些 view 是 transitioning view？ViewGroup 和它的孩子可以被作为一个整体播放动画吗？，我们将逐个解答。
@@ -92,7 +92,7 @@ transition group允许我们将整个ViewGroup作为一个整体来变换。如�
 以下图为例，在整个过程中，用户的头像先是作为一个单独的元素渐渐的进入到下一个界面，而在返回的时候他又是和其他元素一起作为一个整体被动画。
 google play Games 中貌似用的是 transition group 来实现将屏幕分成两半的效果。
 
-![Content Transition 2](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/ContentTransition2.gif?token=AQ83MvthOfl1J661noVbohE8dDcqWWprks5axIYUwA%3D%3D)
+![Content Transition 2](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/ContentTransition2.gif?token=AQ83MvthOfl1J661noVbohE8dDcqWWprks5axIYUwA%3D%3D)
 
 有时候transition groups被用来修改一些Activity切换是出现的莫名其妙的bug。还是以上图为例，calling Activity 
 显示了封面图片的相册界面，而被调用activity则显示了一个header的背景图片，共享的封面图片，一个 webview。

@@ -1,10 +1,10 @@
 # Android 一共有多少种动画？准确告诉你！
 
-![Android 动画](http://img.shedoor.net/github/androidanimationset/FnCS.gif)  
+![Android 动画](https://cdn.jsdelivr.net/gh/ocnyang/gallery@master/github/androidanimationset/FnCS.gif)  
 
 Android 动画在开发中是不可或缺的功能，或者说是界面灵动的添加剂。那你是否总结过 Android 中总共为开发者提供了多少种方式的动画呢？今天就为大家总结归纳一下。
 
-![报告老师，我知道](http://img.shedoor.net/github/androidanimationset/JRYHqwhI.jpg)  
+![报告老师，我知道](https://cdn.jsdelivr.net/gh/ocnyang/gallery@master/github/androidanimationset/JRYHqwhI.jpg)  
 
 我话音未落，前排那位骚气不减当年、故事布满双眼的大胸弟就激动得高高举起了那只满是老茧的右手：“我知道，我知道！都有平移动画、缩放动画、旋转动画、渐变动画、还有......”  
 
@@ -50,7 +50,7 @@ View 动画的一个特点就是，他的动画仅仅是动的 View 的绘制地
 
 View 一般会用作直接作用页面中的 View 上，实现基本的动画效果：平移、旋转、缩放、透明度、或前几者的交集：  
 
-![view_animation_base](http://img.shedoor.net/github/androidanimationset/view_animation_base.png)  
+![view_animation_base](https://cdn.jsdelivr.net/gh/ocnyang/gallery@master/github/androidanimationset/view_animation_base.png)  
 
 除了这几种用法还有几种特殊的使用场景：  
 
@@ -58,7 +58,7 @@ View 一般会用作直接作用页面中的 View 上，实现基本的动画效
 
 大家可以对比一下默认动画和设置后的动画效果对比：  
 
-<img src="http://img.shedoor.net/github/androidanimationset/view_animation_popup1.gif"  width="400px" alt="默认效果"/> <img src="http://img.shedoor.net/github/androidanimationset/view_animation_popup2.gif"  width="400px" alt="自定义效果"/>  
+<img src="https://cdn.jsdelivr.net/gh/ocnyang/gallery@master/github/androidanimationset/view_animation_popup1.gif"  width="400px" alt="默认效果"/> <img src="https://cdn.jsdelivr.net/gh/ocnyang/gallery@master/github/androidanimationset/view_animation_popup2.gif"  width="400px" alt="自定义效果"/>  
 
 * 2. **给 Activity 设置页面跳转、退出动画效果**：
 
@@ -67,7 +67,7 @@ Activity 过场动画效果可以通过很多方式设置，而使用 View 动�
 
 效果对比：  
 
-<img src="http://img.shedoor.net/github/androidanimationset/view_animation_skip1.gif"  width="400px" alt="默认效果"/> <img src="http://img.shedoor.net/github/androidanimationset/view_animation_skip2.gif"  width="400px" alt="自定义效果"/>  
+<img src="https://cdn.jsdelivr.net/gh/ocnyang/gallery@master/github/androidanimationset/view_animation_skip1.gif"  width="400px" alt="默认效果"/> <img src="https://cdn.jsdelivr.net/gh/ocnyang/gallery@master/github/androidanimationset/view_animation_skip2.gif"  width="400px" alt="自定义效果"/>  
 
 * 3. **给 ViewGroup 设置子控件的进场动画效果**：  
 
@@ -75,18 +75,18 @@ Activity 过场动画效果可以通过很多方式设置，而使用 View 动�
 
 效果如下：  
 
-<img src="http://img.shedoor.net/github/androidanimationset/view_animation_layoutanimation1.gif"  width="400px" alt="默认效果"/> <img src="http://img.shedoor.net/github/androidanimationset/view_animation_layoutanimation2.gif"  width="400px" alt="自定义效果"/>  
+<img src="https://cdn.jsdelivr.net/gh/ocnyang/gallery@master/github/androidanimationset/view_animation_layoutanimation1.gif"  width="400px" alt="默认效果"/> <img src="https://cdn.jsdelivr.net/gh/ocnyang/gallery@master/github/androidanimationset/view_animation_layoutanimation2.gif"  width="400px" alt="自定义效果"/>  
 
 > LayoutAnimation 适用于所有的 ViewGroup ，自然也包含 ListView、RecyclerView 等控件。上面说过 LayoutAnimation 提供的是进场动画效果，所以只在 ViewGroup 第一次加载子 View 时显示一次，所以列表控件的 item 加载动画我们一般不使用它，我们会使用 列表 专门的 Item 加载动画， 比如 recyclerView.setItemAnimator() 等。
 
 <h2 id="2">帧动画</h2>  
 
-![动画书](http://img.shedoor.net/github/androidanimationset/frame_animation_0.gif)  
+![动画书](https://cdn.jsdelivr.net/gh/ocnyang/gallery@master/github/androidanimationset/frame_animation_0.gif)  
 
 帧动画这个很好理解，其实就和看的动画片一样，每一帧代表一个画面动作，当快速逐帧显示时，速度到达人眼无法分辨每一帧时，就达到了动画的效果。
 
 在使用中，先要准备好每一帧的素材图片：  
-![帧动画素材图](http://img.shedoor.net/github/androidanimationset/frame_animation_1.png)  
+![帧动画素材图](https://cdn.jsdelivr.net/gh/ocnyang/gallery@master/github/androidanimationset/frame_animation_1.png)  
 
 然后播放出来就成了动画的效果：  
 
@@ -132,7 +132,7 @@ desc.txt 编写规范，例如开机动画需要用到 2 个文件夹，分别�
 
 这里盗一张前段时间有位网友实现的灵动的红鲤鱼效果，具体的实现也用到了不少属性动画的原理。  
 
-![灵动的红鲤鱼](http://img.shedoor.net/github/androidanimationset/fish_animation.gif)  
+![灵动的红鲤鱼](https://cdn.jsdelivr.net/gh/ocnyang/gallery@master/github/androidanimationset/fish_animation.gif)  
 
 <h2 id="4">触摸反馈动画（Ripple Effect）</h2>  
 
@@ -147,8 +147,8 @@ Ripple 波纹效果有两种：
 
 效果分别为：
 
-<img src="http://img.shedoor.net/github/androidanimationset/ripple_effect1.gif"  width="400px" alt="有边界效果"/>  
-<img src="http://img.shedoor.net/github/androidanimationset/ripple_effect2.gif.gif"  width="400px" alt="无边界效果"/>  
+<img src="https://cdn.jsdelivr.net/gh/ocnyang/gallery@master/github/androidanimationset/ripple_effect1.gif"  width="400px" alt="有边界效果"/>  
+<img src="https://cdn.jsdelivr.net/gh/ocnyang/gallery@master/github/androidanimationset/ripple_effect2.gif.gif"  width="400px" alt="无边界效果"/>  
 
 使用也非常简单，只要将上面两种效果设置为控件的背景或者前景就好了，同时需要给控件设置点击事件、或把控件设置为可点击 `android:clickable="true"`  
 
@@ -161,15 +161,15 @@ Ripple 波纹效果有两种：
 
 如下图使用时的一些效果：
 
-![显示隐藏View揭露动画](http://img.shedoor.net/github/androidanimationset/reveal_animation.gif?imageView2/2/w/600)  
+![显示隐藏View揭露动画](https://cdn.jsdelivr.net/gh/ocnyang/gallery@master/github/androidanimationset/reveal_animation.gif?imageView2/2/w/600)  
 
 如果加上些 View 动画效果，结合后成这样：  
 
-![与基础动画效果结合](http://img.shedoor.net/github/androidanimationset/reveal_animation2.gif?imageView2/2/w/400)  
+![与基础动画效果结合](https://cdn.jsdelivr.net/gh/ocnyang/gallery@master/github/androidanimationset/reveal_animation2.gif?imageView2/2/w/400)  
 
 同时它还可以和下面要说的转场动画结合成下面更酷炫的效果：  
 
-![与转场动画结合](http://img.shedoor.net/github/androidanimationset/reveal_animation3.gif?imageView2/2/w/400)  
+![与转场动画结合](https://cdn.jsdelivr.net/gh/ocnyang/gallery@master/github/androidanimationset/reveal_animation3.gif?imageView2/2/w/400)  
 
 上面动画效果是：先使用转场动画的共享元素转场，然后再使用揭露动画显示 View。
 
@@ -186,8 +186,8 @@ Ripple 波纹效果有两种：
 
 话不多说，放上效果图：  
 
-<img src="http://img.shedoor.net/github/androidanimationset/t1.gif"  width="400px" alt="转场效果"/>  
-<img src="https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_animation.gif?token=AQ83MnpsS0QFIfOphNBZ--ahkoxDvan1ks5axHvFwA%3D%3D"  width="400px" alt="共享元素效果"/>
+<img src="https://cdn.jsdelivr.net/gh/ocnyang/gallery@master/github/androidanimationset/t1.gif"  width="400px" alt="转场效果"/>  
+<img src="https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/transition_animation.gif?token=AQ83MnpsS0QFIfOphNBZ--ahkoxDvan1ks5axHvFwA%3D%3D"  width="400px" alt="共享元素效果"/>
 
 <h2 id="7">视图状态动画（Animate View State Changes）</h2>  
 
@@ -212,8 +212,8 @@ VectorDrawable 一般是以 `<vector>` 为根标签定义的 XML 文件，`<vect
 * 也可以用在需要特定动画效果的 VectorDrawable 图片上。
 
 
-<img src="https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/md_toolbar_icon.gif?token=AQ83MjZ3ICbs7datlN4_w46xsoJkFJj-ks5axebywA%3D%3D"  width="400px" alt="动态图标"/>  
-<img src="https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/vector_anim.gif?token=AQ83MkaFkHlYPvrYr6vNPoJBfJAJjuspks5axebVwA%3D%3D"  width="400px" alt="奔跑的图钉"/>
+<img src="https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/md_toolbar_icon.gif?token=AQ83MjZ3ICbs7datlN4_w46xsoJkFJj-ks5axebywA%3D%3D"  width="400px" alt="动态图标"/>  
+<img src="https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/vector_anim.gif?token=AQ83MkaFkHlYPvrYr6vNPoJBfJAJjuspks5axebVwA%3D%3D"  width="400px" alt="奔跑的图钉"/>
 
 
 <h2 id="9">约束布局实现的关键帧动画（ConstraintSet 动画）</h2>  
@@ -227,7 +227,7 @@ VectorDrawable 一般是以 `<vector>` 为根标签定义的 XML 文件，`<vect
 
 那使用场景根据约束动画的说明也比较明显了，就是同一个布局需要重新调整布局内部 View 位置时使用。  
 
-![约束布局动画](http://img.shedoor.net/github/androidanimationset/constraintset.gif)  
+![约束布局动画](https://cdn.jsdelivr.net/gh/ocnyang/gallery@master/github/androidanimationset/constraintset.gif)  
 
 ## 更详细的动画介绍  
 

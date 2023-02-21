@@ -8,7 +8,7 @@ java方式翻墙点击我查看。
 
 如下图就是帧动画的源码文件：
 
-![AnimationDrawable class](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/animation_drawable.jpg?token=AQ83MlWYnnPDJoSwlBJmUrqALx9-eZQEks5awY-CwA%3D%3D)  
+![AnimationDrawable class](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/animation_drawable.jpg?token=AQ83MlWYnnPDJoSwlBJmUrqALx9-eZQEks5awY-CwA%3D%3D)  
 
 可以看见实际的真实父类就是 Drawable。
 

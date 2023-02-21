@@ -54,7 +54,7 @@ Demo 例子中我们实现了 Activity a 中有一个点击按钮，点击按钮
 这里的 overridePendingTransition 方法传递的是两个动画文件 id，第一个参数是需要打开的 Activity 进入时的动画，
 第二个参数是需要关闭的 Activity 离开时的动画。这样我们执行了这段代码之后在跳转 Activity 的时候就展示了动画效果： 
 
-![overridePendingTransition](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/overridePendingTransition.gif?token=AQ83MqQRBPU3KmuAoudHA0i4McHSRGMbks5axHtMwA%3D%3D)
+![overridePendingTransition](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/overridePendingTransition.gif?token=AQ83MqQRBPU3KmuAoudHA0i4McHSRGMbks5axHtMwA%3D%3D)
 
 动画的效果是通过 overridePendingTransition 方法实现的，那么下面我们来看一下 overridePendingTransition 方法的定义，
 我们在 overridependingTransition 方法在定义的时候有这样的一段注释说明：

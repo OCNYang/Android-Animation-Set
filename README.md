@@ -5,7 +5,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/OCNYang/Android-Animation-Set.svg)](https://github.com/OCNYang/Android-Animation-Set/stargazers)  
 
 <div  align="center">
-<img src="https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/app/src/main/res/drawable/header_bg.jpg?token=AQ83Mm1lTKd-0jwgDJ9K3tNGJbk9OI9iks5axtyQwA%3D%3D" alt="Android Animation Set" align=center />
+<img src="https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/app/src/main/res/drawable/header_bg.jpg?token=AQ83Mm1lTKd-0jwgDJ9K3tNGJbk9OI9iks5axtyQwA%3D%3D" alt="Android Animation Set" align=center />
 </div>
 
 <br/>

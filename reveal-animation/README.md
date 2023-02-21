@@ -6,7 +6,7 @@
 从某一个点向四周展开或者从四周向某一点聚合起来，本文实现的效果如下所示，可以用在 Activity 里面的 View 动画效果，
 也可以使用在 Activity 跳转过渡动画中，如下图使用在 View 的显示隐藏的效果图：
  
-![Reveal Effect](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/reveal_animation.gif?token=AQ83MgST0wsEcQCDDGjxTfrFlGcSs9aVks5aw1BwwA%3D%3D)  
+![Reveal Effect](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/reveal_animation.gif)  
 
 ## 2. 使用
 
@@ -41,7 +41,7 @@
 
 如下图所示： 
 
-![通过坐标系分析各个参数](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/createCircularReveal.jpg?token=AQ83Mvo2qlmhlBhInyMZGjUQVcrGzOAbks5aw1ERwA%3D%3D)  
+![通过坐标系分析各个参数](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/createCircularReveal.jpg?)  
 
 揭露动画有两种效果，一种是显示一组UI元素，另一种是隐藏一组UI元素：   
 * 以中心点为轴点，当开始半径小于结束半径时，从开始半径处向外扩大到结束半径处显示View 
@@ -58,7 +58,7 @@ Reveal Animation 要掌握的内容就这么多了，这里通过粗略分析一
 
 这里以上面的效果图来分析：  
 
-![Reveal demo 分析图](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/reveal_animation_demo.png?token=AQ83MjmWChaucjT435XpyFqG0J8F9OOQks5aw135wA%3D%3D)  
+![Reveal demo 分析图](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/reveal_animation_demo.png)  
 
 通过这个分析图，其实应该就很容易理解了，我们要做的所有事情就是确定 `ViewAnimationUtils.createCircularReveal()` 这
 个方法的四个参数。

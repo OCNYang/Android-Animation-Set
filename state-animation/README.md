@@ -6,7 +6,7 @@
 
 咱先看一下实现的一种效果图(点击时Z轴抬高):
 
-![点击时Z轴抬高](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/view_state_change_animation.gif?token=AQ83MkyhlHVruXxcDTI07XfPKKW_ja9Tks5axLfpwA%3D%3D)  
+![点击时Z轴抬高](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/view_state_change_animation.gif?token=AQ83MkyhlHVruXxcDTI07XfPKKW_ja9Tks5axLfpwA%3D%3D)  
 
 ## 使用
 

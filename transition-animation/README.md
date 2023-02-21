@@ -27,9 +27,9 @@ Activity 或者 Fragment 的动画切换，但是他们仅仅局限与将整个�
 
 这里先看一张官方的效果图：  
 
-![共享元素转场动画](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_animation.gif?token=AQ83MnpsS0QFIfOphNBZ--ahkoxDvan1ks5axHvFwA%3D%3D)  
+![共享元素转场动画](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/transition_animation.gif?token=AQ83MnpsS0QFIfOphNBZ--ahkoxDvan1ks5axHvFwA%3D%3D)  
 
-![共享元素转场动画 过程细化](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/SceneTransition.png?token=AQ83Mn28u76WmQPF2MNnecm8kmcNCzVbks5axHv_wA%3D%3D)  
+![共享元素转场动画 过程细化](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/SceneTransition.png?token=AQ83Mn28u76WmQPF2MNnecm8kmcNCzVbks5axHv_wA%3D%3D)  
 
 对转场动画更加详细的介绍可以查看[官方介绍](https://developer.android.com/training/transitions/index.html)。
 
@@ -48,7 +48,7 @@ Activity 或者 Fragment 的动画切换，但是他们仅仅局限与将整个�
 
 这里我们直接介绍通过 Transitions 实现的切换效果。
 
-![transition_A_to_B](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_A_to_B.png?token=AQ83Mhs5y3VQZ-RwFXpL_62sYpQiKMOOks5axHwcwA%3D%3D)
+![transition_A_to_B](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/transition_A_to_B.png?token=AQ83Mhs5y3VQZ-RwFXpL_62sYpQiKMOOks5axHwcwA%3D%3D)
 
 当从 Activity A 切换到  Activity B 的时候，Activity 布局的内容会按照预先定义好的动画来执行过渡动画。
 在 android.transition 包中，已经有三种现成的动画可以用: Explode，Slide 和 Fade。所有这些过渡都会跟踪 
@@ -56,7 +56,7 @@ Activity 布局中可见的目标 Views，驱动这些 Views 按照过渡的规�
 
 | Explode | Slide |　Fade　|
 | :-----: | :----: | :----: |
-| ![transition_explode](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_explode.gif?token=AQ83Ml7jMuekilxc7547E0ytJLeYkm8wks5axHxcwA%3D%3D) | ![transition_slide](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_slide.gif?token=AQ83Mr2PgHwzU2Rkmqzeo9tvvrIRz36gks5axHx_wA%3D%3D) | ![transition_fade](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_fade.gif?token=AQ83Mn7qK6FrN9Yshyb0L0LHdWw04fMnks5axHyNwA%3D%3D) |
+| ![transition_explode](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/transition_explode.gif?token=AQ83Ml7jMuekilxc7547E0ytJLeYkm8wks5axHxcwA%3D%3D) | ![transition_slide](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/transition_slide.gif?token=AQ83Mr2PgHwzU2Rkmqzeo9tvvrIRz36gks5axHx_wA%3D%3D) | ![transition_fade](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/transition_fade.gif?token=AQ83Mn7qK6FrN9Yshyb0L0LHdWw04fMnks5axHyNwA%3D%3D) |
 
 你可以在 xml 中创建这些过渡效果，也可以通过代码来创建。对于 Fade 过渡效果来说，它看起来是这样子的：
 
@@ -156,7 +156,7 @@ Activity 布局中可见的目标 Views，驱动这些 Views 按照过渡的规�
 
 不管哪种创建方法都会产生如下的效果:
 
-![transition_fade](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_fade.gif?token=AQ83Mn7qK6FrN9Yshyb0L0LHdWw04fMnks5axHyNwA%3D%3D)
+![transition_fade](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/transition_fade.gif?token=AQ83Mn7qK6FrN9Yshyb0L0LHdWw04fMnks5axHyNwA%3D%3D)
 
 **那么这里面一步一步的到底发生了什么:**  
 
@@ -187,7 +187,7 @@ Return and Reenter Transitions 是与进入和退出动画相对应的.
 如果 Return or Reenter 没有创建, Android 会把 Enter and Exit Transitions 反过来执行. 但是如果你创建了 
 Return or Reenter，那 Android 就会执行你创建的动画，并且这些动画可以不同.
 
-![b back a](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_B_to_A.png?token=AQ83MmuLIaE4S4KUdEuCNQmgFIaBjzX3ks5axHw1wA%3D%3D)
+![b back a](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/transition_B_to_A.png?token=AQ83MmuLIaE4S4KUdEuCNQmgFIaBjzX3ks5axHw1wA%3D%3D)
 
 我们可以修改下前面 Fade 的例子，给 TransitionActivity 创建 ReturnTransition。这里我们就拿 Slide 过渡效果来举例子。
 这样，如果我们从 B 返回到 A 的时候，B 就会执行一个 Slide 的过渡效果。
@@ -218,7 +218,7 @@ Return or Reenter，那 Android 就会执行你创建的动画，并且这些动
 | :-------------------: | :----------------: |
 | Enter: Fade In | Enter: Fade In | 
 | Exit: Fade Out | Exit: Slide out | 
-| ![transition_fade](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_fade.gif?token=AQ83Mn7qK6FrN9Yshyb0L0LHdWw04fMnks5axHyNwA%3D%3D) | ![transition_fade2](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/transition_fade2.gif?token=AQ83Mp57J5U15fqDFnimNrMgacq6hI_Tks5axHzDwA%3D%3D) | 
+| ![transition_fade](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/transition_fade.gif?token=AQ83Mn7qK6FrN9Yshyb0L0LHdWw04fMnks5axHyNwA%3D%3D) | ![transition_fade2](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/transition_fade2.gif?token=AQ83Mp57J5U15fqDFnimNrMgacq6hI_Tks5axHzDwA%3D%3D) | 
 
 
 ## 3. Activity 之间共享元素 (Share Elements)
@@ -227,7 +227,7 @@ Return or Reenter，那 Android 就会执行你创建的动画，并且这些动
 然后 Transition framework 就会在用户从一个View切换到另一个View的时候给用户展现一些必要的动画。  
 但你要记住:发生动画的View并不是从一个布局中移动到另一个布局。他们是两个独立的View。
 
-![A Start B with shared](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/shared_element.png?token=AQ83Mvh-_twlcYFredjHZjl6mYeTMskZks5axIYXwA%3D%3D)  
+![A Start B with shared](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/shared_element.png?token=AQ83Mvh-_twlcYFredjHZjl6mYeTMskZks5axIYXwA%3D%3D)  
 
 ### 3_a 设置 Window Content Transition 属性
 
@@ -297,7 +297,7 @@ Return or Reenter，那 Android 就会执行你创建的动画，并且这些动
 
 这样就可以有下面漂亮的过渡效果了:
 
-![a to b with shared element](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/shared_element_anim.gif?token=AQ83MlHk7M9_AVjW54jAMd9pWMrDXmzQks5axI2wwA%3D%3D)  
+![a to b with shared element](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/shared_element_anim.gif?token=AQ83MlHk7M9_AVjW54jAMd9pWMrDXmzQks5axI2wwA%3D%3D)  
 
 可以看到, Transition framework 创建并执行了一个动画。动画的视觉效果就是一个View从一个activity移动到另一个activity中
 并伴随着形状的变化。
@@ -330,7 +330,7 @@ Return or Reenter，那 Android 就会执行你创建的动画，并且这些动
         
 最终的效果就是这样的:
 
-![shared_element_no_overlap](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/shared_element_no_overlap.gif?token=AQ83MggDmMsVVZXZIzq8QR4MrDkNioWDks5axI3LwA%3D%3D)
+![shared_element_no_overlap](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/shared_element_no_overlap.gif?token=AQ83MggDmMsVVZXZIzq8QR4MrDkNioWDks5axI3LwA%3D%3D)
 
 ## 5. 允许过渡效果之间的重叠
 
@@ -369,7 +369,7 @@ You can define if enter and exit transitions can overlap each other.
 | Overlap True | Overlap False |
 | :-----------: | :----------: |
 | Fragment_2 出现在Fragment_1的上面 | Fragment_2 等到Fragment_1消失后才出现 | 
-| ![shared_element_overlap](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/shared_element_overlap.gif?token=AQ83Mp2_73_X0IHlShlWuyTLD6oWqswJks5axI3qwA%3D%3D) | ![shared_element_no_overlap](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/shared_element_no_overlap.gif?token=AQ83MggDmMsVVZXZIzq8QR4MrDkNioWDks5axI3LwA%3D%3D) | 
+| ![shared_element_overlap](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/shared_element_overlap.gif?token=AQ83Mp2_73_X0IHlShlWuyTLD6oWqswJks5axI3qwA%3D%3D) | ![shared_element_no_overlap](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/shared_element_no_overlap.gif?token=AQ83MggDmMsVVZXZIzq8QR4MrDkNioWDks5axI3LwA%3D%3D) | 
 
 ## 6. 布局元素动画
 
@@ -408,7 +408,7 @@ You can define if enter and exit transitions can overlap each other.
 
 Transition Framework会考虑当前场景内所有可见的View并计算需出需要的动画来安排两个场景之间的view的位置。
 
-![scenes_anim](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/scenes_anim.gif?token=AQ83Mtdyms3whHdwFywgrs2DIFVbloupks5axI4CwA%3D%3D)
+![scenes_anim](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/scenes_anim.gif?token=AQ83Mtdyms3whHdwFywgrs2DIFVbloupks5axI4CwA%3D%3D)
 
 ### 6_2 布局的改变
 
@@ -429,7 +429,7 @@ Transition Framework会考虑当前场景内所有可见的View并计算需出�
 改变View的宽度属性让他变小，这会触发layoutMeasure。这个点上，Transition framework会记录开始和结束时的相关值，
 并给这个变化加上过渡效果。
 
-![view layout animation](https://raw.githubusercontent.com/OCNYang/Android-Animation-Set/master/README_Res/view_layout_anim.gif?token=AQ83Mv91EWsQVDHAy8cdj0x3WPdc7ldOks5axI4bwA%3D%3D)
+![view layout animation](https://cdn.jsdelivr.net/gh/ocnyang/Android-Animation-Set@master/README_Res/view_layout_anim.gif?token=AQ83Mv91EWsQVDHAy8cdj0x3WPdc7ldOks5axI4bwA%3D%3D)
 
 
 
